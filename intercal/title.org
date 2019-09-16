@@ -1,0 +1,4 @@
+5. Radiometric Differences between AIRS, CrIS, and IASI Derived for the CHIRP Product
+
+   Chris Hepplewhite and Larrabee Strow (UMBC)
+

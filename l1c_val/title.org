@@ -1,0 +1,4 @@
+7. Validation of the AIRS L1c Radiance Product: Spectral and Radiometric
+
+   L. Larrabee Strow, Steven  Buczkowski, and Howard Motteler (UMBC)
+

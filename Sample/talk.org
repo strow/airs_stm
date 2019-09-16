@@ -1,0 +1,120 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large TITLE
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{October 3, 2018 \vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, Steven Leroy\inst{3}, Howard Motteler\inst{2}, Chris Hepplewhite\inst{2}, and Steven Buczkowski\inst{2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET \and \inst{3} AER}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* SAMPLE: Motivation
+- Produce Level 1b CHIRP radiances for retrievals
+- Produce Level 3 climate-level gridded CHIRP radiance products
+- Goals
+   - Minimize sensitivity to a-priori estimates, etc.
+   - Remove artificial sampling biases
+   - Perform as much analysis in radiance space for error traceability
+- Geophysical Products
+   - Level 3 T/Q anomalies and trends (and surface T?)
+\vspace{0.05in}
+
+This approach is in principle very simple and quick.  Allows frequency re-processing. 
+
+\vspace{0.05in}
+
+What's Hard: 
+  - Dealing with clouds
+  - AIRS radiometric stability estimates (ie. how good?)
+
+* SAMPLE 2x Figs
+\vspace{-0.3in}
+
+** \footnotesize Some Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+AIRS, CrIS, IASI are /all/ very stable\\
+CLARREO has removed us from this figure!
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+These are 2-\sigma B(T) statistical uncertainties due to inter-annual variability.  
+
+Some channels, some latitudes not gaussian (strat sudden warmings, QBO, etc.)
+
+
+
+* SAMPLE 4x Figs
+\vspace{-0.35in}
+
+** \footnotesize Some Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.45
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.45
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.25in}
+
+** \footnotesize Some Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.45
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.45
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]

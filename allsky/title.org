@@ -1,0 +1,4 @@
+6. All-Sky AIRS Anomaly Retrievals using Gridded, Time Averaged Radiances
+
+   Sergio De Souza-Machado and Larrabee Strow (UMBC)
+

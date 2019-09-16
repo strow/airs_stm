@@ -1,0 +1,8 @@
+# Tex extra
+*.aux
+*.toc
+*.snm
+*.nav
+*.out
+*.vrb
+*.log

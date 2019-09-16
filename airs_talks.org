@@ -1,0 +1,33 @@
+* AIRS Talks
+
+1. AIRS Calibration for Climate Trend Studies: Status and Future Work
+
+   Larrabee Strow, UMBC
+
+2. AIRS Derived CO2 Zonal Anomalies over Ocean
+
+   Larrabee Strow and Sergio De Souza-Machado, UMBC
+
+3. A Climate Hyperspectral Infrared Product (CHIRP) Combining AIRS, CrIS, and IASI
+
+   L. Larrabee Strow, Howard Motteler, Sergio De Souza-Machado, Chris Hepplewhite, and Steven  Buczkowski
+
+4. The AIRS/Cris/IASI L1c Radiative Transfer Algorithms
+
+   Chris Hepplewhite, Sergio De Souza-Machado, and Larrabee Strow (UMBC)
+
+5. Radiometric Differences between AIRS, CrIS, and IASI Derived for the CHIRP Product
+
+   Chris Hepplewhite and Larrabee Strow (UMBC)
+
+6. All-Sky AIRS Anomaly Retrievals using Gridded, Time Averaged Radiances
+
+   Sergio De Souza-Machado and Larrabee Strow (UMBC)
+
+7. Validation of the AIRS L1c Radiance Product: Spectral and Radiometric
+
+   L. Larrabee Strow, Steven  Buczkowski, and Howard Motteler (UMBC)
+
+8. Statistical Approaches for Simple Measurements of Surface Temperature and Cloud Forcing Trends and Extrema
+
+   Andy Tangborn, Howard Motteler, and Larrabee Strow (UMBC)

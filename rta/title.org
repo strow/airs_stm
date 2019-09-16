@@ -1,0 +1,3 @@
+4. The AIRS/Cris/IASI L1c Radiative Transfer Algorithms
+
+   Chris Hepplewhite, Sergio De Souza-Machado, and Larrabee Strow (UMBC)
