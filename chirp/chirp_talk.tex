@@ -12,6 +12,9 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usetheme{default}
+
+% ---------------------------------------------------------------------
+
 \author{L. Larrabee Strow}
 \date{\today}
 \title{\large Radiometric Differences Between \newline
@@ -39,14 +42,18 @@
   \setlength{\partopsep}{2pt}
 }
 
+% --------------------------------------------------------------------
 \section{Overview}
 \begin{frame}
   \frametitle{Overview of talk}
   \begin{itemize}
   \item Definition of the CHIRP
   \item Establish the framework for determining radiometric records from the different sensors.
+  \item Attribute quality and uncertainty for each channel.
   \item Utilization of large data sets of overlapping observations to quantify radiometric offsets between the sensors.
-  \item Examples of results.
+  \item Examples of results for single footprint observations.
+  \item Issues concerning spatial \& temporal sampling and gridded are not covered here.
+    
   \end{itemize}
 \end{frame}
 
@@ -55,8 +62,28 @@
 \begin{frame}
   \frametitle{The Climate Hyperspectral Infra-red Radiance Product}
   \begin{itemize}
-    \item 
+  \item Spectrally equivalent to CrIS in medium resolution - which for the CrIS sub-bands relates to 0.8/0.6/0.4cm OPD (LW/MW/SW resp.)
+  \item The total number of channels available to use depends on the overlap of the parent sensor, for example AIRS L1C with 2645 channels to the CrIS MSR with 1683 with two guard channels per band edge.
+  \item Covers the time period from AIRS L1C data availaibility (Sep 2002) to the present, with a transition from AIRS to CrIS proposed on Sep 2016.
+  \item Operational overlap between sensors is now considerable: AIRS:CrIS Since 2012, AIRS:IASI from 2007 etc.
+  \item The AIRS L1C currently includes cleaned and filled channels, the CHIRP will use drift corrected AIRS spectral radiance.
+    
   \end{itemize}
 \end{frame}
 
 % ---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{The CHIRP cont.}
+  \begin{itemize}
+  \item CHIRP channels will carry the AIRS L1C noise, quality flag and L1C processing information (up to the transition date).
+    \item CHIRP will have the same stability characteristucs as the parent sensor (AIRS before and CrIS after the transition date).
+  \item Each CHIRP channel has information from close neighbor parent AIRS channels (through the deconvolution/translation algorithm) and shall be weighted accordingly.
+  \item The AIRS fill channels are used and the corresponding CHIRP channels retained  but will flagged for the user. (See below for more details).
+  \item After the transition date (Sep 2016) CrIS-NPP L1C data have been available in FSR (0.8/0.8/0.8cm LW/MW/SW OPD) resolution and therefore the translation to the MSR grid is straightforward and carrying quality data to CHIRP simpler.
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------
+
+
+\end{document}
