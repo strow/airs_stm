@@ -122,5 +122,92 @@
 \end{frame}
 
 % ---------------------------------------------------------------------
+\section{Results}
+\begin{frame}
+  \frametitle{AIRS:CrIS SNOs}
+  \begin{itemize}
+  \item A year of AIRS\&CrIS SNOs are compared on the CHIRP grid. About $1.5 x 10^6$ samples are acquired.
+    \item Results for 2018 are shown in the next figure. AIRS L1C fill channels, dead and band edge channels are ommitted. The standard error of the mean difference is shown in the gray line.
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{./Figs/Pdf/ac_sno_2018_bias_stderr_coloraslp.pdf}
+  \end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{IASI:CrIS SNOs}
+  \begin{itemize}
+  \item A year of IASI\&CrIS SNOs consists of about $7 x 10^4$ samples.
+    \item Results for 2017 are shown in the next figure. Since IASI includes all CrIS bands, the resultant mean bias is computed for all CrIS channels. The standard error of the mean difference is shown in the gray line.
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{./Figs/Pdf/ic_sno_nsr_2017_bias_stder_lw_mw_sw.pdf}
+  \end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{SNOs AIRS\&CrIS AIRS\&IASI on CHIRP}
+  \begin{itemize}
+  \item SNO pairs are collected for the complete period of operational overlap.
+  \item Translation of AIRS L1C to CHIRP (CrIS MSR) and IASI to CHIRP permits both AIRS\&CrIS and airs\&IASI radiometric bias and then to use AIRS as the transfer when taking a double different to compute CrIS\&IASI bias.
+  \item Every AIRS and IASI observations are first translated to CHIRP, then analysed.
+  \item In the following figure the mean differences are computed for one year of data.
+    \item The standard error of the mean is very similar to the individual SNO bias values shown previously.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  \begin{center}
+   \includegraphics[width=\linewidth]{./Figs/Pdf/ac_ai_2017_sno_msr_dble_diff_bias_aslp.pdf}
+  \end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Global Random}
+  \begin{itemize}
+    \item 1\% of global random equal area samples returns about $1 x 10^7$ observations.
+    \item Each AIRS observation is translated to the CHIRP (CrIS MSR) grid and compared to  CrIS on the same grid.
+    \item The mean brightness temperature spectrum and mean difference is shown in the next figure. The standard error of the mean is negligible on this scale and is not shown.
+      \item The small difference of the mean atmospheric view angle between the two sensors is corrected for each channel based on empirical correction derived from the data themselves.
+    \item AIRS L1C fill channels, dead channels, and band-edge channels are not included.
+      \item The different AIRS detector modules are distinguished by the different colors on the bias plot.
+  \end{itemize}
+
+\end{frame}
+  
+\begin{frame}
+  \frametitle{Gobal Random result}
+  \begin{center}
+    \includegraphics[width=\linewidth]{./Figs/Pdf/ac_global_random_fs_bias_mean.pdf}
+  \end{center}
+
+\end{frame}
+
+% ---------------------------------------------------------------------
+\section{Discussion \& Conclusions}
+\begin{frame}
+  \frametitle{}
+  \begin{itemize}
+  \item The translation algorithm of AIRS or IASI to the CHIRP (CrIS MSR) spectral grid has been demonstrated.
+  \item The SNO intercomparison provides a reliable means to quantify the bias as a function of wavelength.
+    \item Using global random equal area samples over a full year gives consistent bias estimates as the SNO.
+    \item The mean bias between the sensors is small, of order tenth Kelvin, and consistent across the band pass.
+    \item The multi-year period of overlap of the missions has been used to determine the stability of the bias estimates with values close to the known AIRS drifts.
+    
+  \end{itemize}
+
+\end{frame}
+
+% ---------------------------------------------------------------------
+
 
 \end{document}
