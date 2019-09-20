@@ -96,10 +96,6 @@ However:  AIRS is extremely stable
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf]]
 
-* Pdf/co2_growth_vs_lat.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/co2_growth_vs_lat.pdf]]
-
 * Pdf/co2_airs_vs_esrl_global_with_dbt.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
@@ -107,6 +103,10 @@ However:  AIRS is extremely stable
 * Pdf/co2_airs_vs_mlo.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_airs_vs_mlo.pdf]]
+
+* Pdf/co2_growth_vs_lat.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_growth_vs_lat.pdf]]
 
 * Pdf/co2_airs_vs_esrl_global_growth_anom.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
@@ -133,27 +133,20 @@ However:  AIRS is extremely stable
 [[./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf]]
 
 
-* Png/best_co2_anom_resid.png
+
+* iasi_cfc_signatures.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/best_co2_anom_resid.png]]
-
-* COMMENT Png/best_co2_anom_resid_no_sw.png
+[[./Figs/Pdf/iasi_cfc_signatures.pdf]]
+* iasi_cfc_bias.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/best_co2_anom_resid_no_sw.png]]
-
-* Png/best_co2_anomaly_resid_fit_chans.png
+[[./Figs/Pdf/iasi_cfc_bias.pdf]]
+* COMMENT air_cfc_signature_in_anomaly_fit_residuals.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/best_co2_anomaly_resid_fit_chans.png]]
-
-* Png/best_co2_anomaly_resid_fit_chans_concat.png
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png]]
-
-
-
+[[./Figs/Pdf/air_cfc_signature_in_anomaly_fit_residuals.pdf]]
 * Pdf/airs_cfc_bias_iasi_times.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/airs_cfc_bias_iasi_times.pdf]]
+
 
 * Pdf/cfc11_bt_trend.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
@@ -163,13 +156,34 @@ However:  AIRS is extremely stable
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cfc11_trend.pdf]]
 
+* Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf]]
+
+
 * Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf]]
 
-* Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+
+* Png/best_co2_anom_resid.png
 #+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf]]
+[[./Figs/Png/best_co2_anom_resid.png]]
+
+* Png/best_co2_anom_resid_no_sw.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anom_resid_no_sw.png]]
+
+* COMMENT Png/best_co2_anomaly_resid_fit_chans.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans.png]]
+
+* Png/best_co2_anomaly_resid_fit_chans_concat.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png]]
+
+
+
 
 
 
@@ -215,6 +229,22 @@ However:  AIRS is extremely stable
 [[./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
 
 
+
+
+
+* overroye_scan.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_scan.pdf]]
+
+* overroye_map.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_map.pdf]]
+
+
+
+
+
+* COMMENT  GLOBAL quick retrievals start here
 
 * Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
@@ -295,71 +325,71 @@ However:  AIRS is extremely stable
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_enso_v2.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2019.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2018.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2018.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2018.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2017.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2017.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2017.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2016.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2016.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2016.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2015.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2015.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2015.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2014.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2014.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2014.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2013.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2013.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2013.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2012.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2012.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2012.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2011.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2011.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2011.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2010.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2010.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2010.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2009.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2009.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2009.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2008.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2008.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2008.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2007.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2007.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2007.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2006.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2006.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2006.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2005.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2005.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2005.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2004.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2004.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2004.pdf]]
 
-* Pdf/cf_vs_sst_vs_year_2003.pdf
+* COMMENT Pdf/cf_vs_sst_vs_year_2003.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2003.pdf]]
 
