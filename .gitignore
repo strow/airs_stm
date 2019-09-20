@@ -6,3 +6,12 @@
 *.out
 *.vrb
 *.log
+
+*.fig
+
+Matlab/
+Mfiles/
+
+Papers/
+
+figs_motteler/
