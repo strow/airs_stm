@@ -1,4 +1,4 @@
-% Created 2019-09-22 Sun 12:11
+% Created 2019-09-22 Sun 14:21
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,t]{beamer}
 \usepackage[utf8]{inputenc}
@@ -16,11 +16,11 @@
 \usetheme{default}
 \author{L. Larrabee Strow}
 \date{\today}
-\title{\large Climate Hyperspectral InfraRed Product (CHIRP): Radiometric Stability and Trends}
+\title{\large AIRS Calibration for Climate Trend Studies: Status and Future}
 \subtitle{\footnotesize{AIRS Science Team Meeting}}
-\date{\vspace{0.1in}\footnotesize{October 3, 2018 \vfill}}
-\author{L. Larrabee Strow\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, Steven Leroy\inst{3}, Howard Motteler\inst{2}, Chris Hepplewhite\inst{2}, and Steven Buczkowski\inst{2}}
-\institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET \and \inst{3} AER}
+\date{\vspace{0.1in}\footnotesize{\today\vfill}}
+\author{L. Larrabee Strow\inst{1,2}}
+\institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
 \input beamer_setup
 \usetheme{metropolis}
 \metroset{titleformat title=allcaps}
@@ -40,7 +40,7 @@
 }
 
 
-\begin{frame}[label={sec:orgc9185af},shrink=30]{Calibration Requirements for Climate Science}
+\begin{frame}[label={sec:orgec4751a},shrink=30]{Calibration Requirements for Climate Science}
 \vspace{-0.1in}
 \begin{large}
 \begin{itemize}
@@ -86,7 +86,7 @@ Significant AIRS calibration drifts have \alert{already} resulted publication of
 \end{large}
 \end{frame}
 
-\begin{frame}[label={sec:org1ef67c7},shrink=20]{Weather versus Climate Research}
+\begin{frame}[label={sec:org36c1f28},shrink=20]{Weather versus Climate Research}
 \begin{block}{Weather Applications}
 \begin{itemize}
 \item AIRS original focus was for NWP
@@ -114,7 +114,7 @@ Hyperspectral IR instrument stability appears to be 1-2 orders of magnitude bett
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org16a3dff},shrink=5]{Climate Product Characteristics}
+\begin{frame}[label={sec:orga253539},shrink=5]{Climate Product Characteristics}
 \begin{block}{Uncertainty Estimates}
 \begin{itemize}
 \item If we provide something unique, validation will be difficult
@@ -134,7 +134,7 @@ There is a long history of controversies in climate measurements (esp. microwave
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org7449b1f}]{AIRS Stability Calibration: An Approach}
+\begin{frame}[label={sec:org081e89d}]{AIRS Stability Calibration: An Approach}
 \begin{itemize}
 \item External standards needed to establish stability
 \item \cd and possibly \nitrous and \methane can provide those standards
@@ -154,12 +154,12 @@ Essentially you need to perform climate-level retrievals to test the capabilitie
 A \emph{key} requirement is the need to reprocess the \emph{full record} many times.  NOT possible with Level 2 approach!  Need fast alternatives that may also address issues of reproducibility.
 \end{frame}
 
-\begin{frame}[label={sec:org370b754}]{Characteristics of AIRs Long-Term Radiance Trends}
+\begin{frame}[label={sec:org8b01e67}]{Characteristics of AIRs Long-Term Radiance Trends}
 \begin{itemize}
 \item 1\% random subset
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgd89b22c}]{AIRS Global 16-Year B(T) Trend}
+\begin{frame}[label={sec:orgfef225e}]{AIRS Global 16-Year B(T) Trend}
 All channels (including fill)
 
 \begin{center}
@@ -167,7 +167,7 @@ All channels (including fill)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb8e9e0a}]{AIRS Global 16-Year B(T) Trend}
+\begin{frame}[label={sec:org7c679e3}]{AIRS Global 16-Year B(T) Trend}
 Fill channels marked
 
 \begin{center}
@@ -175,7 +175,7 @@ Fill channels marked
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org2f79bbd}]{AIRS Global 16-Year B(T) Trend}
+\begin{frame}[label={sec:org58f8280}]{AIRS Global 16-Year B(T) Trend}
 \vspace{-0.1in}
 
 \begin{center}
@@ -192,7 +192,7 @@ Fill channels marked
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org68d5d19}]{\cd and \methane Trends Removed, Fitted Chans Only}
+\begin{frame}[label={sec:org4df7eb4}]{\cd and \methane Trends Removed, Fitted Chans Only}
 \begin{center}
 \includegraphics[width=0.75\linewidth]{./Figs/Png/rand_global_trend_l1c_vs_era_clr_only_fit_chans.png}
 \end{center}
@@ -200,136 +200,136 @@ Fill channels marked
 Uncertainty (gray) is geophysical (Std over latitutde).
 \end{frame}
 
-\begin{frame}[label={sec:orgfd7cc25}]{BT Response to Constant Relative Humidity}
+\begin{frame}[label={sec:orgc68a3b9}]{BT Response to Constant Relative Humidity}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/dbt_constantRH_dsurf_dtrop=0.02k_dstrat=m0.02k.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:orgf37514f}]{Retrieval of \cd, \nitrous, \methane Anomalies}
+\begin{frame}[label={sec:org0b88e23}]{Retrieval of \cd, \nitrous, \methane Anomalies}
 \begin{itemize}
 \item oem approach
 \item data set
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org3b488db}]{Pdf/raw\_co2\_vs\_era\_co2\_example\_lati28\_mlo\_lat.pdf}
+\begin{frame}[label={sec:org4cd4520}]{Pdf/raw\_co2\_vs\_era\_co2\_example\_lati28\_mlo\_lat.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb936739}]{Pdf/co2\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
+\begin{frame}[label={sec:org71fd442}]{Pdf/co2\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6d48160}]{Pdf/co2\_airs\_vs\_mlo.pdf}
+\begin{frame}[label={sec:org8623bf5}]{Pdf/co2\_airs\_vs\_mlo.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_airs_vs_mlo.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org4b35865}]{Pdf/co2\_growth\_vs\_lat.pdf}
+\begin{frame}[label={sec:org0b480aa}]{Pdf/co2\_growth\_vs\_lat.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_growth_vs_lat.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org7fdf2b4}]{Pdf/co2\_airs\_vs\_esrl\_global\_growth\_anom.pdf}
+\begin{frame}[label={sec:orge350b67}]{Pdf/co2\_airs\_vs\_esrl\_global\_growth\_anom.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_airs_vs_esrl_global_growth_anom.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge84f32f}]{Png/co2\_anom\_image\_lat\_vs\_time.png}
+\begin{frame}[label={sec:org3ab2171}]{Png/co2\_anom\_image\_lat\_vs\_time.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/co2_anom_image_lat_vs_time.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6a0863a}]{Png/co2\_anomaly\_image\_fancy2\_corrected.png}
+\begin{frame}[label={sec:orgc53cace}]{Png/co2\_anomaly\_image\_fancy2\_corrected.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/co2_anomaly_image_fancy2_corrected.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org887d211}]{Pdf/n2o\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
+\begin{frame}[label={sec:org41451de}]{Pdf/n2o\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org2a02afb}]{Pdf/ch4\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
+\begin{frame}[label={sec:org95b2593}]{Pdf/ch4\_airs\_vs\_esrl\_global\_with\_dbt.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org83a1df4}]{Pdf/ch4\_airs\_vs\_esrl\_global\_growth\_anom.pdf}
+\begin{frame}[label={sec:orgd14d823}]{Pdf/ch4\_airs\_vs\_esrl\_global\_growth\_anom.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org92cf0c7}]{iasi\_cfc\_signatures.pdf}
+\begin{frame}[label={sec:orgccf20b4}]{iasi\_cfc\_signatures.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/iasi_cfc_signatures.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org546b901}]{iasi\_cfc\_bias.pdf}
+\begin{frame}[label={sec:orga4af19f}]{iasi\_cfc\_bias.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/iasi_cfc_bias.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org658b775}]{Pdf/airs\_cfc\_bias\_iasi\_times.pdf}
+\begin{frame}[label={sec:org0fc707c}]{Pdf/airs\_cfc\_bias\_iasi\_times.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/airs_cfc_bias_iasi_times.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6d6c210}]{Pdf/cfc11\_bt\_trend.pdf}
+\begin{frame}[label={sec:orgdc6bc2c}]{Pdf/cfc11\_bt\_trend.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/cfc11_bt_trend.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge0ece9d}]{Pdf/cfc11\_trend.pdf}
+\begin{frame}[label={sec:org1000ebb}]{Pdf/cfc11\_trend.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/cfc11_trend.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org107f792}]{Pdf/co2\_anom\_sst\_vs\_oisst\_clear\_sampled.pdf}
+\begin{frame}[label={sec:orgb82e131}]{Pdf/co2\_anom\_sst\_vs\_oisst\_clear\_sampled.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb9973ad}]{Pdf/co2\_anom\_sst\_vs\_oisst\_clear\_sampled\_and\_era.pdf}
+\begin{frame}[label={sec:org81e75bb}]{Pdf/co2\_anom\_sst\_vs\_oisst\_clear\_sampled\_and\_era.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgfd2df1b}]{Png/best\_co2\_anom\_resid.png}
+\begin{frame}[label={sec:org8899e57}]{Png/best\_co2\_anom\_resid.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anom_resid.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgf87d8d9}]{Png/best\_co2\_anom\_resid\_no\_sw.png}
+\begin{frame}[label={sec:org2916704}]{Png/best\_co2\_anom\_resid\_no\_sw.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anom_resid_no_sw.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org41fcac8}]{Png/best\_co2\_anomaly\_resid\_fit\_chans\_concat.png}
+\begin{frame}[label={sec:org14d8281}]{Png/best\_co2\_anomaly\_resid\_fit\_chans\_concat.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org60d8957}]{Pdf/bt\_drift\_from\_anom\_resid\_2613\_chan.pdf}
+\begin{frame}[label={sec:orgfffea2b}]{Pdf/bt\_drift\_from\_anom\_resid\_2613\_chan.pdf}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{block}{}
@@ -362,7 +362,7 @@ UAH LT & 0.18\\
 Shortwave drift correction reduces AIRS global temperature trend by 33\% and bring AIRS into close agreement with HadCRUT4, C\&W, and UAH LT, signficantly worse agreement with GISTEMP.
 \end{frame}
 
-\begin{frame}[label={sec:org6137394}]{Latitude Dependence Surface Trends}
+\begin{frame}[label={sec:org00f3965}]{Latitude Dependence Surface Trends}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -401,25 +401,25 @@ But what about the S. Pole??
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org818e513}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003.pdf}
+\begin{frame}[label={sec:org2bfb0f9}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org3812830}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003\_swzoom.pdf}
+\begin{frame}[label={sec:org7c60d00}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003\_swzoom.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge1bc08e}]{Pdf/resid\_1567\_and\_1570\_cm01\_dnu.pdf}
+\begin{frame}[label={sec:org0f7b8bc}]{Pdf/resid\_1567\_and\_1570\_cm01\_dnu.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgae24c3f}]{DCC1}
+\begin{frame}[label={sec:orga782a80}]{DCC1}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf}
@@ -427,7 +427,7 @@ But what about the S. Pole??
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org7a5a5b0}]{DCC4}
+\begin{frame}[label={sec:org0a3d5fd}]{DCC4}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf}
@@ -435,7 +435,7 @@ But what about the S. Pole??
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orga35baa1}]{DCC6}
+\begin{frame}[label={sec:org4c4dfcc}]{DCC6}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf}
@@ -444,20 +444,20 @@ But what about the S. Pole??
 \end{frame}
 
 
-\begin{frame}[label={sec:org0b66318}]{overroye\_scan.pdf}
+\begin{frame}[label={sec:orgd8d380b}]{overroye\_scan.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/overroye_scan.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org71fb9ca}]{overroye\_map.pdf}
+\begin{frame}[label={sec:orgd1192b7}]{overroye\_map.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/overroye_map.pdf}
 \end{center}
 \end{frame}
 
 
-\begin{frame}[label={sec:org8aa173a}]{Surface T Trends Using 1231 \wn Channel}
+\begin{frame}[label={sec:orgd686cb6}]{Surface T Trends Using 1231 \wn Channel}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -503,12 +503,12 @@ But what about the S. Pole??
 \end{frame}
 
 
-\begin{frame}[label={sec:orgc4f523f}]{Pdf/zonal\_sst\_trends\_12311\_vs\_oisst\_ersst5\_hottest\_per\_grid\_envelope.pdf}
+\begin{frame}[label={sec:orgc70f088}]{Pdf/zonal\_sst\_trends\_12311\_vs\_oisst\_ersst5\_hottest\_per\_grid\_envelope.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org9a39960}]{Cloud Forcing Zonal Trends}
+\begin{frame}[label={sec:orgd0b9c54}]{Cloud Forcing Zonal Trends}
 \vspace{-0.3in}
 
 \begin{columns}
@@ -541,72 +541,72 @@ But what about the S. Pole??
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc21fd00}]{Pdf/new\_trend\_rand\_stats\_1231\_and\_2161\_era\_clr\_minus\_obs\_smoothed.pdf}
+\begin{frame}[label={sec:org46bbc2c}]{Pdf/new\_trend\_rand\_stats\_1231\_and\_2161\_era\_clr\_minus\_obs\_smoothed.pdf}
 \begin{center}
 \includegraphics[width=0.4\linewidth]{./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org7f2f8de}]{Pdf/new\_trend\_rand\_stats\_1231\_and\_2161\_era\_clr\_minus\_obs\_smoothed\_with\_2616\_labelled.pdf}
+\begin{frame}[label={sec:org6a936c9}]{Pdf/new\_trend\_rand\_stats\_1231\_and\_2161\_era\_clr\_minus\_obs\_smoothed\_with\_2616\_labelled.pdf}
 \begin{center}
 \includegraphics[width=0.4\linewidth]{./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org60a0ede}]{Pdf/trenberth\_total\_only.pdf}
+\begin{frame}[label={sec:org45ac550}]{Pdf/trenberth\_total\_only.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/trenberth_total_only.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orga906aea}]{Pdf/trenberth2009\_clouds\_top.pdf}
+\begin{frame}[label={sec:orgd04b00e}]{Pdf/trenberth2009\_clouds\_top.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/trenberth2009_clouds_top.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgd466d0b}]{Pdf/trenberth2009\_clouds.pdf}
+\begin{frame}[label={sec:orgaf52848}]{Pdf/trenberth2009\_clouds.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/trenberth2009_clouds.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org598fb9f}]{Pdf/tseries\_sst\_obs\_global.pdf}
+\begin{frame}[label={sec:org86dcffe}]{Pdf/tseries\_sst\_obs\_global.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/tseries_sst_obs_global.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org7678aef}]{Pdf/tseries\_sst\_cf\_obs\_global.pdf}
+\begin{frame}[label={sec:org6885406}]{Pdf/tseries\_sst\_cf\_obs\_global.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/tseries_sst_cf_obs_global.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8aeb338}]{Pdf/ocean\_btobs\_delay\_from\_sst.pdf}
+\begin{frame}[label={sec:org2eddeee}]{Pdf/ocean\_btobs\_delay\_from\_sst.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ocean_btobs_delay_from_sst.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org1afc9a7}]{Pdf/cf\_vs\_sst\_vs\_year\_2019.pdf}
+\begin{frame}[label={sec:orgfb11446}]{Pdf/cf\_vs\_sst\_vs\_year\_2019.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgce5a911}]{Pdf/cf\_vs\_sst\_vs\_enso\_v2.pdf}
+\begin{frame}[label={sec:org14249b8}]{Pdf/cf\_vs\_sst\_vs\_enso\_v2.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/cf_vs_sst_vs_enso_v2.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org34bfedd}]{Pdf/lw\_h2o\_flux\_kernel.pdf}
+\begin{frame}[label={sec:org356c368}]{Pdf/lw\_h2o\_flux\_kernel.pdf}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/lw_h2o_flux_kernel.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8f26a2f}]{Png/water\_chans\_1400to1600\_trend\_vs\_btobs\_2dhist\_global.png}
+\begin{frame}[label={sec:org66114b2}]{Png/water\_chans\_1400to1600\_trend\_vs\_btobs\_2dhist\_global.png}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png}
 \end{center}

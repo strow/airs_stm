@@ -1,11 +1,11 @@
 #+startup: beamer
 #+Options: toc:nil H:1
 #+LaTeX_CLASS_OPTIONS: [10pt,t]
-#+TITLE: \large Climate Hyperspectral InfraRed Product (CHIRP): Radiometric Stability and Trends
+#+TITLE: \large AIRS Calibration for Climate Trend Studies: Status and Future
 #+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
-#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{October 3, 2018 \vfill}}
-#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, Steven Leroy\inst{3}, Howard Motteler\inst{2}, Chris Hepplewhite\inst{2}, and Steven Buczkowski\inst{2}}
-#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET \and \inst{3} AER}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 201\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
 #+BEAMER_HEADER: \input beamer_setup
 #+BEAMER_HEADER: \usetheme{metropolis}
 #+BEAMER_HEADER: \metroset{titleformat title=allcaps}
@@ -755,3 +755,11 @@ However:  AIRS is extremely stable
   - The individual channels are less stable, with considerable variability
 
 * COMMENT Radiance Trends
+
+
+bt_global_trend_area_weight_lat_1231asc_desc_avg_vs_2616_from_hottest_v2.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231_no2616_dayminusnight.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231_no2616.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest.fig
