@@ -1,0 +1,182 @@
+#+OPTIONS: h:3 toc:nil num:3
+#+LINK: hpub https://asl.umbc.edu/pub/strow/figs/may2017/dcc_memo/
+#+LATEX_CLASS_OPTIONS: [twocolumn,10pt]
+#+OPTIONS: H:4 
+#+LATEX_HEADER: \input article_setup.tex
+#+LATEX_HEADER: \usepackage[nottoc,numbib]{tocbibind}
+#+LATEX_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+LATEX_HEADER: \setlist{itemsep=2pt,parsep=-1pt,partopsep=0pt} %,topsep=0pt}
+#+LATEX_HEADER: \geometry{letterpaper,textwidth=7in,textheight=9.3in}
+#+LATEX_HEADER: \titlespacing{\subsubsection}{0pt}{10pt plus 2pt minus 2pt}{2pt plus 2pt minus 2pt}
+#+LINK: hpub https://asl.umbc.edu/pub/strow/figs/may2017/dcc_memo/
+
+#+TITLE:     AIRS DCC Analysis of Radiometric Drifts
+#+AUTHOR:    L. Larrabee Strow (UMBC)
+#+EMAIL:     strow@umbc.edu
+
+#+BEGIN_EXPORT HTML
++++
+title =  "AIRS DCC Analysis of Radiometric Drifts"
+date  =  "2017-05-16"
+author = "L. Larrabee Strow"
+toc = false
+comment = false
++++
+#+END_EXPORT
+# +TOC: headlines 2
+
+* COMMENT How to covert from html to latex
+
+1. Replace hpub: with ./Figs/Pdf/
+2. Replace .png with .pdf
+3. Comment out +TOC: headlines 2 command (above )
+
+* Introduction
+
+The AIRS AIRXBCAL DCC changes over time are examined several ways.  We
+also compare to the UMBC-generated IASI DCC subset.  Both DCC data
+sets are daily averages, over all latitudes, of the observed DCCs.
+Since we are examining the shortwave channels, we restrict
+observations to nighttime.  
+
+We also examine drifts in the different AIRS modules, especially A vs
+B detector shifts in time.
+
+* Time Series
+
+** DCC Spectra
+
+Figure [[fig:tseries]] shows the daily averaged DCC brightness
+temperatures of the AIRS 960 and 2616 cm^{-1} channels.  Starting in
+mid-2007 we also include the IASI 960 cm^{-1} and the average
+brightness temperature of 54 channels of IASI centered at 2616
+cm^{-1}.  The IASI shortwave channels are averaged to lower the noise,
+otherwise it will be off scale (about 8K standard deviation).  
+
+#+CAPTION: /AIRS and IASI Dcc daily average temperatures versus time.  The IASI curve for 2616 cm^{-1} is an average over 54 IASI channels./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:tseries
+[[./Figs/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf]]
+
+Clearly the AIRS 2616 cm^{-1} channel drifted higher during this time
+period, stabilizing in about 2012.  Also note that the AIRS and IASI
+curves for the 960 cm^{-1} channels are quite similar.  
+
+* Linear Drift in Time
+
+** DCC Spectra
+
+The linear rate of change over time of these daily DCC time series
+were determined using least-squares fitting.  An overview of the
+full spectrum results in Fig. [[fig:fullrate]] shows very large rates
+of change in the shortwave, not unexpected given the time series
+results shown above.  IASI is much noiser than AIRS in the shortwave,
+which is highlighted by the large uncertainty in the IASI rates (green
+curve).  
+
+#+CAPTION: /AIRS and IASI DCC linear rate of change from 2017-2016./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:fullrate
+[[./Figs/Pdf/airs_iasi_dcc_rate_sw_iasi_allpts_allnu.pdf]]
+
+Figure [[fig:fullrate2]] is a zoom of Fig. [[fig:fullrate]] in the
+shortwave that shows large ringing in the IASI rates and rate
+uncertainties.  These are due to processing changes in IASI over time
+by CNES, mostly just changes to fourier-transform ringing.  These can
+be almost completely removed by averaging every two channels together,
+as seen in Fig. [[fig:rateavg]].
+
+#+CAPTION: /Zoom of [[fig:fullrate]] showing unphysical ringing in IASI rates./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:fullrate2
+[[./Figs/Pdf/airs_iasi_dcc_rate_sw_iasi_allpts.pdf]]
+
+#+CAPTION: /Same as Fig. [[fig:fullrate]] with every two points in IASI averaged./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:rateavg
+[[./Figs/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf]]
+
+The longwave portion of these DCC linear rate of change spectra are
+shown in Fig. [[fig:ratelw]] included 2-\sigma uncertainties in the
+rates, nominally about 0.01K/year for both instruments.  There are
+significant differences in the longwave AIRS PC modules, which are not
+addressed here.  What is seen is significant "ringing" in AIRS due to
+the differences in A and B detector drift.
+
+#+CAPTION: /Longwave DCC linear rates of change for AIRS and IASI./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:ratelw
+[[./Figs/Pdf/airs_iasi_dcc_rate_lwmw_iasi_avgpts.pdf]]
+
+Figure [[fig:ratelw2]] is a zoom with A and B detectors shown with
+different markers and colors.  Clearly, the "ringing" in the DCC drift
+spectra are just A and B differences in the rate of drift.  Note that
+in the window region the IASI drift is very close to the A + B
+average, although the DCC selection criteria may partly force this
+agreement (I need to examine the A/B states of the DCC channels used
+in AIRXBCAL.)
+
+Note how the A versus B drift can flip with module.  The disagreement
+between IASI and AIRS in the ozone region could simply be a change in
+ozone over the 4 hour observation time difference.  
+
+
+#+CAPTION: /Longwave DCC linear rate of change with AIRS A,B, AB channels identifications highlighted./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:ratelw2
+[[./Figs/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
+
+
+
+** Random Spectra
+
+Differential radiance drifts between AIRS and IASI can also be
+examined using random spectra.  Here we use two data sets similar to
+the the AIRS AIRXBCAL random set, one for AIRS and one for IASI.  The
+main difference between our random sets and the AIRXBCAL AIRS set is
+equal-area sampling.  Otherwise, they are very similar, using
+near-nadir random selections of scenes.
+
+Identical time periods for both AIRS and IASI were selected (July 24, 2007
+through July 23, 2016), and were binned by latitude (40 bins).  The
+linear rate of change of each channel versus time was determined by
+least-square fitting.  
+
+#+CAPTION: /AIRS and IASI linear rate of change for random global spectra./
+#+ATTR_HTML: :width 600
+#+ATTR_LaTeX: :width \linewidth
+#+Name: fig:randrate
+[[./Figs/Pdf/airs_vs_iasi_random_iasi_times_global.pdf]]
+
+The globally averaged random spectra have much higher radiances than
+the DCC spectra.  For example, the 1231 cm^{-1} channel B(T) is 275K
+while the 2616 cm^{-1} channel is at 282K.  Figure [[fig:randrate]] shows
+the linear rate of change for these spectra.  They are quite similar,
+especially in the absorbing bands.  AIRS exhibits slightly higher
+rates in the window regions, by about 0.006K/year, which could be a
+diurnal trend or could be unimportant given that the time period for
+this trend is only 9 years.  
+
+These spectra do not show any differences between the AIRS 1231 and
+2616 cm^{-1} trends and the same for IASI.  The gray and magenta
+horizontal lines in this figure are drawn at the B(T) values for AIRS
+and IASI respectively.  Similarly the same color but dotted lines are
+drawn for the 2616 cm^{-1} channel.  The arrows show the B(T)
+differences between these two channels for AIRS (black) and IASI
+(magenta).  We see here that the differential trend for the IASI
+channels is actually slightly (0.001K) larger than for AIRS.  This
+suggests that the mechanism for the increase in the AIRS DCC radiances
+in the shortwave is either not present, or unimportant for these random
+spectra centered around much higher brightness temperatures.  This
+could be because the DCC spectra are more sensitive to a cold scene
+offset, etc.  
+
+These data sets suggest that future work on trying to model these
+results may be fruitful, especially if a simple parameterization can
+be applied to all channels.
