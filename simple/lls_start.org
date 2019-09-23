@@ -1,0 +1,151 @@
+
+
+
+* Cloud Forcing Zonal Trends
+\vspace{-0.3in}
+
+** \footnotesize Some Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{0.0in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/trenberth_total_only.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+
+* Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf
+#+ATTR_LATEX: :width 0.4\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+* Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+#+ATTR_LATEX: :width 0.4\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+* Pdf/trenberth_total_only.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth_total_only.pdf]]
+
+* Pdf/trenberth2009_clouds_top.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds_top.pdf]]
+
+* Pdf/trenberth2009_clouds.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds.pdf]]
+
+
+* Pdf/tseries_sst_obs_global.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_obs_global.pdf]]
+
+* Pdf/tseries_sst_cf_obs_global.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_cf_obs_global.pdf]]
+
+* Pdf/ocean_btobs_delay_from_sst.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ocean_btobs_delay_from_sst.pdf]]
+
+* pdf/cf_vs_sst_vs_year_2019.pdf
+#+attr_latex: :width 0.7\linewidth
+[[./figs/pdf/cf_vs_sst_vs_year_2019.pdf]]
+
+* pdf/cf_vs_sst_vs_enso_v2.pdf
+#+attr_latex: :width 0.7\linewidth
+[[./figs/pdf/cf_vs_sst_vs_enso_v2.pdf]]
+
+* pdf/lw_h2o_flux_kernel.pdf
+#+attr_latex: :width 0.7\linewidth
+[[./figs/pdf/lw_h2o_flux_kernel.pdf]]
+
+* png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png
+#+attr_latex: :width 0.7\linewidth
+[[./figs/png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png]]
+
+
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2018.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2018.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2017.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2017.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2016.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2016.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2015.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2015.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2014.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2014.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2013.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2013.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2012.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2012.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2011.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2011.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2010.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2010.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2009.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2009.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2008.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2008.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2007.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2007.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2006.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2006.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2005.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2005.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2004.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2004.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2003.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2003.pdf]]
+

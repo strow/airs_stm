@@ -1,0 +1,473 @@
+* Introduction
+
+Hyperspectral IR measures both:
+  - Climate forcings (\cd and other gas greenhouse effect)
+  - Earth system responses (temperature, humidity, clouds, surface properties)
+
+- AIRS now 1 of 6 operational hyperspectral sounders
+  - AIRS now up 17 years, IASI-1 12 years is next longest (9:30 orbit)
+  - 17 years can be considered "long enough" for climate trending
+  - AIRS record will be extended with CrIS (1:30 orbit)
+
+- AIRS long time series makes it unique
+- What limits climate-level trending with AIRS
+  - Calibration stability
+  - Retrieval algorithm limitations
+  - Climate level measurements require frequent full-mission reprocessing 
+
+* Climate Questions Relevant for IR Sounding
+
+** Language of Climate Research
+ - Atmospheric/surface anomalies (variations over time from the mean/baseline)
+ - Relationships between atmospheric variables undergoing climate forcings
+ - Improved understanding of dynamic processes possible via IR soundings
+
+ - Break into two categories, although they overlap.
+
+** General: Climate Data Records
+- Temperature, Humidity, Ozone anomalies
+- Minor gas trends
+- Cloud anomalies
+- Event detections: extrema, occurance of cloud types, volcanic events
+
+** Feedbacks: Climate Feedbacks
+- Forcings
+  - \cd etc.
+  - 
+- Responses
+
+* Climate Calibration Requirements
+
+NASA: uncertainty is a requirement
+
+1. Radiometric stability
+2. Mult-instrument continuity 
+
+- AIRS absolute radiometric accuracy is very good, but:
+   - Grating spectrometer produces far greater radiometric variation with channel than interferometers
+   - Accuracy is similar to Forward Model uncertainties
+   - All retrieval approachs bias tune the radiometry in one form or another
+
+
+* AIRS Calibration Overview
+
+Goal for climate measurements: small fraction of 0.01K/year
+
+- Absolute accuracy is ~0.1-0.3K
+- But with significant variations within this range with detector, module
+
+
+However:  AIRS is extremely stable
+  - The blackbody /may/ be stable to < ~0.004 K/year
+  - The individual channels are less stable, with considerable variability
+
+
+
+* Standards
+
+* Pdf/tbert_text.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tbert_text.pdf]]
+
+* Pdf/tberth_title.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tberth_title.pdf]]
+
+
+* Pdf/rand_global_trend_l1c_overview.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview.pdf]]
+
+
+* Pdf/rand_global_trend_l1c_overview_fill_marked.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview_fill_marked.pdf]]
+
+* Pdf/rand_global_trend_l1c_overview_calfit_marked.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview_calfit_marked.pdf]]
+
+* Png/rand_global_trend_l1c_vs_era_clr_only_fit_chans.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/rand_global_trend_l1c_vs_era_clr_only_fit_chans.png]]
+
+
+* Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf]]
+
+* Pdf/co2_airs_vs_esrl_global_with_dbt.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
+
+* Pdf/co2_airs_vs_mlo.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_airs_vs_mlo.pdf]]
+
+* Pdf/co2_growth_vs_lat.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_growth_vs_lat.pdf]]
+
+* Pdf/co2_airs_vs_esrl_global_growth_anom.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_growth_anom.pdf]]
+
+* Png/co2_anom_image_lat_vs_time.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anom_image_lat_vs_time.png]]
+
+* Png/co2_anomaly_image_fancy2_corrected.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anomaly_image_fancy2_corrected.png]]
+
+* Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf]]
+
+* Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf]]
+
+* Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf]]
+
+
+
+* iasi_cfc_signatures.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/iasi_cfc_signatures.pdf]]
+* iasi_cfc_bias.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/iasi_cfc_bias.pdf]]
+* COMMENT air_cfc_signature_in_anomaly_fit_residuals.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/air_cfc_signature_in_anomaly_fit_residuals.pdf]]
+* Pdf/airs_cfc_bias_iasi_times.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/airs_cfc_bias_iasi_times.pdf]]
+
+
+* Pdf/cfc11_bt_trend.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cfc11_bt_trend.pdf]]
+
+* Pdf/cfc11_trend.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cfc11_trend.pdf]]
+
+* Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf]]
+
+
+* Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf]]
+
+
+* Png/best_co2_anom_resid.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anom_resid.png]]
+
+* Png/best_co2_anom_resid_no_sw.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anom_resid_no_sw.png]]
+
+* COMMENT Png/best_co2_anomaly_resid_fit_chans.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans.png]]
+
+* Png/best_co2_anomaly_resid_fit_chans_concat.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png]]
+
+
+
+
+
+
+* Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf]]
+
+* Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf]]
+
+* Pdf/resid_1567_and_1570_cm01_dnu.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf]]
+
+* Png/resid_872to939cm-1_drift_and_1471to1541.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/resid_872to939cm-1_drift_and_1471to1541.png]]
+
+* Pdf/resid_872to939cm-1_drift.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_872to939cm-1_drift.pdf]]
+
+
+* DCC1
+#+CAPTION: /AIRS and IASI Dcc daily average temperatures versus time.  The IASI curve for 2616 cm^{-1} is an average over 54 IASI channels./
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf]]
+
+* DCC4
+#+CAPTION: /Same as Fig. where? with every two points in IASI averaged./
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf]]
+
+* COMMENT DCC5
+#+CAPTION: /Longwave DCC linear rates of change for AIRS and IASI./
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_lwmw_iasi_avgpts.pdf]]
+
+* DCC6
+#+CAPTION: /Longwave DCC linear rate of change with AIRS A,B, AB channels identifications highlighted./
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
+
+
+
+
+
+* overroye_scan.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_scan.pdf]]
+
+* overroye_map.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_map.pdf]]
+
+
+
+
+
+* COMMENT  GLOBAL quick retrievals start here
+
+* Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf]]
+
+* Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+
+* Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+* new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf]]
+
+* Pdf/trenberth_total_only.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth_total_only.pdf]]
+
+* Pdf/trenberth2009_clouds_top.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds_top.pdf]]
+
+* Pdf/trenberth2009_clouds.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds.pdf]]
+
+* Pdf/lw_h2o_flux_kernel.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/lw_h2o_flux_kernel.pdf]]
+
+* Pdf/tseries_sst_obs_global.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_obs_global.pdf]]
+
+* Png/cf_vs_sst_vs_enso_v2.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/cf_vs_sst_vs_enso_v2.png]]
+
+* Png/co2_anom_sst_vs_oisst_clear_sampled_and_era.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anom_sst_vs_oisst_clear_sampled_and_era.png]]
+
+* Png/co2_anom_sst_vs_oisst_clear_sampled.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anom_sst_vs_oisst_clear_sampled.png]]
+
+* Png/oisst_trend_map.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/oisst_trend_map.png]]
+
+* Png/airs_tsurf_trend_from_1231cm_trend.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/airs_tsurf_trend_from_1231cm_trend.png]]
+
+* Png/era_tsurf_trend.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/era_tsurf_trend.png]]
+
+
+
+* Pdf/rand_global_trend_l1c_vs_era_clr.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_vs_era_clr.pdf]]
+
+
+* Pdf/ocean_btobs_delay_from_sst.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ocean_btobs_delay_from_sst.pdf]]
+
+* Pdf/tseries_sst_cf_obs_global.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_cf_obs_global.pdf]]
+
+* Pdf/cf_vs_sst_vs_enso_v2.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_enso_v2.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2018.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2018.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2017.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2017.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2016.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2016.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2015.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2015.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2014.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2014.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2013.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2013.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2012.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2012.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2011.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2011.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2010.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2010.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2009.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2009.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2008.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2008.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2007.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2007.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2006.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2006.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2005.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2005.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2004.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2004.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2003.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2003.pdf]]
+
+* Pdf/tseries_sst_cf_obs_global.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_cf_obs_global.pdf]]
+
+* Png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png]]
+
+* COMMENT  Figs.
+
+Pdf/tbert_text.pdf
+Pdf/tberth_title.pdf
+Pdf/lw_h2o_flux_kernel.pdf
+Pdf/trenberth_total_only.pdf
+Pdf/trenberth2009_clouds_top.pdf
+Pdf/trenberth2009_clouds.pdf
+Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf
+Pdf/airs_cfc_bias_iasi_times.pdf
+Pdf/cfc11_bt_trend.pdf
+Pdf/cfc11_trend.pdf
+Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf
+Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf
+Pdf/resid_1567_and_1570_cm01_dnu.pdf
+Png/resid_872to939cm-1_drift_and_1471to1541.png
+Pdf/resid_872to939cm-1_drift.pdf
+Png/best_co2_anomaly_resid_fit_chans_concat.png
+Png/best_co2_anomaly_resid_fit_chans.png
+Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf
+Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf
+Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf
+Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf
+Png/co2_anomaly_image_fancy2_corrected.png
+Png/co2_anom_image_lat_vs_time.png
+Pdf/co2_airs_vs_esrl_global_growth_anom.pdf
+Pdf/co2_airs_vs_mlo.pdf
+Pdf/co2_airs_vs_esrl_global_with_dbt.pdf
+Pdf/co2_growth_vs_lat.pdf
+Pdf/rand_global_trend_l1c_vs_era_clr_only_fit_chans.pdf
+Pdf/rand_global_trend_l1c_vs_era_clr.pdf
+Pdf/rand_global_trend_l1c_overview_calfit_marked.pdf
+Pdf/rand_global_trend_l1c_overview_fill_marked.pdf
+Pdf/rand_global_trend_l1c_overview.pdf
+Png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png
+Png/best_co2_anom_resid_no_sw.png
+Png/best_co2_anom_resid.png
+Pdf/tseries_sst_obs_global.pdf
+Pdf/ocean_btobs_delay_from_sst.pdf
+Pdf/tseries_sst_cf_obs_global.pdf
+Pdf/cf_vs_sst_vs_year_2019.pdf
+Pdf/cf_vs_sst_vs_year_2018.pdf
+Pdf/cf_vs_sst_vs_year_2017.pdf
+Pdf/cf_vs_sst_vs_year_2016.pdf
+Pdf/cf_vs_sst_vs_year_2015.pdf
+Pdf/cf_vs_sst_vs_year_2014.pdf
+Pdf/cf_vs_sst_vs_year_2013.pdf
+Pdf/cf_vs_sst_vs_year_2012.pdf
+Pdf/cf_vs_sst_vs_year_2011.pdf
+Pdf/cf_vs_sst_vs_year_2010.pdf
+Pdf/cf_vs_sst_vs_year_2009.pdf
+Pdf/cf_vs_sst_vs_year_2008.pdf
+Pdf/cf_vs_sst_vs_year_2007.pdf
+Pdf/cf_vs_sst_vs_year_2006.pdf
+Pdf/cf_vs_sst_vs_year_2005.pdf
+Pdf/cf_vs_sst_vs_year_2004.pdf
+Pdf/cf_vs_sst_vs_year_2003.pdf
+Pdf/tseries_sst_cf_obs_global.pdf
+Pdf/cf_vs_sst_vs_enso_v2.pdf
+Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf
+Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+Png/cf_vs_sst_vs_enso_v2.png
+Png/co2_anom_sst_vs_oisst_clear_sampled_and_era.png
+Png/co2_anom_sst_vs_oisst_clear_sampled.png
+Png/oisst_trend_map.png
+Png/airs_tsurf_trend_from_1231cm_trend.png
+Png/era_tsurf_trend.png

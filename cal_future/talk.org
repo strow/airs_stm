@@ -1,0 +1,948 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large AIRS Calibration for Climate Trend Studies: Status and Future
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 201\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+
+* Calibration Requirements for Climate Science
+   :PROPERTIES:
+  :BEAMER_opt: shrink=30
+  :END:
+\vspace{-0.1in}
+#+LaTeX: \begin{large}
+- AIRS 17+ year record long enough to address key climate questions
+- Stability of radiometric calibration is key
+- AIRS sensitivity to \cd, SST, etc allows stringent tests of stability
+#+LaTeX: \end{large}
+\vspace{-0.2in}
+** Climate Science Questions 
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{0.05in}
+/All require min ~0.1K/decade stability/
+\vspace{-0.05in}
+- Global Trending: T(z), \water(z), T_{surf}
+- Water vapor feedback (Does relative humidity vary)
+- Cloud feedback 
+- Trends in PBL cloud occurance
+- OLR anomalies separated by cause: T/\water/cloud/surface, etc.
+
+** Hyperspectral IR Advantages
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+
+- AIRS senses both climate forcings, and responses
+- Clean separation of tropospheric vs stratospheric temperature trends (unlike microwave)
+- Multiple long-term overlapping missions (AIRS, CrIS, IASI)
+- AIRS, CrIS, IASI aleady agree to ~0.1-0.3K and can be merged to 0.03K or better. 
+
+
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\vspace{0.2in}
+#+LaTeX: \begin{large}
+Significant AIRS calibration drifts have *already* resulted publication of in-accurate data that were publized by NASA/GSFC and the media (Washington Post, Scientific American).  /This talk suggests how to make AIRS an accurate instrument for climate science./
+#+LaTeX: \end{large}
+
+* Weather versus Climate Research
+   :PROPERTIES:
+   :BEAMER_opt: shrink=20
+   :END:
+** Weather Applications
+- AIRS original focus was for NWP
+- Both 1Dvar retrievals and data assimilation /require/ bias removal
+  - NWP: biases due to the instrument, RTA, model
+  - Retrievals: biases due to the instrument and RTA
+  - Bias removal is generally in the ~0.1-0.3K range
+- Radiometric accuracy is important
+  - But, below the nominal ~0.3K range we cannot differentiate instrument vs RTA errors.
+  - Spectroscopy errors are at the 1-2% level, or 0.1-0.3K
+** Climate Applications
+  - Anomalies are the main language of climate observations
+  - Although energy budget and fluxes are important, AIRS is not a major contributor
+  - For AIRS, radiometric stability is most fundamental calibration requirement
+
+Hyperspectral IR instrument stability appears to be 1-2 orders of magnitude better than absolute accuracy.  This is where we can shine, especially with a 17+ year record.
+
+* Climate Product Characteristics
+   :PROPERTIES:
+   :BEAMER_opt: shrink=5
+   :END:
+** Uncertainty Estimates
+   - If we provide something unique, validation will be difficult
+   - Internal product uncertainty estimates will be far more important than for weather applciations
+   - Establishing uncertainites for products is a NASA ROSES requirement!
+
+** Reproducibility 
+   - Reproducibiity of results is becoming increasingly important
+   - Difficlt to achieve with our Level 2 approach
+   - For climate simpler algorithms with reproducible results would enhance our impact on the broader community
+
+There is a long history of controversies in climate measurements (esp. microwave temperature trends).  AIRS derived results will be heavily scrutinized, we need to be prepared for that to retain trust.
+
+* AIRS Stability Calibration: An Approach
+- External standards needed to establish stability
+- \cd and possibly \nitrous and \methane can provide those standards
+  - \cd is well mixed (on long time scales) and extremely well known
+  - Establish AIRS stability by retrieving \cd anomalies (vs time)
+- SST is the other well established climate record
+  - Similarly, use retrieved SST anomalies to test AIRS stability
+- Land surface temperatures are another possibility, although less reliable than SST but of great interest and heavily studied.
+
+Essentially you need to perform climate-level retrievals to test the capabilities of your instrument.  
+
+A /key/ requirement is the need to reprocess the /full record/ many times.  NOT possible with Level 2 approach!  Need fast alternatives that may also address issues of reproducibility.
+
+* Characteristics of AIRs Long-Term Radiance Trends
+  - 1% random subset
+* AIRS Global 16-Year B(T) Trend
+
+\vspace{-0.35in}
+
+** \footnotesize All channels (inc. fill)
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview.pdf]]
+
+
+** \footnotesize Fill channels marked
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview_fill_marked.pdf]]
+
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.25in}
+
+** \footnotesize Calibration channels
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.75\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_overview_calfit_marked.pdf]]
+
+
+** \footnotesize 
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+LaTeX: \begin{footnotesize}
+Channels used for calibration testing marked.\\
+\vspace{0.05in}
+These channels have no A/B state changes, good S/N, small drift\\
+\vspace{0.05in}
+Note sparsity of \cd channels in tropospheric sounding region\\
+#+LaTeX: \end{footnotesize}
+
+* \cd and \methane Trends Removed, Fitted Chans Only
+\vspace{-0.3in}
+**  \footnotesize AIRS + ERA
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Png/rand_global_trend_l1c_vs_era_clr_only_fit_chans.png]]
+
+** \footnotesize AIRS w/ 0.02K dT, RH constant
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/dbt_constantRH_dsurf_dtrop=0.02k_dstrat=m0.02k_withAIRS.pdf]]
+
+**   
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+#+LaTeX: \begin{small}
+- Uncertainty (gray) is geophysical (Std over latitutde).
+- RHS: Trop T(z) + 0.02K, Strat T(z) - 0.02K
+- \water trend is close to constant RH. (Varies with latitude).
+- Could suggest RH is a bit lower over time??
+- Shortwave appears to have a positive drift
+#+LaTeX: \end{small}
+
+* Retrieval of \cd, \nitrous, \methane Anomalies
+- oem approach
+- data set
+- kcarta vs sarta
+- true noise, averaged over ~600 pts/16 days per 1/40 lat bins.
+- 2ppm \cd a-priori covariance, with 2ppm slope a=prori, 5 ppm covariance almost as good
+- jacobian (kernel) profiles from ERA, but we could fit for them,
+- iterate: first remove jumps due to know events in fitting channels
+- then evaluate channels not fitted, and include if warranted
+- possible  BB is stable
+- relative channel errors are likely due to small thermal changes changing view of cold space, etc.  a/b often different
+* \cd Anomaly Fit for MLO Latitude
+\vspace{-0.3in}
+** \footnotesize Fitting Trick
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf]]
+
+** \footnotesize Fitted \cd Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/co2_airs_vs_mlo.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+#+LaTeX: \begin{footnotesize}
+- ERA simulations done per footprint
+- Fit ERA simulation for \cd
+- Removes co-linearity? and lowers "noise"
+#+LaTeX: \end{footnotesize}
+
+* \cd Anomaly Converted to B(T) Trends
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
+
+* Other \cd Diagnostics
+\vspace{-0.35in}
+** \footnotesize Growth Rates
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Pdf/co2_growth_vs_lat.pdf]]
+
+** \footnotesize Growth Rate Anomaly
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_growth_anom.pdf]]
+
+**   
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.2in}
+
+** \footnotesize Zonal Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Png/co2_anom_image_lat_vs_time.png]]
+
+** 
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\footnotesize Growth rate anomaly accuracy very encouraging.
+
+* COMMENT Png/co2_anomaly_image_fancy2_corrected.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anomaly_image_fancy2_corrected.png]]
+
+* \nitrous Retrieved Anomalies
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf]]
+
+#+LaTeX: \begin{footnotesize}
+- This is what we are after
+- Something a little before 2006?
+- A jump due to the Jan. 2010 shutdown
+- Stable otherwise
+- Look at residuals of fits to understand guilty channels
+#+LaTeX: \end{footnotesize}
+
+* \methane Retrieved Anomalies
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf]]
+
+#+LaTeX: \begin{footnotesize}
+- Is \methane well mixed enough for this analysis?
+- Clearly an offset in Jan 2010 but it recovered (seen in spectral!)
+- Clear Nov. 2003 B(T) shift
+#+LaTeX: \end{footnotesize}
+
+* \methane Growth Rate Anomalies
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf]]
+
+#+LaTeX: \begin{footnotesize}
+- Very nice agreement with NOAA ESRL in-situ
+- Shows drop-off in global \methane growth early in mission
+- Then increasing growth starting in 2014
+#+LaTeX: \end{footnotesize}
+
+* Unlike Retrievals We'd Like to Examine Many Channels
+\vspace{-0.3in}
+
+** \footnotesize IASI: 11-Year Trend
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.75\linewidth
+[[./Figs/Pdf/iasi_cfc_signatures.pdf]]
+
+** \footnotesize 
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+
+#+LaTeX: \begin{footnotesize}
+That means taking the CFC 11 and 12 into account.\\
+\vspace{0.05in}
+Maybe 3 strong CFC 11 channels?\\
+\vspace{0.05in}
+Maybe 3-5 strong CFC 12 channels?\\
+\vspace{0.05in}
+But, need to remove effects in wings
+#+LaTeX: \end{footnotesize}
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.25in}
+
+** \footnotesize IASI Trend Zoom
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.75\linewidth
+[[./Figs/Pdf/iasi_cfc_bias.pdf]]
+
+** \footnotesize AIRS Trend Zoom
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+ATTR_LATEX: :width 0.75\linewidth
+[[./Figs/Pdf/airs_cfc_bias_iasi_times.pdf]]
+
+* Fit to AIRS CFC-11 for Removal in Fit Residuals
+\vspace{-0.3in}
+** \footnotesize CFC-11 B(T) Trend
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/cfc11_bt_trend.pdf]]
+
+** \footnotesize CFC ppb Trend
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/cfc11_trend.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+#+LaTeX: \begin{footnotesize}
+- Reasonably linear negative trend, as expected
+- Values agree well with in-situ
+- BUT, the trend appears to be decreasing!
+- Also expected from in-situ: possible cause is Chinese production of CFC-11
+- ENSO signals in time series: retrieval problem or something real?
+- Clear problems due to Nov. 2003 AQUA shutdown
+#+LaTeX: \end{footnotesize}
+* SST Retrieved from Anomaly Fits
+\vspace{-0.2in}
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf]]
+#+LaTeX: \begin{footnotesize}
+- OISST likely better?  AIRS-OISST = +0.005 \pm 0.007 K/year (tropics)
+- ERA transitioned from RTG to OSTIA in Feb. 2009, we likely see that
+- Differences very small and at limits of SST climatologies
+#+LaTeX: \end{footnotesize}
+
+* COMMENT Residual Analysis
+* Png/best_co2_anom_resid.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anom_resid.png]]
+
+* Png/best_co2_anom_resid_no_sw.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anom_resid_no_sw.png]]
+
+* Png/best_co2_anomaly_resid_fit_chans_concat.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png]]
+
+* Pdf/bt_drift_from_anom_resid_2613_chan.pdf
+** 
+:PROPERTIES:
+:BEAMER_col: 0.6
+:BEAMER_env: block
+:END:
+\vspace{-0.3in}
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/bt_drift_from_anom_resid_2613_chan_v2.pdf]]
+
+** From Susskind et. al.
+:PROPERTIES:
+:BEAMER_col: 0.4
+:BEAMER_env: block
+:END:
+#+LaTeX: \begin{small}
+| AIRS           | 0.24 \pm 0.12 |
+| AIRS Corrected | 0.18          |
+| GISTEMP        | 0.22 \pm 0.13 |
+| HadCRUT4       | 0.17 \pm 0.13 |
+| C&W            | 0.19 \pm 0.12 |
+| ECMWF          | 0.20 \pm 0.16 |
+| UAH LT         | 0.18          |
+#+LaTeX: \end{small}
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+Shortwave drift correction reduces AIRS global temperature trend by 33% and bring AIRS into close agreement with HadCRUT4, C&W, and UAH LT, signficantly worse agreement with GISTEMP.
+
+* Latitude Dependence Surface Trends
+\vspace{-0.3in}
+** Susskind 2019: SW
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/susskind_giss_trend_vs_lat.pdf]]
+
+** UMBC Trends: LW and SW
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{0.14in}
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.15in}
+#+LaTeX: \begin{footnotesize}
+Global Means
+| GISS | Susskind | UMBC-1231 | UMBC-2616 | HadCRUT4 |
+| 0.22 |     0.24 |      0.18 |      0.17 |     0.17 |
+
+\vspace{-0.05in}
+But, why isn't UMBC-2616 0.05K higher??\\
+Note high/low Susskind values at poles not matched by UMBC\\
+/Rough/ estimate for 2616 scene dependence: 0.06K/decade, Obs: 0.09K/decade\\
+But what about the S. Pole??
+#+LaTeX: \end{footnotesize}
+
+* Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf]]
+
+* Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf]]
+
+* Pdf/resid_1567_and_1570_cm01_dnu.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf]]
+
+* COMMENT Png/resid_872to939cm-1_drift_and_1471to1541.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/resid_872to939cm-1_drift_and_1471to1541.png]]
+
+* COMMENT DCC Analysis
+* DCC1
+#+CAPTION: /AIRS and IASI Dcc daily average temperatures versus time.  The IASI curve for 2616 cm^{-1} is an average over 54 IASI channels./
+#+ATTR_LaTeX: :width 0.7\linewidth
+[[./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf]]
+
+* DCC4
+#+CAPTION: /Same as Fig. where? with every two points in IASI averaged./
+#+ATTR_LaTeX: :width 0.7\linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf]]
+
+* DCC6
+#+CAPTION: /Longwave DCC linear rate of change with AIRS A,B, AB channels identifications highlighted./
+#+ATTR_LaTeX: :width 0.7\linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
+
+
+* overroye_scan.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_scan.pdf]]
+
+* overroye_map.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_map.pdf]]
+
+
+* COMMENT  GLOBAL quick retrievals start here
+
+* Surface T Trends Using 1231 \wn Channel
+\vspace{-0.35in}
+
+** \footnotesize AIRS 1231 \wn
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Png/airs_tsurf_trend_from_1231cm_trend.png]]
+
+** \footnotesize ERA
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Png/era_tsurf_trend.png]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+** \footnotesize OISST
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Png/oisst_trend_map.png]]
+
+** \footnotesize AIRS 2616 \wn
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.5
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Png/airs_tsurf_trend_from_2616cm_trend.png]]
+
+
+* Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf]]
+
+* COMMENT sample 2x figs
+\vspace{-0.3in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.55
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+airs, cris, iasi are /all/ very stable\\
+clarreo has removed us from this figure!
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.55
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+these are 2-\sigma b(t) statistical uncertainties due to inter-annual variability.  
+
+some channels, some latitudes not gaussian (strat sudden warmings, qbo, etc.)
+
+* COMMENT sample 4x figs
+\vspace{-0.35in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** 
+:properties:
+:beamer_env: ignoreheading
+:end:
+\vspace{-0.25in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2018.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2018.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2017.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2017.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2016.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2016.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2015.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2015.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2014.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2014.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2013.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2013.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2012.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2012.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2011.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2011.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2010.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2010.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2009.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2009.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2008.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2008.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2007.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2007.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2006.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2006.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2005.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2005.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2004.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2004.pdf]]
+
+* COMMENT Pdf/cf_vs_sst_vs_year_2003.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/cf_vs_sst_vs_year_2003.pdf]]
+
+* COMMENT new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf]]
+
+* COMMENT Pdf/rand_global_trend_l1c_vs_era_clr.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/rand_global_trend_l1c_vs_era_clr.pdf]]
+
+* COMMENT Png/best_co2_anomaly_resid_fit_chans.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/best_co2_anomaly_resid_fit_chans.png]]
+
+* COMMENT air_cfc_signature_in_anomaly_fit_residuals.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/air_cfc_signature_in_anomaly_fit_residuals.pdf]]
+* COMMENT DCC5
+#+CAPTION: /Longwave DCC linear rates of change for AIRS and IASI./
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_lwmw_iasi_avgpts.pdf]]
+
+* COMMENT  Figs.
+
+Pdf/tbert_text.pdf
+Pdf/tberth_title.pdf
+Pdf/lw_h2o_flux_kernel.pdf
+Pdf/trenberth_total_only.pdf
+Pdf/trenberth2009_clouds_top.pdf
+Pdf/trenberth2009_clouds.pdf
+Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf
+Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf
+Pdf/airs_cfc_bias_iasi_times.pdf
+Pdf/cfc11_bt_trend.pdf
+Pdf/cfc11_trend.pdf
+Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf
+Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf
+Pdf/resid_1567_and_1570_cm01_dnu.pdf
+Png/resid_872to939cm-1_drift_and_1471to1541.png
+Pdf/resid_872to939cm-1_drift.pdf
+Png/best_co2_anomaly_resid_fit_chans_concat.png
+Png/best_co2_anomaly_resid_fit_chans.png
+Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf
+Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf
+Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf
+Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf
+Png/co2_anomaly_image_fancy2_corrected.png
+Png/co2_anom_image_lat_vs_time.png
+Pdf/co2_airs_vs_esrl_global_growth_anom.pdf
+Pdf/co2_airs_vs_mlo.pdf
+Pdf/co2_airs_vs_esrl_global_with_dbt.pdf
+Pdf/co2_growth_vs_lat.pdf
+Pdf/rand_global_trend_l1c_vs_era_clr_only_fit_chans.pdf
+Pdf/rand_global_trend_l1c_vs_era_clr.pdf
+Pdf/rand_global_trend_l1c_overview_calfit_marked.pdf
+Pdf/rand_global_trend_l1c_overview_fill_marked.pdf
+Pdf/rand_global_trend_l1c_overview.pdf
+Png/water_chans_1400to1600_trend_vs_btobs_2dhist_global.png
+Png/best_co2_anom_resid_no_sw.png
+Png/best_co2_anom_resid.png
+Pdf/tseries_sst_obs_global.pdf
+Pdf/ocean_btobs_delay_from_sst.pdf
+Pdf/tseries_sst_cf_obs_global.pdf
+Pdf/cf_vs_sst_vs_year_2019.pdf
+Pdf/cf_vs_sst_vs_year_2018.pdf
+Pdf/cf_vs_sst_vs_year_2017.pdf
+Pdf/cf_vs_sst_vs_year_2016.pdf
+Pdf/cf_vs_sst_vs_year_2015.pdf
+Pdf/cf_vs_sst_vs_year_2014.pdf
+Pdf/cf_vs_sst_vs_year_2013.pdf
+Pdf/cf_vs_sst_vs_year_2012.pdf
+Pdf/cf_vs_sst_vs_year_2011.pdf
+Pdf/cf_vs_sst_vs_year_2010.pdf
+Pdf/cf_vs_sst_vs_year_2009.pdf
+Pdf/cf_vs_sst_vs_year_2008.pdf
+Pdf/cf_vs_sst_vs_year_2007.pdf
+Pdf/cf_vs_sst_vs_year_2006.pdf
+Pdf/cf_vs_sst_vs_year_2005.pdf
+Pdf/cf_vs_sst_vs_year_2004.pdf
+Pdf/cf_vs_sst_vs_year_2003.pdf
+Pdf/tseries_sst_cf_obs_global.pdf
+Pdf/cf_vs_sst_vs_enso_v2.pdf
+Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf
+Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+Png/cf_vs_sst_vs_enso_v2.png
+Png/co2_anom_sst_vs_oisst_clear_sampled_and_era.png
+Png/co2_anom_sst_vs_oisst_clear_sampled.png
+Png/oisst_trend_map.png
+Png/airs_tsurf_trend_from_1231cm_trend.png
+Png/era_tsurf_trend.png
+
+
+| AIRS           | 0.24 ± 0.12 |
+| AIRS Corrected | 0.18        |
+| GISTEMP        | 0.22 ± 0.13 |
+| HadCRUT4       | 0.17 ± 0.13 |
+| C&W            | 0.19 ± 0.12 |
+| ECMWF          | 0.20 ± 0.16 |
+| ^*UAH LT       | 0.18        |
+
+* COMMENT Pdf/tbert_text.pdf
+#+ATTR_LATEX: :width 0.\linewidth
+[[./Figs/Pdf/tbert_text.pdf]]
+
+* COMMENT Pdf/tberth_title.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tberth_title.pdf]]
+
+* COMMENT Climate Calibration Requirements
+
+NASA: uncertainty is a requirement
+
+1. Radiometric stability
+2. Mult-instrument continuity 
+
+- AIRS absolute radiometric accuracy is very good, but:
+   - Grating spectrometer produces far greater radiometric variation with channel than interferometers
+   - Accuracy is similar to Forward Model uncertainties
+   - All retrieval approachs bias tune the radiometry in one form or another
+
+
+* COMMENT AIRS Calibration Overview
+
+Goal for climate measurements: small fraction of 0.01K/year
+
+- Absolute accuracy is ~0.1-0.3K
+- But with significant variations within this range with detector, module
+
+
+However:  AIRS is extremely stable
+  - The blackbody /may/ be stable to < ~0.004 K/year
+  - The individual channels are less stable, with considerable variability
+
+* COMMENT Radiance Trends
+
+
+FOR JOEL discission
+bt_global_trend_area_weight_lat_1231asc_desc_avg_vs_2616_from_hottest_v2.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231_no2616_dayminusnight.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231_no2616.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2_and_asc1231.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2.fig
+bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest.fig
+
+
+
+
+* COMMENT Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf]]
+
+
+
+
+* COMMENT Cloud Forcing Zonal Trends
+\vspace{-0.3in}
+
+** \footnotesize Some Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{0.0in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/trenberth_total_only.pdf]]
+
+** \footnotesize Another Small Title
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.33
+  :END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+
+* COMMENT Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf
+#+ATTR_LATEX: :width 0.4\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+* COMMENT Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+#+ATTR_LATEX: :width 0.4\linewidth
+[[./Figs/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+* COMMENT Pdf/trenberth_total_only.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth_total_only.pdf]]
+
+* COMMENT Pdf/trenberth2009_clouds_top.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds_top.pdf]]
+
+* COMMENT Pdf/trenberth2009_clouds.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/trenberth2009_clouds.pdf]]
+
