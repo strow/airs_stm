@@ -48,11 +48,11 @@
   \frametitle{Overview of talk}
   \begin{itemize}
   \item Definition of the CHIRP
-  \item Establish the framework for determining radiometric records from the different sensors.
+  \item Establish the framework for determining climate quality radiometric records from the different sensors.
   \item Attribute quality and uncertainty for each channel.
   \item Utilization of large data sets of overlapping observations to quantify radiometric offsets between the sensors.
   \item Examples of results for single footprint observations.
-  \item Issues concerning spatial \& temporal sampling and gridded are not covered here.
+  \item Spatial \& temporal sampling are not covered here.
     
   \end{itemize}
 \end{frame}
@@ -126,12 +126,12 @@
 \begin{frame}
   \frametitle{AIRS:CrIS SNOs}
   \begin{itemize}
-  \item A year of AIRS\&CrIS SNOs are compared on the CHIRP grid. About $1.5 x 10^6$ samples are acquired.
-    \item Results for 2018 are shown in the next figure. AIRS L1C fill channels, dead and band edge channels are ommitted. The standard error of the mean difference is shown in the gray line.
+  \item 2018 year of AIRS\&CrIS SNOs are compared on the CHIRP grid. About $1.5 x 10^6$ samples are acquired.
+    \item AIRS L1C fill, dead and band edge channels are ommitted. The standard error of the mean is shown in the gray line.
   \end{itemize}
 
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{./Figs/Pdf/ac_sno_2018_bias_stderr_coloraslp.pdf}
+    \includegraphics[width=0.66\linewidth]{./Figs/Pdf/ac_sno_2018_bias_stderr_coloraslp.pdf}
   \end{center}
 
 \end{frame}
@@ -140,12 +140,12 @@
 \begin{frame}
   \frametitle{IASI:CrIS SNOs}
   \begin{itemize}
-  \item A year of IASI\&CrIS SNOs consists of about $7 x 10^4$ samples.
-    \item Results for 2017 are shown in the next figure. Since IASI includes all CrIS bands, the resultant mean bias is computed for all CrIS channels. The standard error of the mean difference is shown in the gray line.
+  \item 2017 year of IASI\&CrIS SNOs consists of about $7 x 10^4$ samples.
+    \item Since IASI includes all CrIS bands, the resultant mean bias is computed for all CrIS channels. The standard error of the mean is shown in the gray line.
   \end{itemize}
 
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{./Figs/Pdf/ic_sno_nsr_2017_bias_stder_lw_mw_sw.pdf}
+    \includegraphics[width=0.66\linewidth]{./Figs/Pdf/ic_sno_nsr_2017_bias_stder_lw_mw_sw.pdf}
   \end{center}
 
 \end{frame}
@@ -155,17 +155,19 @@
   \frametitle{SNOs AIRS\&CrIS AIRS\&IASI on CHIRP}
   \begin{itemize}
   \item SNO pairs are collected for the complete period of operational overlap.
-  \item Translation of AIRS L1C to CHIRP (CrIS MSR) and IASI to CHIRP permits both AIRS\&CrIS and airs\&IASI radiometric bias and then to use AIRS as the transfer when taking a double different to compute CrIS\&IASI bias.
-  \item Every AIRS and IASI observations are first translated to CHIRP, then analysed.
+  \item Translation of AIRS L1C to CHIRP (CrIS MSR) and IASI to CHIRP permits both AIRS\&CrIS and AIRS\&IASI radiometric bias and then to use AIRS as the transfer when taking a double different to compute CrIS\&IASI bias.
+  \item Every AIRS and IASI observation are first translated to CHIRP, then analysed.
   \item In the following figure the mean differences are computed for one year of data.
     \item The standard error of the mean is very similar to the individual SNO bias values shown previously.
   \end{itemize}
 \end{frame}
 
+% ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{}
+  \frametitle{SNOs AIRS\&CrIS AIRS\&IASI on CHIRP}
+  
   \begin{center}
-   \includegraphics[width=\linewidth]{./Figs/Pdf/ac_ai_2017_sno_msr_dble_diff_bias_aslp.pdf}
+   \includegraphics[width=0.8\linewidth]{./Figs/Pdf/ac_ai_2017_sno_msr_dble_diff_bias_aslp.pdf}
   \end{center}
 
 \end{frame}
@@ -184,8 +186,13 @@
 
 \end{frame}
   
+% ---------------------------------------------------------------------
 \begin{frame}
   \frametitle{Gobal Random result}
+  \begin{itemize}
+    \item 2018 Global random on CHIRP
+  \end{itemize}
+  
   \begin{center}
     \includegraphics[width=\linewidth]{./Figs/Pdf/ac_global_random_fs_bias_mean.pdf}
   \end{center}
@@ -198,6 +205,7 @@
   \frametitle{}
   \begin{itemize}
   \item The translation algorithm of AIRS or IASI to the CHIRP (CrIS MSR) spectral grid has been demonstrated.
+  \item Ref: H. E. Motteler and L. L. Strow, "AIRS Deconvolution and the Translation of AIRS-to-CrIS Radiances With Applications for the IR Climate Record," in IEEE Transactions on Geoscience and Remote Sensing, vol. 57, no. 3, pp. 1793-1803, March 2019.
   \item The SNO intercomparison provides a reliable means to quantify the bias as a function of wavelength.
     \item Using global random equal area samples over a full year gives consistent bias estimates as the SNO.
     \item The mean bias between the sensors is small, of order tenth Kelvin, and consistent across the band pass.
