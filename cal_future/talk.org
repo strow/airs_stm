@@ -3,7 +3,7 @@
 #+LaTeX_CLASS_OPTIONS: [10pt,t]
 #+TITLE: \large AIRS Calibration for Climate Trend Studies: Status and Future
 #+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
-#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 201\vfill}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 2019\vfill}}
 #+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}}
 #+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
 #+BEAMER_HEADER: \input beamer_setup
@@ -46,7 +46,7 @@
 - Global Trending: T(z), \water(z), T_{surf}
 - Water vapor feedback (Does relative humidity vary)
 - Cloud feedback 
-- Trends in PBL cloud occurance
+- Trends in PBL cloud occurrence
 - OLR anomalies separated by cause: T/\water/cloud/surface, etc.
 
 ** Hyperspectral IR Advantages
@@ -58,7 +58,7 @@
 - AIRS senses both climate forcings, and responses
 - Clean separation of tropospheric vs stratospheric temperature trends (unlike microwave)
 - Multiple long-term overlapping missions (AIRS, CrIS, IASI)
-- AIRS, CrIS, IASI aleady agree to ~0.1-0.3K and can be merged to 0.03K or better. 
+- AIRS, CrIS, IASI already agree to ~0.1-0.3K and can be merged to 0.03K or better. 
 
 
 
@@ -69,7 +69,7 @@
 
 \vspace{0.2in}
 #+LaTeX: \begin{large}
-Significant AIRS calibration drifts have \textbf{already} resulted publication of in-accurate data that were publized by NASA/GSFC and the media (Washington Post, Scientific American).  /This talk suggests how to make AIRS an accurate instrument for climate science./
+Significant AIRS calibration drifts have \textbf{already} resulted publication of in-accurate data that were publicized by NASA/GSFC and the media (Washington Post, Scientific American).  /This talk suggests how to make AIRS an accurate instrument for climate science./
 #+LaTeX: \end{large}
 
 * Weather versus Climate Research
@@ -98,12 +98,12 @@ Hyperspectral IR instrument stability appears to be 1-2 orders of magnitude bett
    :END:
 ** Uncertainty Estimates
    - If we provide something unique, validation will be difficult
-   - Internal product uncertainty estimates will be far more important than for weather applciations
-   - Establishing uncertainites for products is a NASA ROSES requirement!
+   - Internal product uncertainty estimates will be far more important than for weather applications
+   - Establishing uncertainties for products is a NASA ROSES requirement!
 
 ** Reproducibility 
    - Reproducibiity of results is becoming increasingly important
-   - Difficlt to achieve with our Level 2 approach
+   - Difficult to achieve with our Level 2 approach
    - For climate simpler algorithms with reproducible results would enhance our impact on the broader community
 
 There is a long history of controversies in climate measurements (esp. microwave temperature trends).  AIRS derived results will be heavily scrutinized, we need to be prepared for that to retain trust.
@@ -121,7 +121,7 @@ Essentially you need to perform climate-level retrievals to test the capabilitie
 
 A /key/ requirement is the need to reprocess the /full record/ many times.  NOT possible with Level 2 approach!  Need \textbf{fast} alternatives that may also address issues of reproducibility.
 
-* Characteristics of AIRs Long-Term Radiance Trends
+* Characteristics of AIRS Data Sets Used Here
    :PROPERTIES:
    :BEAMER_opt: shrink=20
    :END:
@@ -130,19 +130,18 @@ A /key/ requirement is the need to reprocess the /full record/ many times.  NOT 
     2) A random, area-weighted subset of all scenes
   - Clear scenes are zonally averaged into 40 latitude bins of 16 days length
     - The anomalies of these B(T) time series are created (remove seasonal, constant)
-    - An optimal estimation retrievel for T(z), \water(z), SST, \cd, \methane, \nitrous, and CFCs is performed
+    - An optimal estimation retrieval for T(z), \water(z), SST, \cd, \methane, \nitrous, and CFCs is performed
 
 ** OE Parameters
-  - First: only channel where A/B constant through the mission
+  - First: use only channels where A/B constant through the mission
   - But: include more channels than most retrievals, since we want to evaluate as many channels as possible
-  - Observation noise covariance (diagonal) computed from Nesr from all scenes, < 0.01K
+  - Observation noise covariance (diagonal) computed from NEDN from all scenes, < 0.01K
   - A-Priori trends are zero
   - A-Priori covariance (empirically spread across diagonal) are equal to estimated change in gas for 1-year, so 2 ppm for \cd.  Using 5 ppm covariance made little difference.
   - Since we start with a-priori = 0, \cd changes so large needed finite-difference Jacobians
   - Jacobians generated with kCARTA (LBL) from ERA profiles.  (Not difficult to switch to retrievals to get 16-day mean state one day.)
 
-
-* AIRS Global 16-Year B(T) Trends (no OE fitting yet)
+* AIRS All-Sky Global 16-Year B(T) Trends
 
 \vspace{-0.35in}
 
@@ -221,14 +220,14 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 :END:
 
 #+LaTeX: \begin{small}
-- Uncertainty (gray) is geophysical (Std over latitutde).
+- Uncertainty (gray) is geophysical (Std over latitude).
 - RHS: Trop T(z) + 0.02K, Strat T(z) - 0.02K
 - \water trend is close to constant RH. (Varies with latitude).
 - Could suggest RH is a bit lower over time??
 - Shortwave appears to have a positive drift
 #+LaTeX: \end{small}
 
-* \cd Anomaly Fit for MLO Latitude
+* \small Switch to Clear Ocean Time Series: \cd Anomaly Fit for 20\deg N. (MLO)
 \vspace{-0.3in}
 ** \footnotesize Fitting Trick
 :PROPERTIES:
@@ -260,6 +259,10 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 * \cd Anomaly Converted to B(T) Trends
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
+
+- A main result
+- Suggest our \cd and SST channels are reasonably well-behaved
+- BUT: \cd channels have a residual spread
 
 * Other \cd Diagnostics
 \vspace{-0.35in}
@@ -437,7 +440,7 @@ But, need to remove effects in wings
 #+LaTeX: \begin{footnotesize}
 - All residuals shown (including fill)
 - Color scale is \Delta BT in K
-- \pm full scale equivlent to \pm 0.0125K/year drift
+- \pm full scale equivalent to \pm 0.0125K/year drift
 - Remember: we would like to get to the 0.003K/year level or better
 - Easy to see issues: Shortwave!!, Nov. 2003, some bad arrays, etc.
 
@@ -448,7 +451,7 @@ But, need to remove effects in wings
 [[./Figs/Png/best_co2_anom_resid_no_sw.png]]
 
 - Note: colorscale now \pm 0.1 K
-- But, only limited usefulness if fitted geophysical paramaters are good!
+- But, only limited usefulness if fitted geophysical parameters are good!
 
 * COMMENT Png/best_co2_anomaly_resid_fit_chans_concat.png
 #+ATTR_LATEX: :width 0.7\linewidth
@@ -578,7 +581,7 @@ But, need to remove effects in wings
 :BEAMER_env: ignoreheading
 :END:
 
-Shortwave drift correction reduces AIRS global temperature trend by 33% and bring AIRS into close agreement with HadCRUT4, C&W, and UAH LT, signficantly worse agreement with GISTEMP.
+Shortwave drift correction reduces AIRS global temperature trend by 33% and bring AIRS into close agreement with HadCRUT4, C&W, and UAH LT, significantly worse agreement with GISTEMP.
 
 \vspace{-0.1in}
 
@@ -615,7 +618,7 @@ Global Means
 #+LaTeX: \end{footnotesize}
 #+LaTeX: \begin{footnotesize}
 Note high/low Susskind values at poles not matched by UMBC\\
-Artic: UMBC closer to GISTEMP, Susskind ~0.5K/decade higher than GISTEMP
+Arctic: UMBC closer to GISTEMP, Susskind ~0.5K/decade higher than GISTEMP
 AIRS corrected 2616 trend from DCC Slide: 0.19/0.30K/decade at 265/255K!
 Why is UMBC-2616 not higher?
 But what about the S. Pole??  2616 should be higher?
