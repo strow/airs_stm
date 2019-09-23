@@ -81,6 +81,7 @@
 
 
 
+
 * COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/cf_vs_sst_vs_year_2019.pdf]]

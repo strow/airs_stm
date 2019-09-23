@@ -295,10 +295,6 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 :END:
 \footnotesize Growth rate anomaly accuracy very encouraging.
 
-* COMMENT Png/co2_anomaly_image_fancy2_corrected.png
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/co2_anomaly_image_fancy2_corrected.png]]
-
 * \nitrous Retrieved Anomalies
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf]]
@@ -425,7 +421,6 @@ But, need to remove effects in wings
 - Differences very small and at limits of SST climatologies
 #+LaTeX: \end{footnotesize}
 
-* COMMENT Residual Analysis
 * Png/best_co2_anom_resid.png
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Png/best_co2_anom_resid.png]]
@@ -438,7 +433,89 @@ But, need to remove effects in wings
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png]]
 
-* Pdf/bt_drift_from_anom_resid_2613_chan.pdf
+* Deep Convective Cloud Time Series
+\vspace{-0.35in}
+
+** \footnotesize AIRS vs IASI Time Series
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf]]
+
+** \footnotesize Trends (A/B detector issues)
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LaTeX: :width \linewidth
+[[./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.1in}
+#+LaTeX: \begin{footnotesize}
+- Shortwave drift 2004-2012
+- Consistent with Space Look getting colder 
+- Back of the envelope: 
+  - at 210K dBT/dyr = 0.47K/ for 2616 \wn
+  - at 300K equivalent to 0.0045K/year!
+  - at 255/265K (Arctic) equivalent to 0.30/0.19 K/decade
+
+#+LaTeX: \end{footnotesize}
+
+* Sample Fit Residual Time Series
+\vspace{-0.35in}
+** \footnotesize Water Vapor Channels
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf]]
+
+** \footnotesize Effect of Nov. 2003 Shutdown
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.2in}
+
+** 
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+#+LaTeX: \begin{footnotesize}
+- AIRS "events" easily seen
+- Fix events, re-retrieve \cd, SST, etc. and test
+- FUTURE: Use DCC spectra instead of clear for scene dependence
+#+LaTeX: \end{footnotesize}
+
+** \footnotesize Zoom of Nov. 2003 Shutdown (fringes)
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf]]
+
+* SW Fit Residual Trends: Impact on Warming Estimates
 ** 
 :PROPERTIES:
 :BEAMER_col: 0.6
@@ -470,22 +547,24 @@ But, need to remove effects in wings
 
 Shortwave drift correction reduces AIRS global temperature trend by 33% and bring AIRS into close agreement with HadCRUT4, C&W, and UAH LT, signficantly worse agreement with GISTEMP.
 
+\vspace{-0.1in}
+
 * Latitude Dependence Surface Trends
-\vspace{-0.3in}
-** Susskind 2019: SW
+\vspace{-0.35in}
+** \footnotesize Susskind 2019: SW
 :PROPERTIES:
 :BEAMER_col: 0.55
 :BEAMER_env: block
 :END:
+\vspace{-0.15in}
 #+ATTR_LATEX: :width \linewidth
 [[./Figs/Pdf/susskind_giss_trend_vs_lat.pdf]]
 
-** UMBC Trends: LW and SW
+** \footnotesize UMBC Trends: LW and SW
 :PROPERTIES:
 :BEAMER_col: 0.55
 :BEAMER_env: block
 :END:
-\vspace{0.14in}
 #+ATTR_LATEX: :width \linewidth
 [[./Figs/Pdf/bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2.pdf]]
 
@@ -496,60 +575,28 @@ Shortwave drift correction reduces AIRS global temperature trend by 33% and brin
 \vspace{-0.15in}
 #+LaTeX: \begin{footnotesize}
 Global Means
+\vspace{-0.1in}
 | GISS | Susskind | UMBC-1231 | UMBC-2616 | HadCRUT4 |
 | 0.22 |     0.24 |      0.18 |      0.17 |     0.17 |
-
-\vspace{-0.05in}
-But, why isn't UMBC-2616 0.05K higher??\\
+\vspace{-0.03in}
+#+LaTeX: \end{footnotesize}
+#+LaTeX: \begin{footnotesize}
 Note high/low Susskind values at poles not matched by UMBC\\
-/Rough/ estimate for 2616 scene dependence: 0.06K/decade, Obs: 0.09K/decade\\
-But what about the S. Pole??
+Artic: UMBC closer to GISTEMP, Susskind ~0.5K/decade higher than GISTEMP
+AIRS corrected 2616 trend from DCC Slide: 0.19/0.30K/decade at 265/255K!
+Why is UMBC-2616 not higher?
+But what about the S. Pole??  2616 should be higher?
 #+LaTeX: \end{footnotesize}
 
-* Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf]]
-
-* Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf]]
-
-* Pdf/resid_1567_and_1570_cm01_dnu.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf]]
-
-* COMMENT Png/resid_872to939cm-1_drift_and_1471to1541.png
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Png/resid_872to939cm-1_drift_and_1471to1541.png]]
-
-* COMMENT DCC Analysis
-* DCC1
-#+CAPTION: /AIRS and IASI Dcc daily average temperatures versus time.  The IASI curve for 2616 cm^{-1} is an average over 54 IASI channels./
-#+ATTR_LaTeX: :width 0.7\linewidth
-[[./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf]]
-
-* DCC4
-#+CAPTION: /Same as Fig. where? with every two points in IASI averaged./
-#+ATTR_LaTeX: :width 0.7\linewidth
-[[./Figsdc/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf]]
-
-* DCC6
-#+CAPTION: /Longwave DCC linear rate of change with AIRS A,B, AB channels identifications highlighted./
-#+ATTR_LaTeX: :width 0.7\linewidth
-[[./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf]]
-
-
-* overroye_scan.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
+* Trends in AIRS Blackbody Scans (Courtesy Ken Overroye)
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.8\linewidth
 [[./Figs/Pdf/overroye_scan.pdf]]
 
-* overroye_map.pdf
-#+ATTR_LATEX: :width 0.7\linewidth
-[[./Figs/Pdf/overroye_map.pdf]]
-
-
-* COMMENT  GLOBAL quick retrievals start here
-
+#+LaTeX: \begin{small}
+-  Strongly suggests B(T) trends maybe be associated with thermal drifts over time
+-  Same effects cause AIRS frequency shifts
+#+LaTeX: \end{small}
 * Surface T Trends Using 1231 \wn Channel
 \vspace{-0.35in}
 
@@ -594,85 +641,32 @@ But what about the S. Pole??
 #+ATTR_LATEX: :width \linewidth 
 [[./Figs/Png/airs_tsurf_trend_from_2616cm_trend.png]]
 
-
 * Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf]]
 
-* COMMENT sample 2x figs
-\vspace{-0.3in}
 
-** \footnotesize some small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.55
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
-\footnotesize
-airs, cris, iasi are /all/ very stable\\
-clarreo has removed us from this figure!
 
-** \footnotesize another small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.55
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
-\footnotesize
-these are 2-\sigma b(t) statistical uncertainties due to inter-annual variability.  
 
-some channels, some latitudes not gaussian (strat sudden warmings, qbo, etc.)
 
-* COMMENT sample 4x figs
-\vspace{-0.35in}
 
-** \footnotesize some small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.45
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
-** \footnotesize another small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.45
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
-** 
-:properties:
-:beamer_env: ignoreheading
-:end:
-\vspace{-0.25in}
 
-** \footnotesize some small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.45
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
-** \footnotesize another small title
-  :properties:
-  :beamer_env: block
-  :beamer_col: 0.45
-  :end:
-\vspace{-0.1in}
-#+attr_latex: :width \linewidth 
-[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+
+
+
+
+
+
+
+
+
+
 
 
 * COMMENT Pdf/cf_vs_sst_vs_year_2019.pdf
@@ -863,7 +857,6 @@ NASA: uncertainty is a requirement
    - Accuracy is similar to Forward Model uncertainties
    - All retrieval approachs bias tune the radiometry in one form or another
 
-
 * COMMENT AIRS Calibration Overview
 
 Goal for climate measurements: small fraction of 0.01K/year
@@ -889,11 +882,9 @@ bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest.fig
 
 
 
-
 * COMMENT Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled.pdf]]
-
 
 
 
@@ -945,4 +936,95 @@ bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest.fig
 * COMMENT Pdf/trenberth2009_clouds.pdf
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/trenberth2009_clouds.pdf]]
+
+* COMMENT Png/co2_anomaly_image_fancy2_corrected.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/co2_anomaly_image_fancy2_corrected.png]]
+
+
+* COMMENT Residual Analysis
+* COMMENT Png/resid_872to939cm-1_drift_and_1471to1541.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/resid_872to939cm-1_drift_and_1471to1541.png]]
+
+* COMMENT DCC Analysis
+* COMMENT overroye_map.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/overroye_map.pdf]]
+
+* COMMENT  GLOBAL quick retrievals start here
+* COMMENT sample 2x figs
+\vspace{-0.3in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.55
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+airs, cris, iasi are /all/ very stable\\
+clarreo has removed us from this figure!
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.55
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+\footnotesize
+these are 2-\sigma b(t) statistical uncertainties due to inter-annual variability.  
+
+some channels, some latitudes not gaussian (strat sudden warmings, qbo, etc.)
+
+* COMMENT sample 4x figs
+\vspace{-0.35in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** 
+:properties:
+:beamer_env: ignoreheading
+:end:
+\vspace{-0.25in}
+
+** \footnotesize some small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
+
+** \footnotesize another small title
+  :properties:
+  :beamer_env: block
+  :beamer_col: 0.45
+  :end:
+\vspace{-0.1in}
+#+attr_latex: :width \linewidth 
+[[./figs/pdf/drying_in_convective_regions_v2.pdf]]
 
