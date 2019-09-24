@@ -41,13 +41,19 @@
   \setlength{\partopsep}{2pt}
 }
 
+
+%anom_noise = load('btn_avg.mat');
+%load /home/sbuczko1/git/rtp_prod2/airs/static/f_default_l1c.mat
+%plot(f,squeeze(anom_noise.btn_avg(20,:,:))')
+
 \section{Overview}
 \begin{frame}
   \frametitle{Overview of talk}
   \begin{itemize}
   \item \textcolor{red}{Larrabee's talk establishes high stability of AIRS(LW/MW)}
   \begin{itemize}
-    \item we used noise covariance based on <NedT> per latitude bin 
+    \item we used noise covariance based
+ on <NedT> per latitude bin 
     \item instead of using SARTA jacobians for anomalies, we used kCARTA with latest spectroscopy
     (LBLRTM 12.8 for CO2,CH4), HITRAN 2016 for other gases, CKD 3.2
     \item plus we also know kCARTA jacobians work fine for any CO2/T combinations
@@ -87,7 +93,7 @@
         \item binned into 40 equal area latitude bins (thinner in equator/thicker at polar regions)
         \item BT anomalies and average ERA profiles for all 365 timesteps
       \end{itemize}
-    \item kCARTA analytic jacobians for surface temperature, T(z), WV(z),O3(z)
+    \item kCARTA 97 layer analytic jacobians for surface temperature, T(z), WV(z),O3(z)
     \item Ran off kCARTA at t=0 to t=T to make ``finite difference'' column trace gas jacobians
           (CO2,N2O,CH4,CFC11,CFC12)
     \item Using these jacobians, we retrieved T(t,z), WV(t,z), O3(t,z), CO2(t), N2O(t), CH4(t), 
@@ -248,7 +254,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : T(z,lat)}
+\begin{frame}{UMBC Retrieved Clear Sky Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : T(z,lat)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -302,7 +308,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : WV(z,lat)}
+\begin{frame}{UMBC Retrieved Clear Sky Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : WV(z,lat)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -356,7 +362,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : O3(z,lat)}
+\begin{frame}{UMBC Retrieved Clear Sky Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : O3(z,lat)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -621,6 +627,57 @@ X\begin{center}
 \end{column}
 \end{columns}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{27 N AllSky Ocean Retrieved Geophysical Anomalies}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize T(z,t)}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_ptemp_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize $frac$ WV(z,t)}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_wv_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.25in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize $frac$ O3(z,t)}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_o3_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+%\begin{block}{\footnotesize Another Small Title}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{{Figs/CloudAnom/era_cld_stemp_anom_200209_201808.png}
+%\end{center}
+%\end{block}
+
+\end{column}
+\end{columns}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
