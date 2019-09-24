@@ -234,7 +234,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Geophysical Rates : T(z,lat)}
+\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : T(z,lat)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -243,7 +243,7 @@
 \begin{block}{\footnotesize ERA}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_ptemp_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/rawERAtzrates.png}
 \end{center}
 \end{block}
 \end{column}
@@ -265,7 +265,9 @@
 \begin{block}{\footnotesize UMBC Retr Obs}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_o3_anom_200209_201808.png}
+%% oops got this backwards
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_ptemp_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_wv_rate_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -274,31 +276,39 @@
 \begin{block}{\footnotesize UMBC Retr Calc}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_o3_anom_200209_201808.png}
+%% oops got this backwards
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_ptemp_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_wv_rate_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
 \end{columns}
 
-ljahlhjfalhfa
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : WV(z,lat)}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
+\begin{block}{\footnotesize ERA}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{
+\includegraphics[width=\linewidth]{Figs/ClearAnom/rawERAwvrates.png}
 \end{center}
 \end{block}
 \end{column}
 
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_wv_rate_200209_201808.png}
-\end{center}
-\end{block}
+%\begin{block}{\footnotesize $frac$ O3(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
+%\end{center}
+%\end{block}
 \end{column}
 \end{columns}
 
@@ -306,7 +316,61 @@ ljahlhjfalhfa
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
+\begin{block}{\footnotesize UMBC Retr Obs}
+\vspace{-0.1in}
+\begin{center}
+%% oops got this backwards
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_wv_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_ptemp_rate_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Calc}
+\vspace{-0.1in}
+\begin{center}
+%% oops got this backwards
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_wv_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_ptemp_rate_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Decadal Geophysical Rates : O3(z,lat)}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/rawERAo3rates.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+%\begin{block}{\footnotesize $frac$ O3(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
+%\end{center}
+%\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.25in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Obs}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_o3_rate_200209_201808.png}
@@ -315,67 +379,18 @@ ljahlhjfalhfa
 \end{column}
 
 \begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/ClearAnom/umbc_clr_retr_obs_stemp_rate_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{UMBC Retrieved Clear Sky CAL Geophysical Anomalies $\rightarrow$ Geophysical Rates}
-%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
-\vspace{-0.35in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_ptemp_rate_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_wv_rate_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-\end{columns}
-
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
+\begin{block}{\footnotesize UMBC Retr Calc}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_o3_rate_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/ClearAnom/umbc_clr_retr_cal_stemp_rate_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
 \end{columns}
+
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ---------------------------------------------------------------------
 \section{AllSky Results}
