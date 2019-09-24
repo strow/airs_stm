@@ -45,10 +45,19 @@
 \begin{frame}
   \frametitle{Overview of talk}
   \begin{itemize}
-  \item We are starting to produce long-term anomalies and trends directly from gridded (time and space)
-        (radiance converted to Brightness Temperature BT)
-  \item This process is very fast and easy to test in many ways.
-  \item Details on our retrieved thermodynamic and cloud rates
+  \item \textcolor{red}{Larrabee's talk shows we have establish high stability of AIRS(LW/MW)}
+  \begin{itemize}
+    \item we used noise covariance based on <NedT> per latitude bin 
+    \item instead of using SARTA jacobians for anomalies, we used kCARTA with latest spectroscopy
+    (LBLRTM 12.8 for CO2,CH4), HITRAN 2016 for other gases, CKD 3.2
+    \item plus we also know kCARTA jacobians work fine for any CO2/T combinations
+  \end{itemize}
+  \item Using lessons learned from clear sky spectral anomaly and rate retrievals 
+     we are now beginning to work with  allsky spectral anomalies and trends.
+  \item kCARTA can do very similar TwoSlab calcs to SARTA, so no problems using it for allsky
+        T/WV/O3,surftemp jacobians; for this talk we use SARTA for cloud jacobians
+  \item In this talk we show zonally averaged anomalies
+  \item Long term goal is gridded anomalies, and trends derived from those anomalies
   \end{itemize}
 \end{frame}
 
@@ -75,13 +84,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Tropical ERA Clear Sky Geophysical Anomalies}
+\begin{frame}{Tropical Clear Sky Geophysical Anomalies : T(z,t)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
+\begin{block}{\footnotesize ERA}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_ptemp_anom_200209_201808.png}
@@ -90,12 +99,12 @@
 \end{column}
 
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_wv_anom_200209_201808.png}
-\end{center}
-\end{block}
+%\begin{block}{\footnotesize $frac$ WV(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_wv_anom_200209_201808.png}
+%\end{center}
+%\end{block}
 \end{column}
 \end{columns}
 
@@ -103,85 +112,7 @@
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_stemp_anom_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Tropical UMBC Retrieved Clear Sky CAL Geophysical Anomalies}
-%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
-\vspace{-0.35in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_ptemp_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_wv_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-\end{columns}
-
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_o3_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/ClearAnom/umbc_clr_retr_cal_stemp_anom_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Tropical UMBC Retrieved Clear Sky OBS Geophysical Anomalies}
-%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
-\vspace{-0.35in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
+\begin{block}{\footnotesize UMBC Retr Obs}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_ptemp_anom_200209_201808.png}
@@ -190,12 +121,40 @@
 \end{column}
 
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
+\begin{block}{\footnotesize UMBC Retr Calc}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_wv_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_ptemp_anom_200209_201808.png}
 \end{center}
 \end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tropical Clear Sky Geophysical Anomalies : \textit{frac} WV(z,t)}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_wv_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+%\begin{block}{\footnotesize $frac$ WV(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_wv_anom_200209_201808.png}
+%\end{center}
+%\end{block}
 \end{column}
 \end{columns}
 
@@ -203,7 +162,57 @@
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
+\begin{block}{\footnotesize UMBC Retr Obs}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_wv_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Calc}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_wv_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Tropical Clear Sky Geophysical Anomalies : \textit{frac} O3(z,t)}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+%\begin{block}{\footnotesize $frac$ O3(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
+%\end{center}
+%\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.25in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Obs}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_o3_anom_200209_201808.png}
@@ -212,29 +221,73 @@
 \end{column}
 
 \begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/ClearAnom/umbc_clr_retr_obs_stemp_anom_200209_201808.png}
-%\end{center}
-%\end{block}
-
+\begin{block}{\footnotesize UMBC Retr Calc}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_o3_anom_200209_201808.png}
+\end{center}
+\end{block}
 \end{column}
 \end{columns}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Geophysical Rates}
+\begin{frame}{UMBC Retrieved Clear Sky OBS Geophysical Anomalies $\rightarrow$ Geophysical Rates : T(z,lat)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_ptemp_rate_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+%\begin{block}{\footnotesize $frac$ O3(z,t)}
+%\vspace{-0.1in}
+%\begin{center}
+%\includegraphics[width=\linewidth]{Figs/ClearAnom/era_clr_o3_anom_200209_201808.png}
+%\end{center}
+%\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.25in}
+
+\begin{columns}
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Obs}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_o3_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+\begin{block}{\footnotesize UMBC Retr Calc}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_cal_o3_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+ljahlhjfalhfa
 
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{block}{\footnotesize T(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/ClearAnom/umbc_clr_retr_obs_ptemp_rate_200209_201808.png}
+\includegraphics[width=\linewidth]{
 \end{center}
 \end{block}
 \end{column}
@@ -698,7 +751,7 @@ X\begin{center}
 \begin{block}{\footnotesize T(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_orig/era_cld_ptemp_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_ptemp_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -707,7 +760,7 @@ X\begin{center}
 \begin{block}{\footnotesize $frac$ WV(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_orig/era_cld_wv_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_wv_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -720,7 +773,7 @@ X\begin{center}
 \begin{block}{\footnotesize $frac$ O3(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_orig/era_cld_o3_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_o3_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -738,6 +791,27 @@ X\begin{center}
 \end{frame}
 
 %%%%%
+
+\section{Conclusions}
+\begin{frame}
+  \frametitle{Conclusions}
+  \begin{itemize}
+  \item Using lessons learned from clear sky spectral anomaly and rate retrievals (see Larrabee's talk), 
+        we are now beginning to work with  allsky spectral anomalies and trends.
+  \item Started to work with zonally averaged allsky spectra, rather problematic because of
+  \begin{itemize}
+    \item too much cloud variability across latitude bins, especially with large 2016 ENSO
+    \item on surface rather hard to seearate low cloud from surface temparature
+  \end{itemize}
+  \item But using allsky spectral rates, we actually get 
+  \begin{itemize}
+    \item  decent trace gas rates; but not from anomalies (so we tie the trace gases to known ``trends'')
+    \item using either spectral rates or anomalies, we are obtaining ballpart T/WV/O3 trends
+    \item we see recognizable features in anomalies eg QBO in tropical latbins
+  \end{itemize}
+  \item Reminder : Long term goal is gridded anomalies, and trends derived from those anomalies
+  \end{itemize}
+\end{frame}
 
 \end{document}
 
