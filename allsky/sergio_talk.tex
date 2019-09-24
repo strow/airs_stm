@@ -407,9 +407,8 @@
         \item BT anomalies and average ERA profiles for all 365 timesteps
       \end{itemize}
     \item kCARTA analytic jacobians for surface temperature, T(z), WV(z),O3(z) using TwoSlab Clouds
-    \item kCARTA at t=0 to t=T to make ``finite difference'' column trace gas jacobians
-          (CO2,N2O,CH4,CFC11,CFC12)
-    \item SARTA for cloud jacs
+          and also for trace gases(CO2,N2O,CH4,CFC11,CFC12)
+    \item SARTA for cloud jacs (kCARTA and SARTA slightly differ in cloud vertical placement)
     \item Using these jacobians, we retrieved T(t,z),WV(t,z),O3(t,z),[CO2(t),N2O(t),CH4(t),CFC11(t),CFC12(t),surftemp(t)]
           [cld amount/cld eff size/ cld top for liquid/ice clouds] at each of the 40 latbins $\times $ 365 timesteps
   \end{itemize}
@@ -562,7 +561,7 @@ X\begin{center}
 %%%%%
 
 \subsection{AllSky UMBC vs ERA vs L3 Anomalies}
-\begin{frame}{Tropical ERA AllSky Geophysical Anomalies}
+\begin{frame}{Tropical ERA AllSky Ocean Geophysical Anomalies}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -757,10 +756,11 @@ X\begin{center}
 %%%%%
 
 \subsection{AllSky UMBC vs ERA vs L3 Anomalies}
-\begin{frame}{Tropical ERA AllSky Geophysical Anomalies}
+\begin{frame}{Tropical ERA AllSky Land/Ocean Geophysical Anomalies}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
+GAH
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{block}{\footnotesize T(z,t)}
