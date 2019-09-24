@@ -1,4 +1,4 @@
-% Created 2019-09-22 Sun 16:10
+% Created 2019-09-23 Mon 23:19
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,t]{beamer}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 \date{\today}
 \title{\large AIRS Calibration for Climate Trend Studies: Status and Future}
 \subtitle{\footnotesize{AIRS Science Team Meeting}}
-\date{\vspace{0.1in}\footnotesize{September 25, 201\vfill}}
+\date{\vspace{0.1in}\footnotesize{September 25, 2019\vfill}}
 \author{L. Larrabee Strow\inst{1,2}}
 \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
 \input beamer_setup
@@ -40,7 +40,7 @@
 }
 
 
-\begin{frame}[label={sec:org123901d},shrink=30]{Calibration Requirements for Climate Science}
+\begin{frame}[label={sec:orge26c686},shrink=30]{Calibration Requirements for Climate Science}
 \vspace{-0.1in}
 \begin{large}
 \begin{itemize}
@@ -60,7 +60,7 @@
 \item Global Trending: T(z), \water(z), T\textsubscript{surf}
 \item Water vapor feedback (Does relative humidity vary)
 \item Cloud feedback
-\item Trends in PBL cloud occurance
+\item Trends in PBL cloud occurrence
 \item OLR anomalies separated by cause: T/\water/cloud/surface, etc.
 \end{itemize}
 \end{block}
@@ -72,7 +72,7 @@
 \item AIRS senses both climate forcings, and responses
 \item Clean separation of tropospheric vs stratospheric temperature trends (unlike microwave)
 \item Multiple long-term overlapping missions (AIRS, CrIS, IASI)
-\item AIRS, CrIS, IASI aleady agree to \textasciitilde{}0.1-0.3K and can be merged to 0.03K or better.
+\item AIRS, CrIS, IASI already agree to \textasciitilde{}0.1-0.3K and can be merged to 0.03K or better.
 \end{itemize}
 \end{block}
 \end{column}
@@ -82,14 +82,13 @@
 
 \vspace{0.2in}
 \begin{large}
-Significant AIRS calibration drifts have \alert{already} resulted publication of in-accurate data that were publized by NASA/GSFC and the media (Washington Post, Scientific American).  \emph{This talk suggests how to make AIRS an accurate instrument for climate science.}
+Significant AIRS calibration drifts have \textbf{already} resulted publication of in-accurate data that were publicized by NASA/GSFC and the media (Washington Post, Scientific American).  \emph{This talk suggests how to make AIRS an accurate instrument for climate science.}
 \end{large}
 \end{frame}
 
-\begin{frame}[label={sec:org83a03ca},shrink=20]{Weather versus Climate Research}
+\begin{frame}[label={sec:org8b71b96},shrink=20]{Weather versus Climate Research}
 \begin{block}{Weather Applications}
 \begin{itemize}
-\item AIRS original focus was for NWP
 \item Both 1Dvar retrievals and data assimilation \emph{require} bias removal
 \begin{itemize}
 \item NWP: biases due to the instrument, RTA, model
@@ -114,19 +113,19 @@ Hyperspectral IR instrument stability appears to be 1-2 orders of magnitude bett
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org24ce98f},shrink=5]{Climate Product Characteristics}
+\begin{frame}[label={sec:orga98e52c},shrink=5]{Climate Product Characteristics}
 \begin{block}{Uncertainty Estimates}
 \begin{itemize}
 \item If we provide something unique, validation will be difficult
-\item Internal product uncertainty estimates will be far more important than for weather applciations
-\item Establishing uncertainites for products is a NASA ROSES requirement!
+\item Internal product uncertainty estimates will be far more important than for weather applications
+\item Establishing uncertainties for products is a NASA ROSES requirement!
 \end{itemize}
 \end{block}
 
 \begin{block}{Reproducibility}
 \begin{itemize}
 \item Reproducibiity of results is becoming increasingly important
-\item Difficlt to achieve with our Level 2 approach
+\item Difficult to achieve with our Level 2 approach
 \item For climate simpler algorithms with reproducible results would enhance our impact on the broader community
 \end{itemize}
 
@@ -134,7 +133,7 @@ There is a long history of controversies in climate measurements (esp. microwave
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgf4ace31}]{AIRS Stability Calibration: An Approach}
+\begin{frame}[label={sec:org87bc820}]{AIRS Stability Calibration: An Approach}
 \begin{itemize}
 \item External standards needed to establish stability
 \item \cd and possibly \nitrous and \methane can provide those standards
@@ -151,15 +150,37 @@ There is a long history of controversies in climate measurements (esp. microwave
 
 Essentially you need to perform climate-level retrievals to test the capabilities of your instrument.  
 
-A \emph{key} requirement is the need to reprocess the \emph{full record} many times.  NOT possible with Level 2 approach!  Need fast alternatives that may also address issues of reproducibility.
+A \emph{key} requirement is the need to reprocess the \emph{full record} many times.  NOT possible with Level 2 approach!  Need \textbf{fast} alternatives that may also address issues of reproducibility.
 \end{frame}
 
-\begin{frame}[label={sec:org35e37f9}]{Characteristics of AIRs Long-Term Radiance Trends}
+\begin{frame}[label={sec:orgbc9f3c2},shrink=20]{Characteristics of AIRS Data Sets Used Here}
 \begin{itemize}
-\item 1\% random subset
+\item Subsequent results use either:
+\begin{enumerate}
+\item Clear ocean subsetting data; or
+\item A random, area-weighted subset of all scenes
+\end{enumerate}
+\item Clear scenes are zonally averaged into 40 latitude bins of 16 days length
+\begin{itemize}
+\item The anomalies of these B(T) time series are created (remove seasonal, constant)
+\item An optimal estimation retrieval for T(z), \water(z), SST, \cd, \methane, \nitrous, and CFCs is performed
 \end{itemize}
+\end{itemize}
+
+\begin{block}{OE Parameters}
+\begin{itemize}
+\item First: use only channels where A/B constant through the mission
+\item But: include more channels than most retrievals, since we want to evaluate as many channels as possible
+\item Observation noise covariance (diagonal) computed from NEDN from all scenes, < 0.01K
+\item A-Priori trends are zero
+\item A-Priori covariance (empirically spread across diagonal) are equal to estimated change in gas for 1-year, so 2 ppm for \cd.  Using 5 ppm covariance made little difference.
+\item Since we start with a-priori = 0, \cd changes so large needed finite-difference Jacobians
+\item Jacobians generated with kCARTA (LBL) from ERA profiles.  (Not difficult to switch to retrievals to get 16-day mean state one day.)
+\end{itemize}
+\end{block}
 \end{frame}
-\begin{frame}[label={sec:org4503062}]{AIRS Global 16-Year B(T) Trend}
+
+\begin{frame}[label={sec:orgbce5e15}]{AIRS All-Sky Global 16-Year B(T) Trends}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -211,7 +232,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orga4bf877}]{\cd and \methane Trends Removed, Fitted Chans Only}
+\begin{frame}[label={sec:orge78f532}]{\cd and \methane Trends Removed, Fitted Chans Only}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -235,7 +256,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 
 \begin{small}
 \begin{itemize}
-\item Uncertainty (gray) is geophysical (Std over latitutde).
+\item Uncertainty (gray) is geophysical (Std over latitude).
 \item RHS: Trop T(z) + 0.02K, Strat T(z) - 0.02K
 \item \water trend is close to constant RH. (Varies with latitude).
 \item Could suggest RH is a bit lower over time??
@@ -244,21 +265,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{small}
 \end{frame}
 
-\begin{frame}[label={sec:orgdef18f4}]{Retrieval of \cd, \nitrous, \methane Anomalies}
-\begin{itemize}
-\item oem approach
-\item data set
-\item kcarta vs sarta
-\item true noise, averaged over \textasciitilde{}600 pts/16 days per 1/40 lat bins.
-\item 2ppm \cd a-priori covariance, with 2ppm slope a=prori, 5 ppm covariance almost as good
-\item jacobian (kernel) profiles from ERA, but we could fit for them,
-\item iterate: first remove jumps due to know events in fitting channels
-\item then evaluate channels not fitted, and include if warranted
-\item possible  BB is stable
-\item relative channel errors are likely due to small thermal changes changing view of cold space, etc.  a/b often different
-\end{itemize}
-\end{frame}
-\begin{frame}[label={sec:orga1eeb73}]{\cd Anomaly Fit for MLO Latitude}
+\begin{frame}[label={sec:orgc9dcc68}]{\small Switch to Clear Ocean Time Series: \cd Anomaly Fit for 20\textdegree{} N. (MLO)}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -287,13 +294,25 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org028daca}]{\cd Anomaly Converted to B(T) Trends}
+\begin{frame}[label={sec:orgcc0ebe8}]{\cd Anomaly Converted to B(T) Trends}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
+
+\vspace{-0.1in}
+\begin{footnotesize}
+\begin{itemize}
+\item Mean AIRS-ESRL \cd = 0.035 \textpm{} 0.032  pppm (1\(\sigma\) standard error)
+\item Mean AIRS-ESRL in BT Units = +0.0026K \textpm{} 0.0023K (1\(\sigma\) standard error)
+\item Sampling and ESRL errors hard to characterize
+\item Suggests our \cd and SST channels are reasonably well-behaved
+\item BUT: residuals of \cd sensitive channels do vary
+\end{itemize}
+\end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf2793ca}]{Other \cd Diagnostics}
+
+\begin{frame}[label={sec:org19445da}]{Other \cd Diagnostics}
 \vspace{-0.35in}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -329,13 +348,19 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 
 \begin{column}{0.5\columnwidth}
 \begin{block}{}
-\footnotesize Growth rate anomaly accuracy very encouraging.
+\vspace{-0.2in}
+\begin{footnotesize}
+\begin{itemize}
+\item Growth rate anomaly accuracy very encouraging.
+\item AIRS - Avg(MLO + CGRIM) growth rate difference: -0.0056K/year in BT units
+\item MLO, CGRIM growth rate uncertainty from ESRL \textasciitilde{}0.0051K/year
+\end{itemize}
+\end{footnotesize}
 \end{block}
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:orgbc41163}]{\nitrous Retrieved Anomalies}
+\begin{frame}[label={sec:orgda3882b}]{\nitrous Retrieved Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
@@ -351,7 +376,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org4afcc39}]{\methane Retrieved Anomalies}
+\begin{frame}[label={sec:orga13fbe5}]{\methane Retrieved Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
@@ -365,7 +390,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org7b9eba2}]{\methane Growth Rate Anomalies}
+\begin{frame}[label={sec:orgd4f41f5}]{\methane Growth Rate Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf}
 \end{center}
@@ -379,7 +404,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd95e21f}]{Unlike Retrievals We'd Like to Examine Many Channels}
+\begin{frame}[label={sec:orgc33163f}]{Unlike Retrievals We'd Like to Examine Many Channels}
 \vspace{-0.3in}
 
 \begin{columns}
@@ -429,7 +454,7 @@ But, need to remove effects in wings
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2d74f0d}]{Fit to AIRS CFC-11 for Removal in Fit Residuals}
+\begin{frame}[label={sec:org421ec84}]{Fit to AIRS CFC-11 for Removal in Fit Residuals}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -462,8 +487,7 @@ But, need to remove effects in wings
 \end{itemize}
 \end{footnotesize}
 \end{frame}
-\begin{frame}[label={sec:org2874479}]{SST Retrieved from Anomaly Fits}
-\vspace{-0.2in}
+\begin{frame}[label={sec:org89b3cbb}]{SST Retrieved from Anomaly Fits}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf}
 \end{center}
@@ -476,25 +500,142 @@ But, need to remove effects in wings
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc28c0e9}]{Png/best\_co2\_anom\_resid.png}
+\begin{frame}[label={sec:org7d021c3}]{OE Fit Residuals:  Main Diagnostic of Trends}
+\vspace{-0.1in}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anom_resid.png}
 \end{center}
+
+\vspace{-0.1in}
+\begin{footnotesize}
+\begin{itemize}
+\item All residuals shown (including fill)
+\item Color scale is \(\Delta\) BT in K
+\item \textpm{} full scale equivalent to \textpm{} 0.0125K/year drift
+\item Remember: we would like to get to the 0.003K/year level or better
+\item Easy to see issues: Shortwave!!, Nov. 2003, some bad arrays, etc.
+\end{itemize}
+
+\end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org878893e}]{Png/best\_co2\_anom\_resid\_no\_sw.png}
+\begin{frame}[label={sec:orga34d887}]{Zoom of Residual w/o Shortwave}
 \begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anom_resid_no_sw.png}
+\includegraphics[width=0.8\linewidth]{./Figs/Png/best_co2_anom_resid_no_sw.png}
 \end{center}
+
+\begin{itemize}
+\item Note: colorscale now \textpm{} 0.1 K
+\item But, only limited usefulness if fitted geophysical parameters are good!
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf4832a9}]{Png/best\_co2\_anomaly\_resid\_fit\_chans\_concat.png}
+\begin{frame}[label={sec:org14a943c}]{Deep Convective Cloud Time Series}
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{block}{\footnotesize AIRS vs IASI Time Series}
+\vspace{-0.1in}
 \begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anomaly_resid_fit_chans_concat.png}
+\includegraphics[width=\linewidth]{./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf}
 \end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{block}{\footnotesize Trends (A/B detector issues)}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.1in}
+\begin{footnotesize}
+\begin{itemize}
+\item Shortwave drift 2004-2012
+\item Consistent with Space Look getting colder
+\item Back of the envelope: 
+\begin{itemize}
+\item at 210K dBT/dyr = 0.47K/ for 2616 \wn
+\item at 300K equivalent to 0.0045K/year!
+\item at 255/265K (Arctic) equivalent to 0.30/0.19 K/decade
+\end{itemize}
+\end{itemize}
+
+\end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org7892f9f}]{Pdf/bt\_drift\_from\_anom\_resid\_2613\_chan.pdf}
+\begin{frame}[label={sec:org7365180}]{Sample Fit Residual Time Series}
+\vspace{-0.35in}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{block}{\footnotesize Water Vapor Channels}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=0.85\linewidth]{./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{block}{\footnotesize Effect of Nov. 2003 Shutdown}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=0.85\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{-0.2in}
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{block}{}
+\begin{footnotesize}
+\begin{itemize}
+\item AIRS "events" easily seen
+\item Fix events, re-retrieve \cd, SST, etc. and test
+\item FUTURE: Use DCC spectra instead of clear for scene dependence
+\end{itemize}
+\end{footnotesize}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{block}{\footnotesize Zoom of Nov. 2003 Shutdown (fringes)}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=0.85\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org2489db7}]{Summary}
+\begin{itemize}
+\item Validate OE retrieval products (done above)
+\item Adjust channel "event" offsets
+\item Re-do OE retrievals, re-validated.
+\item Add more channels as they are "fixed"
+\item etc.
+\end{itemize}
+
+\begin{block}{Improvements Possible}
+\begin{itemize}
+\item More uniform sampling of clear
+\item Must add colder scenes (DCC's) to process since adjustments are likely scene temperature dependent
+\item OE can always be improved, start to look at T(z), \water(z), \ozone(z) profile retrievals once have more uniform (gridded) sampling.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orga863315}]{SW Fit Residual Trends: Impact on Warming Estimates}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{block}{}
@@ -524,14 +665,17 @@ UAH LT & 0.18\\
 \end{column}
 \end{columns}
 
-Shortwave drift correction reduces AIRS global temperature trend by 33\% and bring AIRS into close agreement with HadCRUT4, C\&W, and UAH LT, signficantly worse agreement with GISTEMP.
+Shortwave drift correction reduces AIRS global temperature trend by 33\% and bring AIRS into close agreement with HadCRUT4, C\&W, and UAH LT, significantly worse agreement with GISTEMP.
+
+\vspace{-0.1in}
 \end{frame}
 
-\begin{frame}[label={sec:orgf6abfb0}]{Latitude Dependence Surface Trends}
-\vspace{-0.3in}
+\begin{frame}[label={sec:org540bbdf}]{Latitude Dependence Surface Trends}
+\vspace{-0.35in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
-\begin{block}{Susskind 2019: SW}
+\begin{block}{\footnotesize Susskind 2019: SW}
+\vspace{-0.15in}
 \begin{center}
 \includegraphics[width=\linewidth]{./Figs/Pdf/susskind_giss_trend_vs_lat.pdf}
 \end{center}
@@ -539,8 +683,7 @@ Shortwave drift correction reduces AIRS global temperature trend by 33\% and bri
 \end{column}
 
 \begin{column}{0.55\columnwidth}
-\begin{block}{UMBC Trends: LW and SW}
-\vspace{0.14in}
+\begin{block}{\footnotesize UMBC Trends: LW and SW}
 \begin{center}
 \includegraphics[width=\linewidth]{./Figs/Pdf/bt_global_trend_area_weight_lat_1231_vs_2616_from_hottest_v2.pdf}
 \end{center}
@@ -551,78 +694,66 @@ Shortwave drift correction reduces AIRS global temperature trend by 33\% and bri
 \vspace{-0.15in}
 \begin{footnotesize}
 Global Means
+\vspace{-0.1in}
 \begin{center}
 \begin{tabular}{rrrrr}
 GISS & Susskind & UMBC-1231 & UMBC-2616 & HadCRUT4\\
 0.22 & 0.24 & 0.18 & 0.17 & 0.17\\
 \end{tabular}
 \end{center}
-
-\vspace{-0.05in}
-But, why isn't UMBC-2616 0.05K higher??\\
+\vspace{-0.03in}
+\end{footnotesize}
+\begin{footnotesize}
 Note high/low Susskind values at poles not matched by UMBC\\
-\emph{Rough} estimate for 2616 scene dependence: 0.06K/decade, Obs: 0.09K/decade\\
-But what about the S. Pole??
+Arctic: UMBC closer to GISTEMP, Susskind \textasciitilde{}0.5K/decade higher than GISTEMP
+AIRS corrected 2616 trend from DCC Slide: 0.19/0.30K/decade at 265/255K!
+Why is UMBC-2616 not higher?
+But what about the S. Pole??  2616 should be higher?
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org267b8e5}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003.pdf}
+\begin{frame}[label={sec:orgfb56a29}]{Trends in AIRS Blackbody Scans (Courtesy Ken Overroye)}
+\vspace{-0.1in}
 \begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003.pdf}
+\includegraphics[width=0.8\linewidth]{./Figs/Pdf/overroye_scan.pdf}
 \end{center}
+
+\begin{small}
+\begin{itemize}
+\item Strongly suggests B(T) trends maybe be associated with thermal drifts over time
+\item Same effects cause AIRS frequency shifts
+\end{itemize}
+\end{small}
 \end{frame}
 
-\begin{frame}[label={sec:org25827b1}]{Pdf/resid\_spectrum\_dec17\_minus\_oct14\_2003\_swzoom.pdf}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_spectrum_dec17_minus_oct14_2003_swzoom.pdf}
-\end{center}
+\begin{frame}[label={sec:orgd095c45},shrink=20]{Quick Look at Fast T\textsubscript{surface} Algorithms}
+\begin{itemize}
+\item Want to examine sensitivity to L1c adjustments \alert{quickly}
+\item Examine channels separately
+\end{itemize}
+
+\begin{block}{Approach Presented (preliminary)}
+\begin{itemize}
+\item Here we generated 1231 and 2616 \wn time series from 1\% of all data
+\item Gridded into lat/lon/16-day bins
+\item For each 16-day bin pick the hottest BT and keep it.  So now about 0.02\% of all data
+\item Form the BT anomalies for each bin and retrieve linear slope (trend)
+\item Compare to ERA, OISST, etc.
+\end{itemize}
+\end{block}
+
+\begin{block}{Liens and Future Changes}
+\begin{itemize}
+\item 1231 \wn needs dBT/dT\textsubscript{surf} adjustment (used mean values from ERA)
+\item Additional adjustment needed if \water varies significantly (not done)
+\item Picking hottest only is quite a small subset.
+\item In future use all data, not 1\% random subset (done) and use more than just hottest scenes
+\item Pick up enough full-spectrum data to fit for \water trends for 1231 \wn adjustments
+\end{itemize}
+\end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgeb69b0b}]{Pdf/resid\_1567\_and\_1570\_cm01\_dnu.pdf}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Pdf/resid_1567_and_1570_cm01_dnu.pdf}
-\end{center}
-\end{frame}
-
-\begin{frame}[label={sec:org9dd777f}]{DCC1}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/bt2616_and_bt960_dcc_vs_time_airs_and_iasi.pdf}
-\caption{\emph{AIRS and IASI Dcc daily average temperatures versus time.  The IASI curve for 2616 cm\textsuperscript{-1} is an average over 54 IASI channels.}}
-\end{figure}
-\end{frame}
-
-\begin{frame}[label={sec:org65d09f5}]{DCC4}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/airs_iasi_dcc_rate_sw_iasi_avgpts.pdf}
-\caption{\emph{Same as Fig. where? with every two points in IASI averaged.}}
-\end{figure}
-\end{frame}
-
-\begin{frame}[label={sec:orge13b5dc}]{DCC6}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\linewidth]{./Figsdc/Pdf/airs_iasi_dcc_rate_lw_ab_diffs_vs_iasi.pdf}
-\caption{\emph{Longwave DCC linear rate of change with AIRS A,B, AB channels identifications highlighted.}}
-\end{figure}
-\end{frame}
-
-
-\begin{frame}[label={sec:org9ad207c}]{overroye\_scan.pdf}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Pdf/overroye_scan.pdf}
-\end{center}
-\end{frame}
-
-\begin{frame}[label={sec:orgbbf839e}]{overroye\_map.pdf}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{./Figs/Pdf/overroye_map.pdf}
-\end{center}
-\end{frame}
-
-
-\begin{frame}[label={sec:org7abc5e9}]{Surface T Trends Using 1231 \wn Channel}
+\begin{frame}[label={sec:orgbae84f2}]{Surface T Trends Using 1231 \wn Channel}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -667,10 +798,31 @@ But what about the S. Pole??
 \end{columns}
 \end{frame}
 
-
-\begin{frame}[label={sec:org3a67ddb}]{Pdf/zonal\_sst\_trends\_12311\_vs\_oisst\_ersst5\_hottest\_per\_grid\_envelope.pdf}
+\begin{frame}[label={sec:org1355945}]{SST Trends of Previous Mapped Data (1231 \wn only)}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf}
 \end{center}
+
+\begin{footnotesize}
+\begin{itemize}
+\item ERSST5 is considered one of the best climate surface T products
+\item ERA is NOT a measurement, but sure is good!
+\item Will expand to HADCRUT, GISTEMP, etc. in the future
+\end{itemize}
+
+Results appear to be quite good! 
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}[label={sec:org286d8ac}]{Conclusions}
+\begin{itemize}
+\item We have a tremendous instrument, with a very stable blackbody reference
+\item But, small thermal shifts in the grating system produce BT trends that can vary with channel
+\item Cold (space look) measurements appear to be the culprit?
+\item The approach to fixing these problems seems doable, but will require a significant effort
+\item Most climate questions can be answered if the radiometric trends are fixed
+\item Better absolute radiometry will not impact most science we need to do, it's already quite good!
+\item This works needs to be done now before Level 2 is used too much for climate research!
+\end{itemize}
 \end{frame}
 \end{document}

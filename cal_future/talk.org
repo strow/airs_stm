@@ -77,7 +77,6 @@ Significant AIRS calibration drifts have \textbf{already} resulted publication o
    :BEAMER_opt: shrink=20
    :END:
 ** Weather Applications
-- AIRS original focus was for NWP
 - Both 1Dvar retrievals and data assimilation /require/ bias removal
   - NWP: biases due to the instrument, RTA, model
   - Retrievals: biases due to the instrument and RTA
@@ -260,9 +259,15 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
 
-- A main result
-- Suggest our \cd and SST channels are reasonably well-behaved
-- BUT: \cd channels have a residual spread
+\vspace{-0.1in}
+#+LaTeX: \begin{footnotesize}
+- Mean AIRS-ESRL \cd = 0.035 \pm 0.032  pppm (1\sigma standard error)
+- Mean AIRS-ESRL in BT Units = +0.0026K \pm 0.0023K (1\sigma standard error)
+- Sampling and ESRL errors hard to characterize
+- Suggests our \cd and SST channels are reasonably well-behaved
+- BUT: residuals of \cd sensitive channels do vary
+#+LaTeX: \end{footnotesize}
+
 
 * Other \cd Diagnostics
 \vspace{-0.35in}
@@ -304,8 +309,12 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 :BEAMER_col: 0.5
 :BEAMER_env: block
 :END:
-\footnotesize Growth rate anomaly accuracy very encouraging.
-
+\vspace{-0.2in}
+#+LaTeX: \begin{footnotesize}
+- Growth rate anomaly accuracy very encouraging.
+- AIRS - Avg(MLO + CGRIM) growth rate difference: -0.0056K/year in BT units
+- MLO, CGRIM growth rate uncertainty from ESRL ~0.0051K/year
+#+LaTeX: \end{footnotesize}
 * \nitrous Retrieved Anomalies
 #+ATTR_LATEX: :width 0.7\linewidth
 [[./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf]]

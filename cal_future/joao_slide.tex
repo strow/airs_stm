@@ -1,0 +1,88 @@
+% Created 2019-09-23 Mon 23:21
+% Intended LaTeX compiler: pdflatex
+\documentclass[10pt,t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+\author{L. Larrabee Strow}
+\date{\today}
+\title{\large AIRS Calibration for Climate Trend Studies: Status and Future}
+\subtitle{\footnotesize{AIRS Science Team Meeting}}
+\date{\vspace{0.1in}\footnotesize{September 25, 2019\vfill}}
+\author{L. Larrabee Strow\inst{1,2}}
+\institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+\input beamer_setup
+\usetheme{metropolis}
+\metroset{titleformat title=allcaps}
+\renewcommand{\UrlFont}{\small\tt}
+\renewcommand*{\UrlFont}{\footnotesize}
+\tolerance=1000
+\RequirePackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+\begin{document}
+
+\maketitle
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+
+
+\begin{frame}[label={sec:orge0f03c3},shrink=30]{Calibration Requirements for Climate Science}
+\vspace{-0.1in}
+\begin{large}
+\begin{itemize}
+\item AIRS 17+ year record long enough to address key climate questions
+\item Stability of radiometric calibration is key
+\item AIRS sensitivity to \cd, SST, etc allows stringent tests of stability
+\end{itemize}
+\end{large}
+\vspace{-0.2in}
+\begin{columns}
+\begin{column}{0.55\columnwidth}
+\begin{block}{Climate Science Questions}
+\vspace{0.05in}
+\emph{All require min \textasciitilde{}0.1K/decade stability}
+\vspace{-0.05in}
+\begin{itemize}
+\item Global Trending: T(z), \water(z), T\textsubscript{surf}
+\item Water vapor feedback (Does relative humidity vary)
+\item Cloud feedback
+\item Trends in PBL cloud occurrence
+\item OLR anomalies separated by cause: T/\water/cloud/surface, etc.
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{0.55\columnwidth}
+\begin{block}{Hyperspectral IR Advantages}
+\begin{itemize}
+\item AIRS senses both climate forcings, and responses
+\item Clean separation of tropospheric vs stratospheric temperature trends (unlike microwave)
+\item Multiple long-term overlapping missions (AIRS, CrIS, IASI)
+\item AIRS, CrIS, IASI already agree to \textasciitilde{}0.1-0.3K and can be merged to 0.03K or better.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+
+
+\vspace{0.2in}
+\begin{large}
+Significant AIRS calibration drifts have \textbf{already} resulted publication of in-accurate data that were publicized by NASA/GSFC and the media (Washington Post, Scientific American).  \emph{This talk suggests how to make AIRS an accurate instrument for climate science.}
+\end{large}
+\end{frame}
+\end{document}

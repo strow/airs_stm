@@ -1,0 +1,73 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large AIRS Calibration for Climate Trend Studies: Status and Future
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 2019\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+
+* Calibration Requirements for Climate Science
+   :PROPERTIES:
+  :BEAMER_opt: shrink=30
+  :END:
+\vspace{-0.1in}
+#+LaTeX: \begin{large}
+- AIRS 17+ year record long enough to address key climate questions
+- Stability of radiometric calibration is key
+- AIRS sensitivity to \cd, SST, etc allows stringent tests of stability
+#+LaTeX: \end{large}
+\vspace{-0.2in}
+** Climate Science Questions 
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+\vspace{0.05in}
+/All require min ~0.1K/decade stability/
+\vspace{-0.05in}
+- Global Trending: T(z), \water(z), T_{surf}
+- Water vapor feedback (Does relative humidity vary)
+- Cloud feedback 
+- Trends in PBL cloud occurrence
+- OLR anomalies separated by cause: T/\water/cloud/surface, etc.
+
+** Hyperspectral IR Advantages
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+
+- AIRS senses both climate forcings, and responses
+- Clean separation of tropospheric vs stratospheric temperature trends (unlike microwave)
+- Multiple long-term overlapping missions (AIRS, CrIS, IASI)
+- AIRS, CrIS, IASI already agree to ~0.1-0.3K and can be merged to 0.03K or better. 
+
+
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\vspace{0.2in}
+#+LaTeX: \begin{large}
+Significant AIRS calibration drifts have \textbf{already} resulted publication of in-accurate data that were publicized by NASA/GSFC and the media (Washington Post, Scientific American).  /This talk suggests how to make AIRS an accurate instrument for climate science./
+#+LaTeX: \end{large}
