@@ -1,0 +1,49 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large Climate Hyperspectral InfraRed Product (CHIRP) Combining AIRS, CrIS, and IASI
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{Sept 25, 2019 \vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, Howard Motteler\inst{2}, Chris Hepplewhite\inst{2}, and Steven Buczkowski\inst{2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* A Climate Hyperspectral InfraRed Product (CHIRP) 
+  :PROPERTIES:
+  :BEAMER_opt: shrink=20
+  :END:
+\vspace{-0.1in}
+** Motivation
+- Provide climate-level radiance time series spanning AIRS + CrIS, IASI
+- User friendly by using a single spectral instrument line shape (ILS)
+- A high-stability 25+ year long record of climate forcings and response
+- Allows Level 2 retrievals to use a common Forward Model (RTA) and channel selection
+
+** Implementation
+- Convert AIRS (and IASI) to a slightly modified CrIS ILS 
+- Use satellite overlaps to adjust AIRS radiometry to SNPP CrIS (0.2-0.3K)
+- Three Levels of CHIRP Products:
+  - CHIRP L1c (all scenes converted for Level 2 retrievals)
+  - CHIRP L1 Gridded: 16 day, ~1 deg gridded radiance averages
+    - Likely most used product for climate research
+  - CHIRP L3 (geophysical) Anomalies
+    - T(z), \water(z), T_{surf}, etc retrievals derived from CHIRP L1 Gridded
+    - Quick to produce for frequent reprocessing
+    - Will use very minimal a-priori information
+
+* COMMENT prop
