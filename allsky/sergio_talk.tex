@@ -45,19 +45,33 @@
 \begin{frame}
   \frametitle{Overview of talk}
   \begin{itemize}
-  \item \textcolor{red}{Larrabee's talk shows we have establish high stability of AIRS(LW/MW)}
+  \item \textcolor{red}{Larrabee's talk establishes high stability of AIRS(LW/MW)}
   \begin{itemize}
     \item we used noise covariance based on <NedT> per latitude bin 
     \item instead of using SARTA jacobians for anomalies, we used kCARTA with latest spectroscopy
     (LBLRTM 12.8 for CO2,CH4), HITRAN 2016 for other gases, CKD 3.2
     \item plus we also know kCARTA jacobians work fine for any CO2/T combinations
+    \item Clear Sky scenes have very poor global sampling eg concentrated in Arabian Sea
+    \item (trace gases uniformly mixed so we retrieve those rates very well)
   \end{itemize}
   \item Using lessons learned from clear sky spectral anomaly and rate retrievals 
      we are now beginning to work with  allsky spectral anomalies and trends.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview of talk (cont'd)}
+  \begin{itemize}
   \item kCARTA can do very similar TwoSlab calcs to SARTA, so no problems using it for allsky
         T/WV/O3,surftemp jacobians; for this talk we use SARTA for cloud jacobians
-  \item In this talk we show zonally averaged anomalies
+  \item In this talk we work with zonally averaged anomalies
   \item Long term goal is gridded anomalies, and trends derived from those anomalies
+  \item We also plan to do an ``onion peeling'' where we use BT1231
+    observed and ERA surface temperaure to partition data into
+    clear/partly cloudy/very cloudy/DCC; start the retrievals with
+    clear and then move upwards (weighting the retrievals with nuber
+    of points)
+  \item Here we work only with AIRS for proof of principle, plan to do this with CHIRP
   \end{itemize}
 \end{frame}
 
@@ -560,7 +574,6 @@ X\begin{center}
 
 %%%%%
 
-\subsection{AllSky UMBC vs ERA vs L3 Anomalies}
 \begin{frame}{Tropical ERA AllSky Ocean Geophysical Anomalies}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
@@ -611,6 +624,32 @@ X\begin{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\section{Conclusions}
+\begin{frame}
+  \frametitle{Conclusions}
+  \begin{itemize}
+  \item Started to work with zonally averaged allsky spectra, rather problematic because of
+  \begin{itemize}
+    \item too much cloud variability across latitude bins, especially with large 2016 ENSO
+    \item on surface rather hard to sepearate low cloud from surface temparature
+  \end{itemize}
+  \item But using allsky spectral rates, we actually get 
+  \begin{itemize}
+    \item  decent trace gas rates; but not from anomalies (so we tie the trace gases to known ``trends'')
+    \item using either spectral rates or anomalies, we are obtaining ballpart T/WV/O3 trends
+    \item we see recognizable features in anomalies eg QBO in tropical latbins
+  \end{itemize}
+  \item Reminder : Long term goal is gridded anomalies, and trends derived from those anomalies
+  \item Reminder : Slowly working towards doing this with CHIRP
+
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{AllSky LAND/OCEAN}
 \subsection{AllSky LAND/OCEAN Rates}
 
@@ -653,7 +692,7 @@ Preliminary work
 %figure(9);  aslprint('/home/sergio/PAPERS/AIRS/airs_stm_sep19/allsky/Figs/CloudAnom/Desc/stemp_lat_rates_from_obs_specral_rates.pdf');
 %figure(10); aslprint('/home/sergio/PAPERS/AIRS/airs_stm_sep19/allsky/Figs/CloudAnom/Desc/cloudparam_lat_rates_from_obs_specral_rates.pdf')
 
-\begin{frame}{UMBC AllSky OCEAN Spectral Rates $\rightarrow$ AllSky Geophysical Rates}
+\begin{frame}{UMBC AllSky LAND/OCEAN Spectral Rates $\rightarrow$ AllSky Geophysical Rates}
 %% see /home/sergio/MATLABCODE/oem_pkg_run/AIRS_new_random_scan_August2019/Plotutils/plot_all_latbins_fewlays.m
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
@@ -704,7 +743,7 @@ Preliminary work
 
 %%%%%
 
-\begin{frame}{ERA AllSky OCEAN Rates $\rightarrow$ AllSky AK $\times$ Rates}
+\begin{frame}{ERA AllSky LAND/OCEAN Rates $\rightarrow$ AllSky AK $\times$ Rates}
 %% see /home/sergio/MATLABCODE/oem_pkg_run/AIRS_new_random_scan_August2019/Plotutils/compute_geo_rates_ak_fewlays.m}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
@@ -722,7 +761,7 @@ Preliminary work
 \begin{column}{0.45\columnwidth}
 \begin{block}{\footnotesize $frac$ dWV(z,t)/dt}
 \vspace{-0.1in}
-X\begin{center}
+\begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc/ak_x_ERAwvrates.png}
 \end{center}
 \end{block}
@@ -755,8 +794,7 @@ X\begin{center}
 
 %%%%%
 
-\subsection{AllSky UMBC vs ERA vs L3 Anomalies}
-\begin{frame}{Tropical ERA AllSky Land/Ocean Geophysical Anomalies}
+\begin{frame}{27 N AllSky Land/Ocean Retrieved Geophysical Anomalies}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
@@ -766,7 +804,7 @@ GAH
 \begin{block}{\footnotesize T(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_ptemp_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc/ntropic27N_umbc_cld_retr_obs_ptemp_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -775,7 +813,7 @@ GAH
 \begin{block}{\footnotesize $frac$ WV(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_wv_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc/ntropic27N_umbc_cld_retr_obs_wv_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -788,7 +826,7 @@ GAH
 \begin{block}{\footnotesize $frac$ O3(z,t)}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_o3_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc/ntropic27N_umbc_cld_retr_obs_o3_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
@@ -806,27 +844,3 @@ GAH
 \end{frame}
 
 %%%%%
-
-\section{Conclusions}
-\begin{frame}
-  \frametitle{Conclusions}
-  \begin{itemize}
-  \item Using lessons learned from clear sky spectral anomaly and rate retrievals (see Larrabee's talk), 
-        we are now beginning to work with  allsky spectral anomalies and trends.
-  \item Started to work with zonally averaged allsky spectra, rather problematic because of
-  \begin{itemize}
-    \item too much cloud variability across latitude bins, especially with large 2016 ENSO
-    \item on surface rather hard to seearate low cloud from surface temparature
-  \end{itemize}
-  \item But using allsky spectral rates, we actually get 
-  \begin{itemize}
-    \item  decent trace gas rates; but not from anomalies (so we tie the trace gases to known ``trends'')
-    \item using either spectral rates or anomalies, we are obtaining ballpart T/WV/O3 trends
-    \item we see recognizable features in anomalies eg QBO in tropical latbins
-  \end{itemize}
-  \item Reminder : Long term goal is gridded anomalies, and trends derived from those anomalies
-  \end{itemize}
-\end{frame}
-
-\end{document}
-
