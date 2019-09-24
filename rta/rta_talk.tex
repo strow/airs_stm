@@ -21,7 +21,7 @@
  Radiatie Transfer Algorithms }
 \subtitle{\footnotesize{AIRS Science Team Meeting}}
 \date{\vspace{0.1in}\footnotesize{September 25, 2019 \vfill}}
-\author{C. L. Hepplewhite\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, L. Larrabee Strow\inst{1,2}\inst{1,2}}
+\author{C. L. Hepplewhite\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, L. Larrabee Strow\inst{1,2}}
 \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
 \input beamer_setup
 \usetheme{metropolis}
@@ -61,10 +61,10 @@
   \frametitle{Status - 1}
   \begin{itemize}
   \item kCARTA calculations of layer-to-space optical depths for all parameters for the 49 and 703 SAF regression profiles for AIRS\_L1C, CrIS FSR and IASI are complete. 
-  \item The kCARTA products are based on HITRAN 2016 \& LBLRTM12.8 CO2,CH4 line mixing.
-  \item The kCARTA used to generate TOA radiances to compare directly with SARTA for validation.
-  \item Updated version of AIRS using L1C channel set with SRFs referenced to 10Sep-2010 drift corrected. 
-  \item AIRS\_L1C and IASI SARTA released May and June this year.
+  \item AIRS\_L1C and IASI SARTA update was released May and June this year.
+  \item Updated version of AIRS using L1C channel set with SRFs referenced to 10-Sep-2010 drift corrected. 
+  \item Spectroscopy based on HITRAN 2016 \& LBLRTM12.8 CO2,CH4 line mixing.
+  \item The kCARTA ias used to generate TOA radiances to compare directly with SARTA for validation.
   \item CrIS FSR SARTA update for 2019 currently in work.
   
   \end{itemize}
@@ -74,11 +74,10 @@
 \begin{frame}
   \frametitle{Status - 2}
   \begin{itemize}
-  \item The 2019 AIRS\_L1C and IASI RTA include the fixed gases, and variable O3, H2O, CO2, CH4, HNO3, N2O, SO2, NH3, the nonLTE and improved reflected surface thermal. 
-  \item Have started working on HDO regression.
-  \item 
-  \item 
-  \item 
+  \item The 2019 SARTAs include the fixed gases, and variable O3, H2O, CO2, CH4, HNO3, N2O, SO2, NH3, the nonLTE and improved reflected surface thermal. 
+  \item The new SARTA includes hooks to HDO algorithm, the computation is turned off.
+  \item HDO regression is in progress, regression residuals up to 10\% rms. DIfferent method required for MW than for SW bands. Method based on depletion relative to standard abundance.
+  \item To start on SARTA for CHIRP in due course.
     
   \end{itemize}
 \end{frame}
@@ -145,10 +144,10 @@
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Results - AIRS\_L1C}
+  \frametitle{Results - AIRS\_L1C Mean \& Std. Dev vs angle}
 
   \begin{center}
-    \includegraphics[width=0.9\linewidth]{./Figs/Pdf/kc_sar_airs_l1c_mean_stdv_sfc_emiss_vs_angle.pdf}
+    \includegraphics[width=0.9\linewidth]{./Figs/Pdf/kc_sar_airs_l1c_mean_stdv_emiss_vs_angle_v2.pdf}
   \end{center}
   
   \end{frame}

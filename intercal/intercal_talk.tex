@@ -62,12 +62,17 @@
 \begin{frame}
   \frametitle{The Climate Hyperspectral Infra-red Radiance Product}
   \begin{itemize}
-  \item Spectrally equivalent to CrIS in medium resolution - which for the CrIS sub-bands relates to 0.8/0.6/0.4cm OPD (LW/MW/SW resp.)
+  \item Spectrally equivalent to CrIS in medium resolution (MSR)
+    \begin{itemize}
+    \item MSR = 0.8/0.6/0.4 cm OPD (LW/MW/SW resp.)
+    \item FSR = 0.8/0.8/0.8 cm OPD
+    \item NSR = 0.8/0.4/0.2 cm OPD
+    \end{itemize}
+    
   \item The total number of channels available to use depends on the overlap of the parent sensor, for example AIRS L1C with 2645 channels to the CrIS MSR with 1683 with two guard channels per band edge.
   \item Covers the time period from AIRS L1C data availability (Sep 2002) to the present, with a transition from AIRS to CrIS proposed on Sep 2016.
-  \item Operational overlap between sensors is now considerable: AIRS:CrIS Since 2012, AIRS:IASI from 2007 etc.
-  \item The AIRS L1C currently includes cleaned and filled channels, the CHIRP will use drift corrected AIRS spectral radiance.
-    
+      \item After the transition date (Sep 2016) CrIS-NPP L1C data have been available in FSR resolution and therefore the translation to the MSR grid is straightforward and carrying quality data to CHIRP simpler.
+
   \end{itemize}
 \end{frame}
 
@@ -75,11 +80,12 @@
 \begin{frame}
   \frametitle{The CHIRP cont.}
   \begin{itemize}
+   \item Operational overlap between sensors is now considerable: AIRS:CrIS Since 2012, AIRS:IASI from 2007 etc.
+  \item The AIRS L1C currently includes cleaned and filled channels, the CHIRP will use drift corrected AIRS spectral radiance.
   \item CHIRP channels will carry the AIRS L1C noise, quality flag and L1C processing information (up to the transition date).
-    \item CHIRP will have the same stability characteristucs as the parent sensor (AIRS before and CrIS after the transition date).
-  \item Each CHIRP channel has information from close neighbor parent AIRS channels (through the deconvolution/translation algorithm) so quality information will be weighted accordingly.
-  \item The AIRS fill channels are used and the corresponding CHIRP channels retained  but will be flagged for the user. (See below for more details).
-  \item After the transition date (Sep 2016) CrIS-NPP L1C data have been available in FSR (0.8/0.8/0.8cm LW/MW/SW OPD) resolution and therefore the translation to the MSR grid is straightforward and carrying quality data to CHIRP simpler.
+    \item CHIRP will have the same stability characteristics as the parent sensor (AIRS before and CrIS after the transition date).
+  \item The AIRS fill channels are used and the corresponding CHIRP channels retained but will be flagged for the user. (Refer to accompanying talk).
+
   \end{itemize}
 \end{frame}
 
@@ -89,17 +95,18 @@
   \frametitle{SNO and Global Random Data Sets}
   \begin{itemize}
   \item Simultaneous nadir overpass (SNO) sets of observations have been accumulated for each pair of sensors: AIRS\&CrIS (NPP and N20),  AIRS\&IASI (MetOp-A and B), CrIS\&IASI (two sets).
-  \item SNOs are best for precise intercomparison but are weighted to high latitudes.
-  \item Global random observations are available for several years. Not restricted to field of view/regard, year long statistics (to capture all scene types) and corrected for mean view angle differences.
+  \item SNOs by definition are very closely paired observations but are weighted to high latitudes.
+  \item Global random observations are available for several years, include all view angles, capture all scene types,  and must be corrected for mean view angle differences.
   \item Global random sets are sampled so that equal areas have equal numbers of observations (uniformly weighted with latitude).
+    \item Best estimates of sensor offsets are derived from SNOs and global random sets.
   \end{itemize}
 \end{frame}
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Recap SNOs}
+  \frametitle{Different Coverage}
   \begin{itemize}
-  \item SNOs availability is dependent upon the relationship between the orbits of the two spacecraft. AIRS\&Cris SNOs and IASI\&CrIS SNOs are distributed as shown here:
+  \item SNOs availability is dependent upon the relationship between the orbits of the two spacecraft. AIRS\&Cris SNOs IASI\&CrIS SNOs are distributed as shown here:
   \end{itemize}
 
   \begin{center}
@@ -110,7 +117,7 @@
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Recap SNOs 2}
+  \frametitle{Different Samples}
   \begin{itemize}
   \item The different data sets cover slightly different ranges of scenes: more evident in the window channels than optically thick channels.
   \end{itemize}
