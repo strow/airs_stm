@@ -1,4 +1,4 @@
-% Created 2019-09-23 Mon 23:19
+% Created 2019-09-25 Wed 07:52
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,t]{beamer}
 \usepackage[utf8]{inputenc}
@@ -29,6 +29,13 @@
 \tolerance=1000
 \RequirePackage{fancyvrb}
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+\hypersetup{
+ pdfauthor={L. Larrabee Strow},
+ pdftitle={\large AIRS Calibration for Climate Trend Studies: Status and Future},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
+ pdflang={English}}
 \begin{document}
 
 \maketitle
@@ -40,7 +47,7 @@
 }
 
 
-\begin{frame}[label={sec:orge26c686},shrink=30]{Calibration Requirements for Climate Science}
+\begin{frame}[label={sec:org192bf2c},shrink=30]{Calibration Requirements for Climate Science}
 \vspace{-0.1in}
 \begin{large}
 \begin{itemize}
@@ -86,7 +93,7 @@ Significant AIRS calibration drifts have \textbf{already} resulted publication o
 \end{large}
 \end{frame}
 
-\begin{frame}[label={sec:org8b71b96},shrink=20]{Weather versus Climate Research}
+\begin{frame}[label={sec:orgf059657},shrink=20]{Weather versus Climate Research}
 \begin{block}{Weather Applications}
 \begin{itemize}
 \item Both 1Dvar retrievals and data assimilation \emph{require} bias removal
@@ -113,7 +120,7 @@ Hyperspectral IR instrument stability appears to be 1-2 orders of magnitude bett
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orga98e52c},shrink=5]{Climate Product Characteristics}
+\begin{frame}[label={sec:org061aadb},shrink=5]{Climate Product Characteristics}
 \begin{block}{Uncertainty Estimates}
 \begin{itemize}
 \item If we provide something unique, validation will be difficult
@@ -133,7 +140,7 @@ There is a long history of controversies in climate measurements (esp. microwave
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org87bc820}]{AIRS Stability Calibration: An Approach}
+\begin{frame}[label={sec:org3519070}]{AIRS Stability Calibration: An Approach}
 \begin{itemize}
 \item External standards needed to establish stability
 \item \cd and possibly \nitrous and \methane can provide those standards
@@ -153,7 +160,7 @@ Essentially you need to perform climate-level retrievals to test the capabilitie
 A \emph{key} requirement is the need to reprocess the \emph{full record} many times.  NOT possible with Level 2 approach!  Need \textbf{fast} alternatives that may also address issues of reproducibility.
 \end{frame}
 
-\begin{frame}[label={sec:orgbc9f3c2},shrink=20]{Characteristics of AIRS Data Sets Used Here}
+\begin{frame}[label={sec:orged789e2},shrink=20]{Characteristics of AIRS Data Sets Used Here}
 \begin{itemize}
 \item Subsequent results use either:
 \begin{enumerate}
@@ -180,7 +187,7 @@ A \emph{key} requirement is the need to reprocess the \emph{full record} many ti
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgbce5e15}]{AIRS All-Sky Global 16-Year B(T) Trends}
+\begin{frame}[label={sec:org6583852}]{AIRS All-Sky Global 16-Year B(T) Trends}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -232,7 +239,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orge78f532}]{\cd and \methane Trends Removed, Fitted Chans Only}
+\begin{frame}[label={sec:orga664b2b}]{\cd and \methane Trends Removed, Fitted Chans Only}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -265,7 +272,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{small}
 \end{frame}
 
-\begin{frame}[label={sec:orgc9dcc68}]{\small Switch to Clear Ocean Time Series: \cd Anomaly Fit for 20\textdegree{} N. (MLO)}
+\begin{frame}[label={sec:org09faf44}]{\small Switch to Clear Ocean Time Series: \cd Anomaly Fit for 20\textdegree{} N. (MLO)}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -294,7 +301,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgcc0ebe8}]{\cd Anomaly Converted to B(T) Trends}
+\begin{frame}[label={sec:org5860624}]{\cd Anomaly Converted to B(T) Trends}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
@@ -312,7 +319,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{frame}
 
 
-\begin{frame}[label={sec:org19445da}]{Other \cd Diagnostics}
+\begin{frame}[label={sec:org0d9bc5d}]{Other \cd Diagnostics}
 \vspace{-0.35in}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -360,7 +367,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgda3882b}]{\nitrous Retrieved Anomalies}
+\begin{frame}[label={sec:orge5809ab}]{\nitrous Retrieved Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/n2o_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
@@ -376,7 +383,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orga13fbe5}]{\methane Retrieved Anomalies}
+\begin{frame}[label={sec:orgb3ea1c8}]{\methane Retrieved Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_with_dbt.pdf}
 \end{center}
@@ -390,7 +397,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd4f41f5}]{\methane Growth Rate Anomalies}
+\begin{frame}[label={sec:orgb389685}]{\methane Growth Rate Anomalies}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/ch4_airs_vs_esrl_global_growth_anom.pdf}
 \end{center}
@@ -404,7 +411,7 @@ Note sparsity of \cd channels in tropospheric sounding region\\
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc33163f}]{Unlike Retrievals We'd Like to Examine Many Channels}
+\begin{frame}[label={sec:org26a7784}]{Unlike Retrievals We'd Like to Examine Many Channels}
 \vspace{-0.3in}
 
 \begin{columns}
@@ -454,7 +461,7 @@ But, need to remove effects in wings
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org421ec84}]{Fit to AIRS CFC-11 for Removal in Fit Residuals}
+\begin{frame}[label={sec:orgdb20ab5}]{Fit to AIRS CFC-11 for Removal in Fit Residuals}
 \vspace{-0.3in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -487,7 +494,7 @@ But, need to remove effects in wings
 \end{itemize}
 \end{footnotesize}
 \end{frame}
-\begin{frame}[label={sec:org89b3cbb}]{SST Retrieved from Anomaly Fits}
+\begin{frame}[label={sec:org6ebc154}]{SST Retrieved from Anomaly Fits}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/co2_anom_sst_vs_oisst_clear_sampled_and_era.pdf}
 \end{center}
@@ -500,7 +507,7 @@ But, need to remove effects in wings
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org7d021c3}]{OE Fit Residuals:  Main Diagnostic of Trends}
+\begin{frame}[label={sec:org79ecc5e}]{OE Fit Residuals:  Main Diagnostic of Trends}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Png/best_co2_anom_resid.png}
@@ -519,7 +526,7 @@ But, need to remove effects in wings
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orga34d887}]{Zoom of Residual w/o Shortwave}
+\begin{frame}[label={sec:org838d050}]{Zoom of Residual w/o Shortwave}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{./Figs/Png/best_co2_anom_resid_no_sw.png}
 \end{center}
@@ -530,7 +537,7 @@ But, need to remove effects in wings
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org14a943c}]{Deep Convective Cloud Time Series}
+\begin{frame}[label={sec:org3a5ad85}]{Deep Convective Cloud Time Series}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -560,7 +567,7 @@ But, need to remove effects in wings
 \item Consistent with Space Look getting colder
 \item Back of the envelope: 
 \begin{itemize}
-\item at 210K dBT/dyr = 0.47K/ for 2616 \wn
+\item at 210K d(BT)/d(yr) = 0.47K/yr for 2616 \wn
 \item at 300K equivalent to 0.0045K/year!
 \item at 255/265K (Arctic) equivalent to 0.30/0.19 K/decade
 \end{itemize}
@@ -569,7 +576,7 @@ But, need to remove effects in wings
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org7365180}]{Sample Fit Residual Time Series}
+\begin{frame}[label={sec:org71c5196}]{Sample Fit Residual Time Series}
 \vspace{-0.35in}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -617,7 +624,7 @@ But, need to remove effects in wings
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2489db7}]{Summary}
+\begin{frame}[label={sec:orgbee904e}]{Summary}
 \begin{itemize}
 \item Validate OE retrieval products (done above)
 \item Adjust channel "event" offsets
@@ -635,7 +642,7 @@ But, need to remove effects in wings
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orga863315}]{SW Fit Residual Trends: Impact on Warming Estimates}
+\begin{frame}[label={sec:org2ada063}]{SW Fit Residual Trends: Impact on Warming Estimates}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{block}{}
@@ -670,7 +677,7 @@ Shortwave drift correction reduces AIRS global temperature trend by 33\% and bri
 \vspace{-0.1in}
 \end{frame}
 
-\begin{frame}[label={sec:org540bbdf}]{Latitude Dependence Surface Trends}
+\begin{frame}[label={sec:org564d78e}]{Latitude Dependence Surface Trends}
 \vspace{-0.35in}
 \begin{columns}
 \begin{column}{0.55\columnwidth}
@@ -712,7 +719,24 @@ But what about the S. Pole??  2616 should be higher?
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:orgfb56a29}]{Trends in AIRS Blackbody Scans (Courtesy Ken Overroye)}
+\begin{frame}[label={sec:orgacff5db}]{We Need to Get This Right!}
+\begin{block}{Washington Post Quotes on Susskind Paper}
+\vspace{0.2in}
+“We may actually have been underestimating how much warmer [the Arctic’s]
+been getting,” said Gavin Schmidt, who directs NASA’s Goddard Institute for
+Space Studies, which keeps the temperature data, and who was a co-author of
+the new study released in Environmental Research Letters.
+
+Notably, AIRS sometimes shows more warming than the NASA data set, and
+especially does so in the Arctic, a region where measurements are scarce
+and warming is fastest. Shockingly, it even finds that over the Barents and
+Kara seas in the Arctic, the warming trend is at a rate of 2.5 degrees
+Celsius — or 4.5 degrees Fahrenheit — per decade.
+\end{block}
+\end{frame}
+
+
+\begin{frame}[label={sec:org578b578}]{Trends in AIRS Blackbody Scans (Courtesy Ken Overroye)}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{./Figs/Pdf/overroye_scan.pdf}
@@ -726,7 +750,7 @@ But what about the S. Pole??  2616 should be higher?
 \end{small}
 \end{frame}
 
-\begin{frame}[label={sec:orgd095c45},shrink=20]{Quick Look at Fast T\textsubscript{surface} Algorithms}
+\begin{frame}[label={sec:org3ee2f9f},shrink=20]{Quick Look at Fast T\textsubscript{surface} Algorithms}
 \begin{itemize}
 \item Want to examine sensitivity to L1c adjustments \alert{quickly}
 \item Examine channels separately
@@ -753,7 +777,7 @@ But what about the S. Pole??  2616 should be higher?
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgbae84f2}]{Surface T Trends Using 1231 \wn Channel}
+\begin{frame}[label={sec:orgfc6419d}]{Surface T Trends Using 1231 \wn Channel}
 \vspace{-0.35in}
 
 \begin{columns}
@@ -798,7 +822,7 @@ But what about the S. Pole??  2616 should be higher?
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org1355945}]{SST Trends of Previous Mapped Data (1231 \wn only)}
+\begin{frame}[label={sec:orgf1f02b5}]{SST Trends of Previous Mapped Data (1231 \wn only)}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{./Figs/Pdf/zonal_sst_trends_12311_vs_oisst_ersst5_hottest_per_grid_envelope.pdf}
 \end{center}
@@ -814,13 +838,13 @@ Results appear to be quite good!
 \end{footnotesize}
 \end{frame}
 
-\begin{frame}[label={sec:org286d8ac}]{Conclusions}
+\begin{frame}[label={sec:org65773c4}]{Conclusions}
 \begin{itemize}
 \item We have a tremendous instrument, with a very stable blackbody reference
 \item But, small thermal shifts in the grating system produce BT trends that can vary with channel
 \item Cold (space look) measurements appear to be the culprit?
 \item The approach to fixing these problems seems doable, but will require a significant effort
-\item Most climate questions can be answered if the radiometric trends are fixed
+\item Important climate questions can be answered if the radiometric trends are fixed
 \item Better absolute radiometry will not impact most science we need to do, it's already quite good!
 \item This works needs to be done now before Level 2 is used too much for climate research!
 \end{itemize}

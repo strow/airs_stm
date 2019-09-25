@@ -496,7 +496,7 @@ But, need to remove effects in wings
 - Shortwave drift 2004-2012
 - Consistent with Space Look getting colder 
 - Back of the envelope: 
-  - at 210K dBT/dyr = 0.47K/ for 2616 \wn
+  - at 210K d(BT)/d(yr) = 0.47K/yr for 2616 \wn
   - at 300K equivalent to 0.0045K/year!
   - at 255/265K (Arctic) equivalent to 0.30/0.19 K/decade
 
@@ -633,6 +633,22 @@ Why is UMBC-2616 not higher?
 But what about the S. Pole??  2616 should be higher?
 #+LaTeX: \end{footnotesize}
 
+* We Need to Get This Right!
+
+** Washington Post Quotes on Susskind Paper
+\vspace{0.2in}
+“We may actually have been underestimating how much warmer [the Arctic’s]
+been getting,” said Gavin Schmidt, who directs NASA’s Goddard Institute for
+Space Studies, which keeps the temperature data, and who was a co-author of
+the new study released in Environmental Research Letters.
+
+Notably, AIRS sometimes shows more warming than the NASA data set, and
+especially does so in the Arctic, a region where measurements are scarce
+and warming is fastest. Shockingly, it even finds that over the Barents and
+Kara seas in the Arctic, the warming trend is at a rate of 2.5 degrees
+Celsius — or 4.5 degrees Fahrenheit — per decade.
+
+
 * Trends in AIRS Blackbody Scans (Courtesy Ken Overroye)
 \vspace{-0.1in}
 #+ATTR_LATEX: :width 0.8\linewidth
@@ -724,9 +740,9 @@ Results appear to be quite good!
 
 - We have a tremendous instrument, with a very stable blackbody reference
 - But, small thermal shifts in the grating system produce BT trends that can vary with channel
-- Cold (space look) measurements appear to be the culprit?
+- Cold (space look) measurements appear to be the culprit? 
 - The approach to fixing these problems seems doable, but will require a significant effort
-- Most climate questions can be answered if the radiometric trends are fixed
+- Important climate questions can be answered if the radiometric trends are fixed
 - Better absolute radiometry will not impact most science we need to do, it's already quite good!
 - This works needs to be done now before Level 2 is used too much for climate research!
 
