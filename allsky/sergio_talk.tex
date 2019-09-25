@@ -41,7 +41,6 @@
   \setlength{\partopsep}{2pt}
 }
 
-
 %anom_noise = load('btn_avg.mat');
 %load /home/sbuczko1/git/rtp_prod2/airs/static/f_default_l1c.mat
 %plot(f,squeeze(anom_noise.btn_avg(20,:,:))')
@@ -52,8 +51,8 @@
   \begin{itemize}
   \item \textcolor{red}{Larrabee's talk establishes high stability of AIRS(LW/MW)}
   \begin{itemize}
-    \item we used noise covariance based
- on <NedT> per latitude bin 
+    \item we used noise covariance based on <NedT> per latitude bin \newline 
+     ($\le$ 0.001 K at 1231 \wn, tropical latbins) 
     \item instead of using SARTA jacobians for anomalies, we used kCARTA with latest spectroscopy
     (LBLRTM 12.8 for CO2,CH4), HITRAN 2016 for other gases, CKD 3.2
     \item plus we also know kCARTA jacobians work fine for any CO2/T combinations
@@ -437,9 +436,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{AllSky OCEAN}
-\subsection{AllSky OCEAN Rates}
+\subsection{AllSky spectra over ocean $\rightarrow$ geophysical rates}
 
-\begin{frame}{Geophysical rates from spectral rates (contd)}
+\begin{frame}{Trace gas + stemp rates from spectral rates}
 \vspace{-0.3in}
 
 \begin{columns}
@@ -478,23 +477,51 @@ Preliminary work
 %figure(9);  aslprint('/home/sergio/PAPERS/AIRS/airs_stm_sep19/allsky/Figs/CloudAnom/Desc_ocean/stemp_lat_rates_from_obs_specral_rates.pdf');
 %figure(10); aslprint('/home/sergio/PAPERS/AIRS/airs_stm_sep19/allsky/Figs/CloudAnom/Desc_ocean/cloudparam_lat_rates_from_obs_specral_rates.pdf')
 
-\begin{frame}{UMBC AllSky OCEAN Spectral Rates $\rightarrow$ AllSky Geophysical Rates}
 %% see /home/sergio/MATLABCODE/oem_pkg_run/AIRS_new_random_scan_August2019/Plotutils/plot_all_latbins_fewlays.m
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\begin{frame}{Comparing ERA versus UMBC AllSky Geophysical Rates : dT(z,lat)/dt}
 \vspace{-0.35in}
 
 \begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize dT(z,t)/dt}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ak_x_ERAtzrates.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.55\columnwidth}
+%\begin{block}{\footnotesize Cloud param rates}
+\begin{block}{\footnotesize UMBC}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/tz_lat_p_rates_from_obs_specral_rates.png}
 \end{center}
 \end{block}
 \end{column}
+\end{columns}
 
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ dWV(z,t)/dt}
+\end{frame}
+
+%%%%%
+\begin{frame}{Comparing ERA versus UMBC AllSky Geophysical Rates : dWV(z,lat)/dt}
+\vspace{-0.35in}
+
+\begin{columns}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ak_x_ERAwvrates.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.55\columnwidth}
+%\begin{block}{\footnotesize Cloud param rates}
+\begin{block}{\footnotesize UMBC}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/wv_lat_p_rates_from_obs_specral_rates.png}
@@ -503,62 +530,15 @@ Preliminary work
 \end{column}
 \end{columns}
 
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ dO3(z,t)/dt}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/o3_lat_p_rates_from_obs_specral_rates.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/CloudAnom/umbc_clr_retr_obs_stemp_rate_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
 \end{frame}
 
 %%%%%
-
-\begin{frame}{ERA AllSky OCEAN Rates $\rightarrow$ AllSky AK $\times$ Rates}
-%% see /home/sergio/MATLABCODE/oem_pkg_run/AIRS_new_random_scan_August2019/Plotutils/compute_geo_rates_ak_fewlays.m}
-%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\begin{frame}{Comparing ERA versus UMBC AllSky Geophysical Rates : dO3(z,lat)/dt}
 \vspace{-0.35in}
 
 \begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize dT(z,t)/dt}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ak_x_ERAtzrates.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ dWV(z,t)/dt}
-\vspace{-0.1in}
-X\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ak_x_ERAwvrates.png}
-\end{center}
-\end{block}
-\end{column}
-\end{columns}
-
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ dO3(z,t)/dt}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\footnotesize ERA}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ak_x_ERAo3rates.png}
@@ -566,86 +546,68 @@ X\begin{center}
 \end{block}
 \end{column}
 
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/CloudAnom/umbc_clr_retr_obs_stemp_rate_200209_201808.png}
-%\end{center}
-%\end{block}
-
+\begin{column}{0.55\columnwidth}
+%\begin{block}{\footnotesize Cloud param rates}
+\begin{block}{\footnotesize UMBC}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/o3_lat_p_rates_from_obs_specral_rates.png}
+\end{center}
+\end{block}
 \end{column}
 \end{columns}
+
 \end{frame}
 
 %%%%%
+%%%%%
 
-\begin{frame}{Tropical ERA AllSky Ocean Geophysical Anomalies}
+\begin{frame}{27 N AllSky Ocean Geophysical Anomalies : T(z,t)}
 %% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
 \vspace{-0.35in}
 
+
 \begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\footnotesize ERA}
 \vspace{-0.1in}
 \begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_ptemp_anom_200209_201808.png}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropics27_era_cld_ptemp_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
 
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_wv_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-\end{columns}
-
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean_orig/era_cld_o3_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/CloudAnom/era_cld_stemp_anom_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{27 N AllSky Ocean Retrieved Geophysical Anomalies}
-%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
-\vspace{-0.35in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize T(z,t)}
+\begin{column}{0.55\columnwidth}
+%\begin{block}{\footnotesize Cloud param rates}
+\begin{block}{\footnotesize UMBC}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_ptemp_anom_200209_201808.png}
 \end{center}
 \end{block}
 \end{column}
+\end{columns}
 
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ WV(z,t)}
+\end{frame}
+
+\begin{frame}{27 N AllSky Ocean Geophysical Anomalies : WV(z,t)}
+%% see /home/sergio/MATLABCODE/oem_pkg_run_sergio_AuxJacs/MakeProfs/plot_anomalies.m
+\vspace{-0.35in}
+
+
+\begin{columns}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\footnotesize ERA}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropics27_era_cld_wv_anom_200209_201808.png}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.55\columnwidth}
+%\begin{block}{\footnotesize Cloud param rates}
+\begin{block}{\footnotesize UMBC}
 \vspace{-0.1in}
 \begin{center}
 \includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_wv_anom_200209_201808.png}
@@ -654,30 +616,7 @@ X\begin{center}
 \end{column}
 \end{columns}
 
-\vspace{-0.25in}
-
-\begin{columns}
-\begin{column}{0.45\columnwidth}
-\begin{block}{\footnotesize $frac$ O3(z,t)}
-\vspace{-0.1in}
-\begin{center}
-\includegraphics[width=\linewidth]{Figs/CloudAnom/Desc_ocean/ntropic27N_umbc_cld_retr_obs_o3_anom_200209_201808.png}
-\end{center}
-\end{block}
-\end{column}
-
-\begin{column}{0.45\columnwidth}
-%\begin{block}{\footnotesize Another Small Title}
-%\vspace{-0.1in}
-%\begin{center}
-%\includegraphics[width=\linewidth]{{Figs/CloudAnom/era_cld_stemp_anom_200209_201808.png}
-%\end{center}
-%\end{block}
-
-\end{column}
-\end{columns}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
