@@ -18,7 +18,7 @@
 \author{L. Larrabee Strow}
 \date{\today}
 \title{\large The AIRS/CrIS/IASI (and CHIRP) \newline
- Radiatie Transfer Algorithms }
+ Radiative Transfer Algorithms }
 \subtitle{\footnotesize{AIRS Science Team Meeting}}
 \date{\vspace{0.1in}\footnotesize{September 25, 2019 \vfill}}
 \author{C. L. Hepplewhite\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, L. Larrabee Strow\inst{1,2}}
@@ -64,7 +64,7 @@
   \item AIRS\_L1C and IASI SARTA update was released May and June this year.
   \item Updated version of AIRS using L1C channel set with SRFs referenced to 10-Sep-2010 drift corrected. 
   \item Spectroscopy based on HITRAN 2016 \& LBLRTM12.8 CO2,CH4 line mixing.
-  \item The kCARTA ias used to generate TOA radiances to compare directly with SARTA for validation.
+  \item The kCARTA is used to generate TOA radiances to compare directly with SARTA for validation.
   \item CrIS FSR SARTA update for 2019 currently in work.
   
   \end{itemize}
@@ -74,20 +74,33 @@
 \begin{frame}
   \frametitle{Status - 2}
   \begin{itemize}
-  \item The 2019 SARTAs include the fixed gases, and variable O3, H2O, CO2, CH4, HNO3, N2O, SO2, NH3, the nonLTE and improved reflected surface thermal. 
-  \item The new SARTA includes hooks to HDO algorithm, the computation is turned off.
-  \item HDO regression is in progress, regression residuals up to 10\% rms. DIfferent method required for MW than for SW bands. Method based on depletion relative to standard abundance.
-  \item To start on SARTA for CHIRP in due course.
-    \begin{itemize}
-    \item Build Matrix
-    \item CrIS NSR HITRAN2012
-    \item CrIS FSR HITRAN2012
-    \item AIRS L1B HITRAN2008
-    \item AIRS\_L1C HITRAN2016
-    \item IASI HITRAN2016
-    \end{itemize}
-    
+  \item The 2019 SARTA's include the fixed gases, variable \ozone, \water, \cd, \methane, HNO$_3$, \nitrous, SO$_2$, NH$_3$, nonLTE and improved reflected surface thermal. 
+  \item AIRS L1c SARTA includes hooks for HDO ($\delta D$), the computation is turned off.
+  \item HDO  regression is in progress, regression residuals give $\sim$ 10\% rms, but we think we know how to improve.  What is needed?
+  \item SARTA creation for CHIRP will start soon.
   \end{itemize}
+\begin{footnotesize}
+\vspace{0.1in}
+\begin{tabular}{lll}
+  \textbf{SARTA Versions} & & \\
+  CrIS NSR & HITRAN 2012 & Retired \\
+  CrIS FSR & HITRAN 2012 & Will update\\
+  AIRS L1b & HITRAN 2008 & Retired \\
+  IASI     & HITRAN 2016 & Enhanced SW Continuum\\
+  AIRS L1c & HITRAN 2016 & Enhanced SW Continuum \\
+  CHIRP    & will be HITRAN 2016 & Enhanced SW Continuum
+\end{tabular}
+\end{footnotesize}
+%  \begin{itemize}
+    % \item Build Matrix
+    % \item CrIS NSR HITRAN2012
+    % \item CrIS FSR HITRAN2012
+    % \item AIRS L1B HITRAN2008
+    % \item AIRS\_L1C HITRAN2016
+    % \item IASI HITRAN2016
+    % \end{itemize}
+  
+
 \end{frame}
 
 % ---------------------------------------------------------------------
@@ -143,11 +156,13 @@
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{IASI - error correlation}
+  \frametitle{IASI:  Parameterization Error Correlations}
   \begin{center}
-    \includegraphics[width=0.9\linewidth]{./Figs/Png/plot1.png}
+    \includegraphics[width=0.8\linewidth]{./Figs/Png/plot1.png}
   \end{center}
-      
+
+This does not include correlations due to spectroscopy errors.
+  
  \end{frame}
 
 % ---------------------------------------------------------------------
@@ -161,7 +176,7 @@
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{AIRS - error correlation}
+  \frametitle{AIRS:  Parameterization Error Correlations}
   \begin{center}
     \includegraphics[width=0.9\linewidth]{./Figs/Png/plot6_wavenumber_sorted.png}
   \end{center}
@@ -170,7 +185,7 @@
 
 % ---------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Results - AIRS\_L1C Mean \& Std. Dev vs angle}
+  \frametitle{AIRS\_L1C Mean \& Std. Dev Errors vs angle}
 
   \begin{center}
     \includegraphics[width=0.9\linewidth]{./Figs/Pdf/kc_sar_airs_l1c_mean_stdv_emiss_vs_angle_v2.pdf}
@@ -178,8 +193,89 @@
   
   \end{frame}
 
-% ---------------------------------------------------------------------
-%\section{Plans}
+
+  \begin{frame}
+    \frametitle{Standard Deviations}
+    \begin{itemize}
+    \item Std. deviations are over 49 fitting profiles and 6 secant angles
+    \item The fitting profiles span global variability very nicely
+    \item Std. Dev. will be smaller with a global average profile data set
+    \end{itemize}
+  \end{frame}
+
+\begin{frame}{New Spectroscopy (other than HITRAN)}
+\begin{block}{New Shortwave Continuum (Hartmann)}
+\begin{itemize}
+\item Important new physics, \nitrogen-\water and \cd-\water continuum
+\item Affects temperature sounding region
+\item Existing RTAs have dependence on \water wrong!  Either using quadratic on none.
+\item Hartmann has published these improvements (GRL 2018)
+\item We have partially validated them and included them in new RTA
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org3f23098}]{New Continuum Characteristics}
+\begin{columns}
+\begin{column}{0.55\columnwidth}
+\begin{block}{\small \(\Delta\) B(T) a 2400 \wn vs column water}
+\begin{center}
+\includegraphics[width=\linewidth]{./Figsh/co2_wat_n2_wat_2400_cm_vs_mmw.pdf}
+\end{center}
+\end{block}
+\end{column}
+
+\begin{column}{0.55\columnwidth}
+\begin{block}{\small Spectral effects for 20 cm water}
+\begin{center}
+\includegraphics[width=\linewidth]{./Figsh/co2_wat_n2_wat_spectrum_mean_fitting.pdf}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions}
+  \begin{itemize}
+  \item SARTA AIRS L1c delivered
+  \item But, might be better to just jump to CHIRP radiances and CHIRP RTA??
+  \item Hope to finalize HDO soon, but would like input on accuracy needs
+  \item Will be doing more validation on Hartman continuum, quick look very encouraging
+  \end{itemize}
+\end{frame}
+
+
+% \begin{frame}[label={sec:org3861167}]{\nitrogen-\water and \cd-\water continuum: Sonde Validation}
+% \vspace{-0.2in}
+% \begin{columns}
+% \begin{column}{0.55\columnwidth}
+% \begin{block}{Full Spectrum}
+% \begin{center}
+% \includegraphics[width=\linewidth]{./Figs/hartman_full.pdf}
+% \end{center}
+% \end{block}
+% \end{column}
+% \begin{column}{0.55\columnwidth}
+% \begin{block}{Shortwave Zoom}
+% \begin{center}
+% \includegraphics[width=\linewidth]{./Figs/hartman_2400.pdf}
+% \end{center}
+% \end{block}
+% \end{column}
+% \end{columns}
+
+% \begin{itemize}
+% \item \small Better agreement with thermal window SST near band-head
+% \item \small Not important for low-humidity conditions (not shown)
+% \end{itemize}
+% \end{frame}
+
+
+  
+
+
+%  \section{Plans}
 %\begin{frame}
 %  \frametitle{Current and future Plans}
 %  \begin{itemize}
@@ -195,3 +291,8 @@
 % ---------------------------------------------------------------------
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
