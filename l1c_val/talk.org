@@ -1,0 +1,391 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large Validation of the AIRS L1c Radiance Product: Spectral and Radiometric
+#+AUTHOR: L. Larrabee Strow and Howard Motteler (UMBC)
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 25, 2019\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2} and Howard Motteler\inst{2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEAMER_HEADER: \author{L.~Larrabee~Strow and Howard Motteler (UMBC)}
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* Overview
+
+- Radiometric validation of L1c "fill" channels
+- Radiometric corrections for:
+  - Instrument frequency drifts
+  - Doppler effect
+
+In general, L1c radiances are identical to L1b radiance, except for frequency shift corrections, unless there are significant errors due to:
+  - Detector popping
+  - C_{ij} errors (inhomogenous scenes)
+  - Poor detector performance (high noise, continuous popping, etc.)
+
+L1c contains "fill channels" that do not exist in L1b to cover frequency gaps.   This algorithm was developed by George Aumann and Evan Manning using simulated spectra provided by Sergio DeSouza-Machado.
+
+* L1c Characteristics
+
+- Creates visually appealing spectra
+- However, in general channels that are routinely corrected, and fill channels should not be used for science applications
+- Fill channels are used to create the CHIRP ILS radiance product, but only for a few channels that are weakly dependent on the fill channel radiance
+- The CHIRP application does require us to have a nominal value for the accuracy of the fill channel radiances
+
+* Grating Equation: Model Used for Frequeny Shifting
+    :PROPERTIES:
+    :BEAMER_opt: shrink=10
+    :END:
+
+Basic equation for channel frequency:
+
+\begin{displaymath}
+\nu_i = \frac{m}{d(\sin(\alpha_i) + \sin(\beta_i))}
+\end{displaymath}
+where 
+\alpha_{i} = incidence angle, \beta_{i} = diffracted angle, d = groove spacing, and m = grating order. 
+
+The angle of diffraction is computed from the linear positions $y$ of the detectors on the focal using,
+
+\begin{displaymath}
+\beta_i = \tan^{-1}(y/F)
+\end{displaymath}
+
+where $y = y_o + i*ds$. F = focal length of condensing mirror, $ds$ is the detector spacing on the detector array, and $i$ is the index nunber of the detector.  We often call $y$ "yoffset".
+
+We measure $y_o$ for each array, which varies with orbit phase and time.  The time dependence includes secular, exponential, and. seasonal terms.  The season terms are related to the satellite solar \beta angle.
+
+* Deriving AIRS Frequency Shifts
+
+- Both the Doppler shifts and the instrument frequency shifts are measured by cross-correlating the observed spectral with spectral computed from the ERA reanalysisl
+- We shift the computed spectra over a range of values.  The AIRS true frequency scale is the same as the ERA computed scale when the cross-correlation reaches a maximum
+- For the time dependence of the instrument frequency drifts we generally use an array in the water band that retains high spectral contrast over most observing conditions.
+* B(T) Sensitivity to Yoffsets
+
+Max B(T) changes over (a) Mission, (b) Daily (orbit phase)
+
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figsc/Pdf/max_mission_max_daily_diff_in_bt.pdf]]
+
+* Yoffset is Retrieved from Observations
+
+- yoffset as a function of time and orbit phase
+
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Png/offset_time_phase_pcolor.png]]
+
+* L1c Yoffsets
+- Descending equator
+- Raw L1c (no \nu calibration)
+- L1c adjusted to new fixed L1c \nu grid
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/l1c_nu_cal_closure_m3.pdf]]
+
+* M3 Results: Descending, All Latitudes
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_obs_cal.pdf]]
+
+* M10 Results
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m10_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* M4a Results 
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m4a_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* Doppler Effect
+    :PROPERTIES:
+    :BEAMER_opt: shrink=0
+    :END:
+
+Fractional doppler shift given by:\\
+
+\begin{displaymath}
+\frac{\Omega R_e}{c} \sin(\theta_{zenith}) \cos(lat_{sub}) |sin(\theta_{azimuth})|
+\end{displaymath}
+
+\small where, \Omega = 7.292 \times 10^{-5} (earth's rotational velocity, rad/sec) \\
+R_e = 6.3781 \times 10^{8} (earth radius, cm) \\
+c = 2.99792 \times 10^{10}  (speed of light, cm/sec)\\
+
+\vspace{0.2in}
+
+\small See Yong Chen et.al.,  Applied Optics, September 2013
+
+* Measurement of AIRS Doppler Shifts versus Latitude (M3)
+- Performed using cross-correlation with simulated radiances
+- Showing mean shift (xtrack(1:45) - xtrack(46:90))
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/obs_vs_cal_ppm_diff_vs_lat_asc_desc_mean46to89_vs_mean2to45.pdf]]
+
+* Doppler Shifts versus Cross-Track Index (M3)
+
+** -1.4\deg Latitude
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack.pdf]]
+
+** -39\deg Latitude
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/Pdf/obs_vs_cal_ppm_m39deg_lat_vs_xtrack.pdf]]
+
+* Doppler Shifts using M10 versus M3
+\vspace{-0.1in}
+- How similar are Doppler shifts using M10 instead of M3?
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack_with_m10_obs.pdf]]
+\vspace{-0.1in}
+- \small M10 shifts have some curvature, but show same nominal behavior
+- \small Other studies indicate M3 is best for high-quality frequency shifts
+
+* Doppler Shift Closure Exercise
+\vspace{-0.1in}
+- Apply theoretical Doppler shifts to data and re-measure observed shifts
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack_with_closure.pdf]]
+\vspace{-0.1in}
+- \small Reasonably good closure achieved
+
+* Subtract Ascending from Descending for Full Range
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figsc/Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat.pdf]]
+
+\vspace{-0.15in}
+
+- \small This is \pm{}45\deg latitude average
+- \small Hash phases different for corrected L1c than un-corrected (see zooms)
+
+* Validation of L1c Fill Channels
+- Use IASI and AIRS SNOs
+- Convert IASI to the AIRS ILS
+- Compare IASI2AIRS radiances to AIRS L1c 
+* Native Resolution Spectra
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/airs_iasi_sno_native.pdf]]
+* Native Resolution Spectra with Fill Channels Marked
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/airs_iasi_sno_native_with_fill_marked.pdf]]
+* Zoom in Midwave 
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/airs_iasi_sno_native_with_fill_marked_mwzoom5.pdf]]
+* Now Convert IASI to AIRS ILS and Compare
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_no_fill.pdf]]
+* \small Now Convert IASI to AIRS ILS and Compare with Fill Channels
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill.pdf]]
+* Zooms of AIRS - IASI
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill_lwzoom.pdf]]
+* Zooms of AIRS - IASI
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill_lwzoom2.pdf]]
+* Zooms of AIRS - IASI
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill_lwzoom3.pdf]]
+* Zooms of AIRS - IASI
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill_lwzoom4.pdf]]
+* Zooms of AIRS - IASI
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figs/Pdf/sno_airs_m_iasi_with_fill_mwzoom5.pdf]]
+
+* Conclusions
+
+- AIRS instrument frequency drifts largely eliminated in L1c
+- Some short-term problems in a few arrays after March 2014
+- Doppler effects largely removed
+- L1c fill channels radiances quite good!, sufficient for CHIRP
+- Except in mid-wave water, where some improvements might be nice
+
+** User Visible Changes
+- New AIRS frequency scale!  
+- 2650 channels
+- Retrievals need a new RTA 
+  - New L1c RTA exists
+  - See talk by Chris Hepplewhite
+
+
+
+
+* COMMENT Various Spectral Zooms of Previous Asc-Desc Spectra
+\vspace{-0.5in}
+
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z1.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z2.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.5in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z3.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.5in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z4.pdf]]
+
+
+
+
+
+* COMMENT Why M3 for Yoffset Model
+
+
+- M3 has good, stable (time, latitude) correlations with RTA
+- Also true for CrIS and IASI!
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/corr_vs_time_all_arrays_desc_lat30_raw.pdf]]
+
+* COMMENT M3 Results: All latitudes, descending, cal only
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_cal_only.pdf]]
+
+Need to add ~0.04 \mu{}m offset after March 2014 shutdown (all modules)
+
+* COMMENT M3 Results: All latitudes, desc + asc, cal o nly
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_and_asc_cal_only.pdf]]
+
+* COMMENT M3 Results: Equatorial
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* COMMENT M3 Results versus Orbit Phase
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010.pdf]]
+
+* COMMENT M3 Results versus Orbit Phase with Calibration
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010_with_cal.pdf]]
+
+\small L1c \nu-calibration sucessfully removed orbit-phase spectral variations
+
+
+* COMMENT Why M3 for Yoffset Model
+
+
+- M3 has good, stable (time, latitude) correlations with RTA
+- Also true for CrIS and IASI!
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/corr_vs_time_all_arrays_desc_lat30_raw.pdf]]
+
+* COMMENT Model Creation
+- Done mostly in 2011, 2013
+- Used cloud-cleared radiances, allows full look at orbit-phase
+- All modules tested (but two).  M3 clearly the best
+- Two modules exhibited different time dependence (M4a/c) than others
+
+\vspace{0.1in}
+
+Updates since then only used M3, only need to fix an offset in Jan 2010 due to shutdown. 
+
+Yoffset model and testing use different RTA, different data types.
+
+* COMMENT Model Creation and Testing Flow
+
+#+ATTR_LATEX: :width 0.9\linewidth
+\vspace{-0.2in}
+[[./Figsc/Pdf/l1c_cal_flow.pdf]]
+
+
+* COMMENT M3 Results: All latitudes, descending, cal only
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_cal_only.pdf]]
+
+Need to add ~0.04 \mu{}m offset after March 2014 shutdown (all modules)
+
+* COMMENT M3 Results: All latitudes, desc + asc, cal o nly
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_and_asc_cal_only.pdf]]
+
+
+* COMMENT M3 Results: Equatorial
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* COMMENT M3 Results versus Orbit Phase
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010.pdf]]
+
+* COMMENT M3 Results versus Orbit Phase with Calibration
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010_with_cal.pdf]]
+
+\small L1c \nu-calibration sucessfully removed orbit-phase spectral variations
+
+
+

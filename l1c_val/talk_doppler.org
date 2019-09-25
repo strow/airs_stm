@@ -1,0 +1,221 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large Validation of L1c Doppler Shift Corrections
+#+AUTHOR: L. Larrabee Strow
+#+BEAMER_HEADER: \date{\textit{\footnotesize Feb. 20, 2019}}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEAMER_HEADER: \author{L.~Larrabee~Strow and Howard Motteler (UMBC)}
+* Introduction
+    :PROPERTIES:
+    :BEAMER_opt: shrink=0
+    :END:
+
+Fractional doppler shift given by:\\
+
+\begin{displaymath}
+\frac{\Omega R_e}{c} \sin(\theta_{zenith}) \cos(lat_{sub}) |sin(\theta_{azimuth})|
+\end{displaymath}
+
+\small where, \Omega = 7.292 \times 10^{-5} (earth's rotational velocity, rad/sec) \\
+R_e = 6.3781 \times 10^{8} (earth radius, cm) \\
+c = 2.99792 \times 10^{10}  (speed of light, cm/sec)\\
+
+\vspace{0.2in}
+
+\small See Yong Chen et.al.,  Applied Optics, September 2013
+
+\vspace{0.2in}
+
+I am using latitude binned means for all angular terms
+
+* AIRS L1 Flow
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./AIRS_L1_flow.pdf]]
+* Data Set
+
+- 32 day average of L1c Obs and ECWMF Calcs for clear ocean scenes
+- 40 latitude bins
+- Separate bins for each Xtrack
+
+Doppler measurement is a cross-correlation between observed and computed B(T) for a subset of channels in array M3.  Same channels used for long-term spectral calibration of AIRS.
+
+* Measurement of AIRS Doppler Shifts versus Latitude (M3)
+
+- Performed using cross-correlation with simulated radiances
+- Showing mean shift (xtrack(1:45) - xtrack(46:90))
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/.Pdf/obs_vs_cal_ppm_diff_vs_lat_asc_desc_mean46to89_vs_mean2to45.pdf]]
+
+* Doppler Shifts versus Cross-Track Index (M3)
+
+** -1.4\deg Latitude
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack.pdf]]
+
+** -39\deg Latitude
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/obs_vs_cal_ppm_m39deg_lat_vs_xtrack.pdf]]
+
+* Doppler Shifts using M10 versus M3
+\vspace{-0.1in}
+- How similar are Doppler shifts using M10 instead of M3?
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/.Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack_with_m10_obs.pdf]]
+\vspace{-0.1in}
+- \small M10 shifts have some curvature, but show same nominal behavior
+- \small Other studies indicate M3 is best for high-quality frequency shifts
+
+* Doppler Shift Closure Exercise
+\vspace{-0.1in}
+- Apply theoretical Doppler shifts to data and re-measure observed shifts
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/.Pdf/obs_vs_cal_ppm_m1p4deg_lat_vs_xtrack_with_closure.pdf]]
+\vspace{-0.1in}
+- \small Reasonably good closure achieved
+
+* Second Method: B(T) Shifts vs Xtrack
+
+- Define FOR_a = -45:-1 1:45 
+
+- Bias B(T)_{FOR_a,\theta_{zenith}} = c1 + \Big(c2 \times \sec(\theta_{zenith})-1\Big) +  \Big(c_3 \times FOR_{a}\Big)
+
+- Asymmetric term c_{3} will be sensitive to Doppler shifts (and polarization)
+
+* Secant/Xtrack Fit Results to ECMWF Biases
+
+** Ascending 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_asc.pdf]]
+
+** Descending
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc.pdf]]
+
+
+* Smooth "DC" Component of Asymmetric Slope
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_smoothed_vs_unsmoothed_mean_lats.pdf]]
+
+\vspace{-0.1in}
+- \small Subtract smoothed version from unsmoothed to emphasize Doppler shifts
+
+* Now Remove "DC" Component of Asymmetric Slope
+
+** Ascending
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_asc_dc_removed.pdf]]
+
+** Descending
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_dc_removed.pdf]]
+
+* Subtract Ascending from Descending for Full Range
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat.pdf]]
+
+\vspace{-0.15in}
+
+- \small This is \pm{}45\deg latitude average
+- \small Hash phases different for corrected L1c than un-corrected (see zooms)
+
+* Various Spectral Zooms of Previous Asc-Desc Spectra
+\vspace{-0.5in}
+
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z1.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z2.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.5in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z3.pdf]]
+** 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.5in}
+#+ATTR_LATEX: :width 0.85\linewidth
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z4.pdf]]
+
+
+* Conclusions
+
+- AIRS exhibits Doppler shifts as expected
+- Analytic expression for the Doppler shift 
+- The L1c B(T) shift algorithm sucessfully removes Doppler effects 
+- Ready to implement
+
+* COMMENT x
+
+
+
+
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_minus_asc_dc_removed_-1p4deg_lat.pdf]]
+[[./Figsc/.Pdf/sec_asym_bias_and_corr_desc_smoothed_vs_unsmoothed_mean_lats.pdf]]
+[[./Figsc/.Pdf/sec_asym_obs_and_corr_desc_minus_asc_dc_removed_m45top41_lat.pdf]]
+[[./Figsc/.Pdf/sec_asym_obs_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z1.pdf]]
+[[./Figsc/.Pdf/sec_asym_obs_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z2.pdf]]
+[[./Figsc/.Pdf/sec_asym_obs_and_corr_desc_minus_asc_dc_removed_m45top41_lat_z3.pdf]]
+
