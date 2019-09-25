@@ -1,0 +1,183 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large AIRS L1c Frequency Calibration: Closure
+#+AUTHOR: L. Larrabee Strow
+#+BEAMER_HEADER: \date{\textit{\footnotesize Feb. 6, 2019}}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEAMER_HEADER: \author{L.~Larrabee~Strow and Howard Motteler (UMBC)}
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* Introduction
+- Frequency calibration adjustments applied to AIRS L1c radiances
+- Modules used:
+  - Grating model:  \nu_{i} = Function (yoffset, ab_state)
+  - Yoffset model: yoffset = Function (time, ab_state)
+  - B(T) shift model: BT = Function (BT L1c, \nu_{i}, L1c fixed \nu's)
+- Data for test:
+  - Clear ocean scenes
+  - ~15 latitudes 
+  - Ascending and descending
+  - 16 years averaged into 32 day bins
+- RTA for test: SARTA with yoffset = -14 \mu{}m
+
+* Model Creation
+- Done mostly in 2011, 2013
+- Used cloud-cleared radiances, allows full look at orbit-phase
+- All modules tested (but two).  M3 clearly the best
+- For all modules two showed different time dependence (M4a/c)
+- *Reference RTA:*  SARTA PGE used in variable frequency mode
+
+\vspace{0.1in}
+
+Updates since then only used M3, only need to fix an offset in Jan 2010 due to shutdown. 
+
+Yoffset model and testing use different RTA, different data types.
+
+* Model Creation and Testing Flow
+
+#+ATTR_LATEX: :width 0.9\linewidth
+\vspace{-0.2in}
+[[./Figsc/Pdf/l1c_cal_flow.pdf]]
+
+* Grating yoffset drives everything: M3 yoffsets shown here
+
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figsc/Png/yoffset_time_phase_pcolor.png]]
+
+* Yoffsets from CC'd Data: 2009
+
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figsc/Pdf/yoffset_allmods_thru_2009.pdf]]
+
+* B(T) Sensitivity to Yoffsets
+
+Max B(T) changes over (a) Mission, (b) Daily (orbit phase)
+
+#+ATTR_LATEX: :width 0.8\linewidth
+[[./Figsc/Pdf/max_mission_max_daily_diff_in_bt.pdf]]
+
+* Why M3 for Yoffset Model
+
+
+- M3 has good, stable (time, latitude) correlations with RTA
+- Also true for CrIS and IASI!
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/corr_vs_time_all_arrays_desc_lat30_raw.pdf]]
+
+
+* L1c Yoffsets
+
+- Descending equator
+- Raw L1c (no \nu calibration)
+- L1c adjusted to new fixed L1c \nu grid
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/l1c_nu_cal_closure_m3.pdf]]
+
+* M3 Results: Descending, All Latitudes
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_obs_cal.pdf]]
+
+* M3 Results: All latitudes, descending, cal only
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_cal_only.pdf]]
+
+Need to add ~0.04 \mu{}m offset after March 2014 shutdown (all modules)
+
+* M3 Results: All latitudes, desc + asc, cal o nly
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/all_m3_desc_and_asc_cal_only.pdf]]
+
+* M10 Results
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m10_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* M4a Results 
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m4a_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* M3 Results: Equatorial
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_desc_and_asc_cal_obs_lat7_m1p4deg.pdf]]
+
+* M3 Results versus Orbit Phase
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010.pdf]]
+
+
+* M3 Results versus Orbit Phase with Calibration
+
+Shown is a 32-day period center in March 2010
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/m3_obs_phase_vs_model_march2010_with_cal.pdf]]
+
+\small L1c \nu-calibration sucessfully removed orbit-phase spectral variations
+
+* Conclusions
+
+- We can now produce L1c with at a stable \nu grid
+- This testing showed there was indeed a small 0.04 \mu{}m permanent yoffset after the March 2014 shutdown (of the cooler)
+- M4a (and maybe M4a?) show offset in March 2014, but not "permanent".  Ignore for this version of L1c.
+- Algorithms all working, not that much software
+- Re-examine static yoffsets with new L1c RTA (production going on now)
+- Need frequency calibrated L1c product at the GSFC DIS for my Roses AIRS CHIRP climate product 
+- Fringing changes after Nov. 2013 shutdown not fixed in this L1c version, will attempt to do so in next version.
+
+* COMMENT  double column example
+\vspace{-0.3in}
+
+** \scriptsize NOAA20
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :BEAMER_env: block
+    :END:
+
+#+ATTR_LATEX: :width \linewidth
+[[./Figso/Pdf/stats_bias_mean_bias_lw.pdf]]
+
+
+** \scriptsize NPP
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :BEAMER_env: block
+    :END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figso/PDF/stats1_NPP_bias_mean_bias_lw.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- High FOV-5 differences
+- Some FOV-6 differences
+- 667 \wn differences small since these are warm scenes
+

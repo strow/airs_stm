@@ -1,0 +1,117 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large AIRS L1c Frequency Calibration: Channel B(T) Adjustments and Phase Tests
+#+AUTHOR: L. Larrabee Strow
+#+BEAMER_HEADER: \date{\textit{\footnotesize Aug. 26, 2019}}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEAMER_HEADER: \author{L.~Larrabee~Strow and Howard Motteler (UMBC)}
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* Overview
+
+- Here we concentrate on documenting channel B(T) adjustments by the L1c frequency calibration software.
+- We used the UMBC Matlab routine that is part of the L1c PGE now, but had it operate on the existing L1c produced over the past few years by the GSFC DIS.
+- Three days were analyzed:
+  - Jan 1, 2003
+  - Jan 1, 2011
+  - Jan 5, 2018
+- Nominal clear ocean scenes were analyzed
+  - Chosen by a threshold on BT_{obs} - BT_{sim} only (~0.5K)
+  - Returned about 500,000 observations per day
+
+* Results
+
+ - We found no unusual behavior
+ - "Spikes" in B(T) adjustments we mostly due to A/B changes and bad channels
+ - The long-term time dependences seem reasonable
+
+* Orbit Phase Test
+\vspace{-0.3in}
+
+** \Delta \nu vs Latitude: 1399.2 \wn
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{0.2in}
+#+ATTR_LATEX: :width 0.9\linewidth
+\vspace{-0.2in}
+[[./Figs/Pdf/dnu_desc_asc_2003_1399p2_cm-1.pdf]]
+
+** \Delta B(T) vs Latitude: 1399.2 \wn
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{0.2in}
+#+ATTR_LATEX: :width 0.9\linewidth
+\vspace{-0.2in}
+[[./Figst/Pdf/dbt_desc_asc_2003_1399p2_cm-1.pdf]]
+
+\vspace{0.1in}
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+
+- Variability in \Delta \nu and associated \Delta B(T) with orbit phase demonstrated.
+- Large offset in \Delta B(T) since this is early in the mission compared to AIRS L1c frequency scale standard. 
+
+* Jan 2003 Mean Asc and Desc B(T) Shifts
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figst/Pdf/mean_dbt_desc_asc_jan2003.pdf]]
+
+* Jan 2011 Mean Asc and Desc B(T) Shifts
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figst/Pdf/mean_dbt_desc_asc_jan2011.pdf]]
+
+- Small descending changes since Jan 2011 is close to the L1c \nu calibration reference frequency grid.
+
+* Jan 2018 Mean Asc and Desc B(T) Shifts
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figst/Pdf/mean_dbt_desc_asc_jan2018.pdf]]
+
+- A few spikes have occurred due to A/B changes
+
+
+* Comments on Spikes with Subset of Jan 2018 Data
+
+Below are channels that had \Delta B(T) spikes in a subset of the full Jan 5, 2017
+
+#+LaTeX: \begin{footnotesize}
+|  734.46 | popper                             |
+|  738.17 | ab change, high slope              |
+|  740.35 | ab change, high slope              |
+|  751.12 | ab change, high slope              |
+|  754.68 | ab change ,high slope              |
+| 1135.00 | ab change ,high slope              |
+| 1288.87 | big dbt Nov 2003, March 2014, etc  |
+| 1306.10 | high slope                         |
+| 1306.68 | high slope                         |
+| 1326.77 | M04C?  Nov 2003,etc                |
+| 1327.97 | M04C?  Nov 2003, etc               |
+| 1331.58 | M04C?  Nov 2003, etc               |
+| 1336.43 | M04C?  Nov 2003, etc               |
+| 1560.93 | next to dead and ab change         |
+| 1568.59 | near very bad channel              |
+| 1570.69 | near very bad channel              |
+#+LaTeX: \end{footnotesize}
