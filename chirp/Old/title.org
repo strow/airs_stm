@@ -1,0 +1,4 @@
+3. A Climate Hyperspectral Infrared Product (CHIRP) Combining AIRS, CrIS, and IASI
+
+   L. Larrabee Strow, Howard Motteler, Sergio De Souza-Machado, Chris Hepplewhite, and Steven  Buczkowski
+

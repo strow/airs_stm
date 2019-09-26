@@ -3,9 +3,9 @@
 #+LaTeX_CLASS_OPTIONS: [10pt,t]
 #+TITLE: \large Climate Hyperspectral InfraRed Product (CHIRP) Combining AIRS, CrIS, and IASI
 #+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
-#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{October 3, 2018 \vfill}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 26, 2019 \vfill}}
 #+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2}, Sergio DeSouza--Machado\inst{1,2}, Howard Motteler\inst{2}, Chris Hepplewhite\inst{2}, and Steven Buczkowski\inst{2}}
-#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET \and \inst{3} AER}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET} 
 #+BEAMER_HEADER: \input beamer_setup
 #+BEAMER_HEADER: \usetheme{metropolis}
 #+BEAMER_HEADER: \metroset{titleformat title=allcaps}
@@ -23,26 +23,176 @@
 }
 #+END_EXPORT
 
-* Motivation: Combine AIRS + CrIS + IASI for Long Time Series
-- Produce Level 1b CHIRP radiances for retrievals
-- Produce Level 3 climate-level gridded CHIRP radiance products
-- Goals
-   - Minimize sensitivity to a-priori estimates, etc.
-   - Remove artificial sampling biases
-   - Perform as much analysis in radiance space for error traceability
-- Geophysical Products
-   - Level 3 T/Q anomalies and trends (and surface T?)
+* A Climate Hyperspectral InfraRed Product (CHIRP) 
+  :PROPERTIES:
+  :BEAMER_opt: shrink=20
+  :END:
+\vspace{-0.1in}
+** Motivation
+- Provide climate-level radiance time series spanning AIRS + CrIS, IASI
+- User friendly by using a single spectral instrument line shape (ILS)
+- A high-stability 25+ year long record of climate forcings and response
+- Level 2 retrievals can use a common Forward Model (RTA) and channel selection for consistency
+
+** Three Products
+- CHIRP L1c: (radiances)
+  - Nearly ready
+  - Q/A is the hard part
+- CHIRP L1c Gridded: (space/time gridded radiances)
+  - Simple product
+  - May subdivide averaged/binned radiances into (a) nearly clear (b) mixed clear and cloudy, and (c) high (cold) deep optical depth clouds
+  - This subdivision will greatly enhance surface, lower tropospheric retrievals  
+- CHIRP Level 3: (geophysical anomalies)
+  - Retrieve geophysical anomalies
+  - Start with radiance anomalies derived from CHIRP L1c Gridded
+
+
+* Three Sensors Converted to Single Virtual Sensor
+\vspace{-0.2in}
+** AIRS/CrIS/IASI Spectra
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/hyperall_hamming.pdf]]
+
+
+** CHIRP Spectrum (AIRS2CrIS)
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+ATTR_LATEX: :width \linewidth 
+[[./Figs/Pdf/a2c_full.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+AIRS modules shown in different colors in CHIRP spectrum. This is CrIS-NSR, final CHIRP will be between CrIS NSR and FSR (MW/SW).
+
+* CHIRP L1c
+  - Uses AIRS L1c and CrIS L1b (and IASI) as inputs
+  - Granule in, granule out
+  - Common insrument line shape (ILS), \textbf{allows us to correct for inter-instrument radiance offsets}
+  - CHIRP noise often lower than input noise, normalize to a common level?
+  - Signifiant Q/A effort: AIRS Q/A influences CrIS Q/A flags
+
+* CHIRP L1c Gridded
+  - Likely most important long-term climate data record
+  - Simple gridding of CHIRP L1c
+  - 16 day bins (orbit repeat cycle)
+  - Nominal 1x1 degree grid?
+  - Gridded radiance noise included
+  - Radiometric offset correction for AIRS to match CrIS mean secant angle (0.2-0.3K correction)
+
+* CHIRP Level 3 (Gridded) Geophysical Anomalies
+   - Input is CHIRP L1c Gridded
+   - Create anomalies in radiance space before geophysical retrievals to enhance error  traceability
+   - Approach minimizes sensitivity to a-priori estimates (i.e. use zero for T, \water, \ozone a-priori estimates)
+   - Minimze sampling biases due to clouds
+   - Designed for quick reprocessing, essential for climate products
+
+* CHIRP Processing Flow
+\vspace{-0.2in}
+#+ATTR_LATEX: :width 1.0\linewidth 
+[[./airs2cris_stm_talk1_landscape.pdf]]
+
+CHIRP: (Common or Climate) Hyperspectral InfraRed Product
+
 \vspace{0.05in}
 
-This approach is in principle very simple and quick.  Allows frequency re-processing. 
+\small
+- CrIS High-Res OPD = 0.8/0.8/0.8 cm
+- CHIRP "OPD" = 0.8/0.6/0.4 cm  \hspace{0.1in} (Allows AIRS conversion to CrIS)
+- CHIRP MW/SW 75%/50% lower resolution than CrIS
 
-\vspace{0.05in}
 
-What's Hard: 
-  - Dealing with clouds
-  - AIRS radiometric stability estimates (ie. how good?)
+* AIRS2CrIS Algorithm
+#+LaTeX: \vspace{-0.15in}
+#+LaTeX: \begin{small}
+- Simple deconvolution to 0.1 \wn grid
+- $S_a r = r_A$, $r_o = S_a^{-1} r_A$ using Moore-Penrose pseudoinverse
+- $r_{A2C} = S_c \circledast r_o$
+- Small additional terms using linear regression (mostly bias)
+- Errors below assume AIRS ILS functions are perfect
+#+LaTeX: \end{small}
+#+LaTeX: \vspace{-0.25in}
+** \footnotesize AIRS2CrIS Mean Error (std. similar)
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+LaTeX: \vspace{-0.1in}
+#+ATTR_LATEX: :width 0.95\linewidth 
+[[./Figs/Pdf/ap_decon_corr.pdf]]
 
-* CHIRP Overview
+** \footnotesize AIRS2CrIS Noise
+  :PROPERTIES:
+  :BEAMER_env: block
+  :BEAMER_col: 0.55
+  :END:
+#+LaTeX: \vspace{-0.1in}
+#+ATTR_LATEX: :width 0.95\linewidth 
+[[./Figs/Pdf/a2cris_nedt.pdf]]
+
+** 
+  :PROPERTIES:
+  :BEAMER_env: ignoreheading
+  :END:
+
+#+LaTeX: \vspace{-0.1in}
+\small Shortwave sounding region max noise dominated by CrIS
+
+* Radiometric Corrections Applied to AIRS
+\vspace{-0.1in}
+- CrIS-like ILS is CHIRP standard
+- We convert AIRS to CrIS ILS, and apply inter-instrument radiometric offsets to create a seamless record
+#+ATTR_LATEX: :width 0.7\linewidth 
+[[./ac_sno_2018_bias_stderr_coloraslp.pdf]]
+
+* Anomaly and Trend Approach: 
+
+First: generate radiance anomalies $dBT(t)$.\\
+Then perform geophysical anomaly retrievals.\\
+
+\vspace{0.1in}
+
+Linear solution for trends with a-priori state = 0 given by,
+\begin{displaymath}
+dx(t) =  \left(K^T S_{\epsilon}^{-1} K + R^{-1}\right)^{-1} \left(K^T S_{\epsilon}^{-1} dBT(t)\right)
+\end{displaymath}
+
+- /dx(t)/ are the atmospheric state vector anomalies
+- /K/ are the B(T) Jacobians
+- $S_{\epsilon}$ is the observation error covariance matrix (noise)
+- /R/ combines empirical regularization (Tikonov L1-type) and the \emph{a-priori} covariance-based terms
+
+Sergio showed zonally averaged dx(t) samples yesterday\\
+
+\small
+\vspace{0.1in}
+- Cloud parameter Jacobians may be derived from MERRA-2 (or ERA5)
+- Or, if necessary retrievals of $x(t)$, at least for cloud top heights and amounts
+
+* Level 2 Retrievals using CHIRP
+
+- CHIRP L1c could be input for the AIRS/CrIS Level 2 product
+- Removes instrument bias differences
+- Removes retrieval differences due to different RTAs
+- Level 2 validation may be more straightfoward using this approach
+
+* Conclusions
+
+- We hope to have CHIRP L1c algorithm ready in several months
+  - File formats almost done
+  - Q/A issues and noise normalization still being worked out
+- CHIRP L1c Gridded will soon follow, relatively easy to develop
+- CHIRP Level 3 geophysical anomalies will require further development
+  - Hope to have CHIRP Level 3 mature in 1 year
+* COMMENT CHIRP Overview
   :PROPERTIES:
   :BEAMER_opt: shrink=20
   :END:
@@ -67,374 +217,3 @@ What's Hard:
   - Surface and SST climatologies
   - GPS-RO (Leroy)
 
-* Time Series Length Nearing Climate Scales
-\vspace{-0.3in}
-
-** \footnotesize CLARREO Schematic: Our Uncertainty?
-  :PROPERTIES:
-  :BEAMER_env: block
-  :BEAMER_col: 0.55
-  :END:
-[[./Figso/Pdf/clarreo.pdf]]
-\vspace{0.1in}
-#+ATTR_LATEX: :width \linewidth 
-
-\footnotesize
-AIRS, CrIS, IASI are /all/ very stable\\
-CLARREO has removed us from this figure!
-
-** \footnotesize AIRS 14-Year global trends
-  :PROPERTIES:
-  :BEAMER_env: block
-  :BEAMER_col: 0.55
-  :END:
-
-#+ATTR_LATEX: :width \linewidth 
-[[./Figso/Pdf/1231and1566cm-1_dbt_uncertainty_vs_time_iasi_airs_2016_v2.pdf]]
-
-\footnotesize
-These are 2-\sigma B(T) statistical uncertainties due to inter-annual variability.  
-
-Some channels, some latitudes not gaussian (strat sudden warmings, QBO, etc.)
-
-* CHIRB Processing Flow
-\vspace{-0.2in}
-#+ATTR_LATEX: :width 1.0\linewidth 
-[[./Figs/Pdf/airs2cris_stm_talk2_landscape.pdf]]
-
-CHIRP: (Common or Climate) Hyperspectral InfraRed Product
-
-\vspace{0.05in}
-
-\small
-- CHIRP "OPD" = 0.8/0.6/0.4 cm  \hspace{0.1in} (Allows AIRS conversion to CrIS)
-- CrIS OPD = 0.8/0.8/0.8 cm
-- CHIRP MW/SW 75%/50% lower resolution than CrIS
-
-* COMMENT Time/Space Gridded Radiance Data Flow
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.6\linewidth 
-[[./Figs/Pdf/airs2cris_stm_talk2_small.pdf]]
-
-* Anomaly and Trend Approach: (Result Shown Previously)
-
-Linear solution for trends with a-priori state = 0 given by,
-\begin{displaymath}
-\frac{dx}{dt} =  \left(K^T S_{\epsilon}^{-1} K + R^{-1}\right)^{-1} \left(K^T S_{\epsilon}^{-1} \frac{dBT}{dt}\right)
-\end{displaymath}
-
-- /x/ is the atmospheric state
-- /K/ are the B(T) Jacobians
-- $S_{\epsilon}$ is the observation error covariance matrix. 
-- /R/ combines empirical regularization (Tikonov L1-type) and the \emph{a-priori} covariance-based terms
-
-$S_\epsilon$ covariances represent inter-annual variability and instrument stability.  They introduce significant constraints compared to L3 time derivatives, /still implementing/.
-
-Jacobian state from standard all-sky retrievals or from re-analysis; high accuracy not needed.
-
-* This Talk
-- Concentrate on 16 (or 15) year radiance trends
-- AIRS Stability
-- Cloud variability on 15 years, how to minmize
-
-Cocentrate on global, zonal trends to emphasize instrument issues
-
-** Data Sets
-
-- Start with a ~1% random, area-weighted subset (for quick processing)
-- Produce 40 area weighted zonal bins (all channels) for 5475 days
-- Proudce 48 x 90 deg. area-weighted gridded trends (1 channel)
-- All data is L1c (frequency calibrated)
-
-* Stability: Clear Ocean Trends
-\vspace{-0.08in}
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Pdf/clear_desc_pm50lat_with_witho_nucal_era_bias.pdf]]
-
-\vspace{-0.12in}
-- \small This is AIRS 16-year clear ocean BT trend
-- \small Shortwave has issues, not used for science trending
-- \small Compare to ERA vs latitude for "good channels"
-- \small Modify ERA SST to account for effect of water vapor on BT trends
-
-* Stability: AIRS 1231 \wn Trends vs ERA SST Trends
-
-\vspace{-0.08in}
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Png/final_sst_vs_1231_vs_lat.png]]
-
-\vspace{-0.12in}
-- \small ERA SST modification due to water vapor absorption
-- \small These are quite accurate, use Aumann's "split-window" to correct
-- \small AIRS trending hotter by ~0.003K/year
-- \small Differences mostly 30-40 deg. lat??, look at time-dependence
-
-* Stability: OEM Retrieval of Clear Ocean \cd Trends vs MLO
-
-\vspace{-0.08in}
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Pdf/co2_clear_results.pdf]]
-
-\vspace{-0.12in}
-- \small OEM retrieval off due to co-linearity of \cd and T
-- \small Determine OEM offset by retrieval \cd from ERA trend (no \cd)
-- \small Correct OEM \cd trend for this co-linearity
-- \small Compare this to NOAA MLO;  AIRS B(T) trend ~+0.003K/year
-
-* Climate Quality AIRS Channels
-\vspace{-0.1in}
-OEM retrieval fitting residual for clear-ocean trends
-
-** All L1c with A/B=0
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width \linewidth 
-[[./Figs/Pdf/clear_ocean_desc_rate_fit_residuals_all_ab0.pdf]]
-
-** Further Trimming of A/B=0
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width \linewidth 
-[[./Figs/Pdf/clear_ocean_desc_rate_fit_residuals_all_vs_goodchans.pdf]]
-
-** 
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-About 1000 L1c channels good for trending
-
-* Global B(T) Trends: Descending Node
-\vspace{-0.1in}
-All L1c Channels:
-
-#+ATTR_LATEX: :width 0.8\linewidth 
-[[./Figs/Pdf/rand_desc_global_trends_l1c_abfixed_ab0.pdf]]
-
-* Global B(T) Trends: Descending Node
-\vspace{-0.1in}
-Now only A/B Fixed Channels:
-
-#+ATTR_LATEX: :width 0.8\linewidth 
-[[./Figs/Pdf/rand_desc_global_trends_abfixed_ab0.pdf]]
-
-* Global B(T) Trends: Descending Node
-\vspace{-0.1in}
-Now only A/B = 0 Channels (equally weighted)
-
-#+ATTR_LATEX: :width 0.8\linewidth 
-[[./Figs/Pdf/rand_desc_global_trends_ab0.pdf]]
-
-* Global B(T) Trends w/ 2-\sigma Unc: \cd Removed using MLO
-\vspace{-0.1in}
-
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Png/desc_dbt_obs_global.png]]
-
-\vspace{-0.12in}
-- \small \methane dominates MW (follows ESRL trends)
-- \small \water B(T) trends smaller than T-channel trends
-- \small /Window channel and tropospheric channel trends the same!/
-- \small Stratospheric channels show cooling
-
-# [[./Figs/Pdf/rand_desc_global_trends_noco2_lwmw.pdf]]
-
-* Compare T-channel to WV-channel Trends (vs Latitude)
-\vspace{-0.15in}
-
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Png/wv_dbt_vs_trop_dbt.png]]
-
-\vspace{-0.12in}
-- \small Color is latitude: note "lime green"
-- \small If relative humidity is constant, \Delta BT = 0 for water channels
-- \small Compare absolute and relative trends among these two channels
-- \small Both approaches suggest ~+8%/K increase in specific humidity, /maybe/ slightly lower relative humidity
-
-* How Does the T vs \water Trend Vary with Latitude?
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Pdf/drying_in_convective_regions_v2.pdf]]
-
-\vspace{-0.12in}
-- \small Plotting latitude variability relative to the global mean ratio of dBT_{T chan} vs dBT_{Water chan}
-- \small Suggests relative drying in convective regions, moistening nearby
-- \small These results largely independent of any calibration drifts
-- \small These data are from "real?" climate trends, not ENSO-like proxies
-
-* Radiance Gridding: Minimize Cloud Variability
-
-- Radiance gridding combines clear + cloudy scenes
-- Clouds change slowly, but regional variability seen after 16 years
-- Want simple approaches to evaluating gridded radiances trends
-- Possible approach (suggested several years ago)
-  - Grid not ony mean radiance but:
-  - Grid by rough measure of "clear"
-- Nominal approach
-  - Generate radiane anomaly
-  - Separate 10% hottest scenes in anomaly radiance, from colder (more cloudy) scenes.
-  - Minimized cloud interferene for surface trending
-- Crude test done here
-  - Forget anomaly
-  - Just trend 10% hottest scenes in yearly gridded bins
-  - Just one channel, 917 \wn
-
-* 15-Year Global Trends: 10% of Hottest Scenes (Desc node)
-\vspace{-0.15in}
-** \scriptsize AIRS Trends (K/year)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-[[./Figs/Png/desc_airs_hot_trend.png]]
-
-\vspace{-0.1in}
-\small AIRS Global trend: 0.019K/year \\
-\small AIRS Global std: 0.043K/year 
-
-** \scriptsize ERA Surface Trends for /these/ Scenes
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-[[./Figs/Png/desc_era_hot_trend.png]]
-
-
-\vspace{-0.1in}
-\small ERA Global trend: 0.019K/year \\
-\small ERA Global std: 0.049K/year
-
-** 
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-
-- \small Quite similar, no cloud patterns?
-- \small High cancellation of trends, but not to zero
-- \small Very simple, accuracy can be modeled
-
-* Compare Trends to Full ERA Sampling
-\vspace{-0.35in}
-** \scriptsize AIRS Trends (K/year)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.9\linewidth 
-[[./Figs/Png/desc_airs_hot_trend.png]]
-
-** \scriptsize ERA Surface Trends for /these/ Scenes
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.9\linewidth 
-[[./Figs/Png/desc_era_hot_trend.png]]
-
-
-** 
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-
-** \scriptsize Cloud Forcing Patterns (K)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.9\linewidth 
-[[./cloud_forcing.png]]]
-
-
-
-** \scriptsize ERA Surface Trends (full Sampling)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.9\linewidth 
-[[./Figs/Png/desc_era_fullsamp_trends.png]]
-
-
-* Global Variability for This 10% Hot Subset
-\vspace{-0.35in}
-** \small AIRS Std (over time, in K)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width \linewidth 
-[[./Figs/Png/desc_airs_hot_std.png]]
-
-** \small ERA Std (over time, in K)
-:PROPERTIES:
-:BEAMER_col: 0.55
-:BEAMER_env: block
-:END:
-\vspace{-0.1in}
-#+ATTR_LATEX: :width \linewidth 
-[[./Figs/Png/desc_era_hot_std.png]]
-
-** 
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-
-- Quite similar!
-- No obvious cloud patterns?
-- High North polar variability
-- Just an example of what can be done without retrievals!
-
-* Global Trend in 902 \wn Channel: All Scenes
-\vspace{-0.1in}
-#+ATTR_LATEX: :width 0.7\linewidth 
-[[./Figs/Pdf/bt902_global_trend_vs_time.pdf]]
-
-\vspace{-0.15in}
-
-- \small Global average time series of 902 \wn channel with 2-year smoothing
-- \small Globally most of the trend took place in the last four years
-- \small It is now starting to turn around
-
-* Conclusions
-
-- Good progress in defining "good" channels for CHIRP
-- CHIRP radiometric stablility evaluation on-going
-  - Need to examine time-dependence more carefully
-- CHIRP "L1c" product nearly ready for implementation (need AIRS L1c)
-- CHIRP gridded "L3" product being assessed
-  - Very valuable to have all scenes paired with re-analysis
-  - Several type of gridding seem worthwhile (all sky, gridded by nominal % clear)
-- OEM retrievals of T/Q zonal trends will continue with an emphasis on observation error co-variances and better all-sky cloudy jacobians
-
-
-* COMMENT what
-
-rand_desc_global_trends_noco2_mw_marked.pdf
-rand_desc_global_trends_noco2_lw_marked.pdf
-
-rand_desc_global_trends_noco2.pdf
-
-
-rand_desc_global_trends_unc_co2corr.pdf
-rand_desc_global_trends_unc.pdf
-
-
-
-* COMMENT 
-
-  :PROPERTIES:
-  :BEAMER_opt: shrink=10
-  :END:
