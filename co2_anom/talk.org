@@ -1,0 +1,265 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large AIRS Derived CO2 Zonal Anomalies over Ocean
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 26, 2019\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2} and Sergio De Souza-Machado, UMBC\inst{1,2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* Introduction
+- How to AIRS growth rate anomalies compare to OCO
+- OCO is column, AIRS is broad kernel around 400 mbar, little surface contribution
+- OCO is quite heavily constrained over ocean in the S. Hemisphere
+- Why: AIRS S. Hemisphere anomalies grew during 2015 ENSO before the N. Hemisphere anomalies.  Doesn't seem right?
+- Either very interesting, or, more likely, good way to investigate ultimate accuracy of AIRS \cd anomalies.
+
+* \cd Anomaly Fit for 20\deg N. (MLO)
+\vspace{-0.3in}
+** \footnotesize Fitting Trick
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/raw_co2_vs_era_co2_example_lati28_mlo_lat.pdf]]
+
+** \footnotesize Fitted \cd Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./Figs/Pdf/co2_airs_vs_mlo.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+#+LaTeX: \begin{footnotesize}
+- ERA simulations done per footprint
+- Fit ERA simulation for \cd
+- Removes co-linearity? and lowers "noise"
+- Possible approach for Level 2 \cd retrievals?
+#+LaTeX: \end{footnotesize}
+
+* \cd Anomaly Converted to B(T) Trends
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_with_dbt.pdf]]
+
+\vspace{-0.1in}
+#+LaTeX: \begin{footnotesize}
+- Mean AIRS-ESRL \cd = 0.035 \pm 0.032  pppm (1\sigma standard error)
+- Mean AIRS-ESRL in BT Units = +0.0026K \pm 0.0023K (1\sigma standard error)
+- Sampling and ESRL errors hard to characterize
+#+LaTeX: \end{footnotesize}
+
+* \cd Trends and Growth Anomalies
+\vspace{-0.35in}
+** \footnotesize Growth Rates
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Pdf/co2_growth_vs_lat.pdf]]
+
+** \footnotesize Growth Rate Anomaly
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Pdf/co2_airs_vs_esrl_global_growth_anom.pdf]]
+
+**   
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{-0.2in}
+
+** \footnotesize Zonal Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figs/Png/co2_anom_image_lat_vs_time.png]]
+
+** 
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+\vspace{-0.2in}
+#+LaTeX: \begin{footnotesize}
+- Growth rate anomaly accuracy very encouraging.
+- AIRS - Avg(MLO + CGRIM) growth rate difference: -0.0056K/year in BT units
+- MLO, CGRIM growth rate uncertainty from ESRL ~0.0051K/year
+#+LaTeX: \end{footnotesize}
+
+
+* Zonal \cd Growth Anomalies
+\vspace{-0.1in}
+
+#+ATTR_LATEX: :width 0.65\linewidth
+[[./Figs/Png/co2_anomaly_image_fancy2_corrected.png]]
+
+#+LaTeX: \begin{footnotesize}
+- Growth rate anomaly = (\cd anomaly - \cd average growth rate)
+- Magenta are ESRL MLO and Cape Grim \cd growth rate anomalies
+- \cd color scale is equivalent to max \pm 0.09K in BT units
+- What is real?  Smoothing may be an issue.
+- 2015 ENSO effects very clear
+#+LaTeX: \end{footnotesize}
+
+* Global Trend Anomalies: ESRL, AIRS, OCO-2 (ocean)
+\vspace{-0.1in}
+#+ATTR_LATEX: :width 0.75\linewidth
+[[./oco/esrl_airs_oco_global_trend_anomaly.pdf]]
+\small
+- At this level AIRS and OCO agree better than ESRL for 2015 ENSO
+- OCO smaller ENSO shift than ESRL
+- Still very clear AIRS has a Nov. 2003 shutdown problem
+
+* OCO Zonal Growth Anomaies
+** OCO Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./oco/co2_anomaly_OCO_orig_not_converted_to_airs_linear_rate.png]]
+
+** Adjust OCO to AIRS Anomaly Start 
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./oco/first_oco_anomaly_airs_slopes_same_colorscale.png]]
+
+**  
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Need to convert OCO anomalies to zero in Sept. 2002 for comparison to AIRS
+
+* Intercompare AIRS and OCO Anomalies
+\vspace{-0.1in}
+
+** \footnotesize AIRS Growth Anomalies, OCO Time Frame
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./oco/co2_anomaly_image_fancy2_corrected_z1.png]]
+
+** \footnotesize OCO Growth Anomalies
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width \linewidth
+[[./oco/co2_anomaly_OCO_image_fancy2_z1.png]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\small 
+- Notice high OCO at lowest latitudes
+- Why is AIRS ENSO higher in tropics?  Transport from N.H.?
+- More work needed to understand -40 deg. lat timing of \cd anomaly
+- Compare to OCO Anomaly on previous slide
+
+
+* OCO A-Priori for Ocean, 400 mbar
+
+** OCO \cd A-Priori 400 mbar
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./oco/oco_co2_apriori_400mbar.pdf]]
+
+** OCO \cd A-Priori Std
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./oco/oco_co2_apriori_std_400mbar.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\small OCO 400 mbar (and much of ocean profile) a-priori uncertainty is ~1 ppm
+
+* Conclusions
+- Need to develop a gridded clear AIRS L1c subset
+- Present subset is highly non-uniform spatially
+  - However, fairly uniform near Cape-Grim at -40 deg
+- Use these results to further understand ultimate accuracy of AIRS \cd retrievals 
+
+
+
+
+
+* COMMENT oco_vs_cape_grim_vs_airs_anom_only_airs_smooth.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/oco_vs_cape_grim_vs_airs_anom_only_airs_smooth.pdf]]
+
+* COMMENT oco_vs_cape_grim_vs_airs_anom.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/oco_vs_cape_grim_vs_airs_anom.pdf]]
+
+* COMMENT oco_co2_aprior_std_lat_pressure.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/oco_co2_aprior_std_lat_pressure.png]]
+* COMMENT oco_co2_aprior_std_lat_pressure_v2.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/oco_co2_aprior_std_lat_pressure_v2.png]]
+* COMMENT ppoco_co2_aprior_lat_pressure.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/oco_co2_aprior_lat_pressure.png]]
+
+* COMMENT first_oco_anomaly_airs_slopes.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/first_oco_anomaly_airs_slopes.png]]
+
+* COMMENT co2_anomaly_OCO_image_fancy2_z1_mod_color_scale.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/co2_anomaly_OCO_image_fancy2_z1_mod_color_scale.png]]
+
+* COMMENT co2_anomaly_image_fancy2_corrected_z1.png
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./oco/co2_anomaly_OCO_image_fancy2.png]]
