@@ -1,0 +1,118 @@
+#+startup: beamer
+#+Options: toc:nil H:1
+#+LaTeX_CLASS_OPTIONS: [10pt,t]
+#+TITLE: \large Insert into Andy's Talk
+#+BEAMER_HEADER: \subtitle{\footnotesize{AIRS Science Team Meeting}}
+#+BEAMER_HEADER: \date{\vspace{0.1in}\footnotesize{September 26, 2019\vfill}}
+#+BEAMER_HEADER: \author{L. Larrabee Strow\inst{1,2} and Sergio De Souza-Machado, UMBC\inst{1,2}}
+#+BEAMER_HEADER: \institute[UMBC]{\inst{1} UMBC Physics Dept. \and \inst{2}UMBC JCET}
+#+BEAMER_HEADER: \input beamer_setup
+#+BEAMER_HEADER: \usetheme{metropolis}
+#+BEAMER_HEADER: \metroset{titleformat title=allcaps}
+#+BEAMER_HEADER: \renewcommand{\UrlFont}{\small\tt}
+#+BEAMER_HEADER: \renewcommand*{\UrlFont}{\footnotesize}
+#+BEAMER_HEADER: \tolerance=1000
+#+BEAMER_HEADER: \RequirePackage{fancyvrb}
+#+BEAMER_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+#+BEGIN_EXPORT latex
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+#+END_EXPORT
+
+* Cloud Forcing Global Behavior
+- Something for which AIRS may have a unique contribution
+- Define CF = SST - BTobs.  (more cloud means positive)
+- Global: maybe interesting, what does AIRS stability tell us?
+- ENSO:  how does cloud forcing respond to an ENSO kick?
+- We know SST very well, we know BTobs very well.
+- Of course, global dominated by tropics
+
+* Global SST and BTobs Anomalies
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_obs_global.pdf]]
+
+
+* Now Add Cloud Forcing
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/tseries_sst_cf_obs_global.pdf]]
+
+\small 
+- Note sharp CF drop at SST peak anomaly
+
+* Delay of BTobs Anomaly to SST Anomaly
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Pdf/ocean_btobs_delay_from_sst.pdf]]
+
+\small 
+- Almost exactly a 1-year delay in BTobs (clear trend) from SST
+
+* Examine Time Dependence of CF vs SST Anomaly
+\vspace{-0.15in}
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/cf_vs_sst_vs_year.png]]
+
+\vspace{-0.15in}
+\footnotesize
+- At peak of ENSO CF drops very quickly
+- Overshoots
+- Then back to normal, BUT, of course, SST has gone up by a tremendous amount in a short time: 0.15K
+
+* CF vs ENSO Index
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figs/Png/cf_vs_sst_vs_enso_v2.png]]
+
+\footnotesize
+- ENSO returns to normal, CF returns
+
+* Climate Model Cloud Trends (Trenberth, 2009)
+#+ATTR_LATEX: :width 0.9\linewidth
+[[./Figsc/Pdf/trenberth2009_clouds_top.pdf]]
+
+* AIRS CF (Scales about right)
+** Climate Model C(fraction) Trend
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+\vspace{-0.15in}
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/trenberth_total_only.pdf]]
+
+
+** AIRS CF Trend
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
+#+ATTR_LATEX: :width 0.6\linewidth
+[[./Figsc/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed.pdf]]
+
+** 
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\footnotesize
+- Back of envelope:  AIRS cloud forcing fractional change $\sim$5X higher than models
+- Clearly we may just be observing fragments from ENSO
+- But, climate model uncertainty large
+- AIRS stability likely 3x better than obs
+- But, need stable surface T also, best to derive using AIRS for consistency
+
+* COMMENT new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs.pdf]]
+
+* COMMENT Pdf/trenberth2009_clouds.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/trenberth2009_clouds.pdf]]
+
+
+* COMMENT new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf
+#+ATTR_LATEX: :width 0.7\linewidth
+[[./Figsc/Pdf/new_trend_rand_stats_1231_and_2161_era_clr_minus_obs_smoothed_with_2616_labelled.pdf]]
+

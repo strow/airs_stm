@@ -1,0 +1,689 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+%\title[Wavelets]{Wavelet Transforms in Time Series Analysis}
+%\author{Andrew Tangborn}
+%\institute{Planetary Geodynamics Laboratory, Goddard Space Flight Center}
+%\date{May 2, 2018}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Outline}
+
+\begin{frame}{Outline}
+
+\begin{itemize}
+  \item Fourier Transforms 
+  \item What is a Wavelet.
+  \item Continuous and Discrete Wavelet Transforms.
+  \item Construction of Wavelets through dilation equations.
+  \item Example: Haar wavelets.
+  \item Daubechies Compactly Supported Wavelets
+  \item Data compression, efficient representation
+  \item Soft Thresholding
+  \item Continuous Transform - Morlet Wavelet
+  \item Applications to approximating error correlations
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Fourier Transforms}
+$\bullet$ A good way to understand how wavelets work and why they are useful is by comparing them with Fourier Transforms.
+\vskip .01in
+$\bullet$ The Fourier Transform converts a time series into the frequency domain:
+\vskip .01in
+\noindent
+\underline{Continuous Transform} of a function f(x):
+\vskip .01in
+\[ \hat{f}(\omega) = \int\limits^{\infty}_{-\infty} f(x)  e^{-i \omega x} dx \]
+where $\hat{f} (\omega)$ represents the {\it strength} of the function at frequency $\omega$,
+where $\omega$ is continuous.
+\end{frame}
+
+\begin{frame}{Fourier Transforms (continued)}
+\underline{Discrete Transform} of a function f(x):
+\vskip .01in
+\[ \hat{f}(k) = \int\limits^{\infty}_{-\infty} f(x) e^{-ikx} dx \]
+where $k$ is a discrete number.
+\vskip .01in
+\noindent
+for discrete data $f(x_j)$, $j=1,...,N$
+\[ \hat{f}_k = \sum^N_{j=1} f_j e^{(-i2\pi (k-1)(j-1)/N)} \]
+\vskip .01in
+\noindent
+$\bullet$ The Fast Fourier Transform (FFT) is $o(NlogN)$ operations.
+
+\end{frame} 
+
+\begin{frame}{Example: Single Frequency Signal} 
+
+\[ f(t) = \sin(2\pi t) \]
+\vskip .1in
+\begin{figure}[ht]
+\begin{centering}
+\begin{tabular}{cc}
+\includegraphics[width=0.4\textwidth]{figures/single_freq.ps} & 
+\includegraphics[width=0.4\textwidth]{figures/coef_single_four.ps}\\
+{\bf Signal} & 
+{\bf Fourier Transform - note the complex values.}\\
+\end{tabular}
+\end{centering}
+\end{figure}
+\end{frame} 
+
+\begin{frame}{Two Frequency Signal} 
+
+\[ f(t) = \sin(2\pi t) + 2 \sin(4\pi t) \]
+\vskip .1in
+\begin{figure}[ht]
+\begin{centering}
+\begin{tabular}{cc}
+\includegraphics[width=0.4\textwidth]{figures/two_freq.ps} & 
+\includegraphics[width=0.4\textwidth]{figures/coef_2frea.ps} \\
+{\bf Signal} & 
+{\bf Fourier Transform}\\
+\end{tabular}
+\end{centering}
+\end{figure}
+\vskip .01in 
+\noindent
+$\bullet$ Both signal frequencies are represented by the Fourier Coefficients.
+
+\end{frame} 
+
+
+\begin{frame}{Intermittent Signal} 
+
+\noindent
+$  f(t)= \sin(2\pi t) + 2 \sin(4\pi t) $ when $.37 < t < .55 $
+\vskip .02in
+\noindent
+$  f(t) = \sin(2\pi t) $ otherwise
+\vskip .05in
+
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{cc}
+\includegraphics[width=0.4\textwidth]{figures/two_freq_partial.ps} & 
+\includegraphics[width=0.4\textwidth]{figures/two_freq_partial_coef.ps} \\
+{\bf Signal} & {\bf Fourier Transform}\\
+\end{tabular}
+\end{figure}
+\end{centering}
+\vskip .05in
+\noindent
+$\bullet$ First frequency is found, but higher intermittent frequency appears
+as many frequencies, and is not clearly identified.
+
+\end{frame} 
+
+\begin{frame}{What is a Wavelet?} 
+\noindent
+$\bullet$ A function that is localized in time and frequency, generally with a zero mean.
+\vskip .05in
+\noindent
+$\bullet$ It is also a tool for decomposing a signal by location {\it and} frequency.
+\vskip .02in
+\noindent 
+Consider the Fourier transform:
+\vskip .01in
+$\bullet$ A signal is only decomposed into its frequency components.
+What happens when applying a Fourier transform to a signal that has a time varying frequency?
+\vskip .01in 
+\begin{centering}
+\begin{figure}[htp]
+\includegraphics[width=0.28\textwidth]{figures/var_freq.eps} \\ 
+\end{figure}
+\end{centering}
+\noindent
+ $\bullet$ The Fourier transform will only give some information on
+ which frequencies are present, but will give no information on when they occur.
+\end{frame} 
+
+% Commands to include a figure:
+%\begin{figure}
+%\includegraphics[width=\textwidth]{your-figure's-file-name}
+%\caption{\label{fig:your-figure}Caption goes here.}
+%\end{figure}
+
+
+\begin{frame}{Schematic Representation of Decompositions} 
+
+\noindent
+{\bf Original Signal}
+\begin{centering}
+\begin{figure}[htp]
+\includegraphics[width=0.26\textwidth]{figures/signal_decomp.eps} \\
+\end{figure}
+\end{centering}
+\noindent
+$\bullet$ The signal is represented by an amplitude that is changing in time.
+\noindent
+$\bullet$ There is no explicit information on frequency.
+\noindent
+{\bf Fourier Transform}
+\begin{centering}
+\begin{figure}[htp]
+\includegraphics[width=0.3\textwidth]{figures/fourier_decomp.eps} \\ 
+\end{figure}
+\end{centering}
+\noindent
+$\bullet$ The Fourier transform results in a representation that depends only on frequency, but no information on time.
+
+\end{frame} 
+
+
+\begin{frame}{Wavelet Transform} 
+
+\begin{centering}
+\begin{figure}[htp]
+\includegraphics[width=0.4\textwidth]{figures/wavelet_decomp.eps} \\ 
+\end{figure}
+\end{centering}
+\vskip .01in
+\noindent
+$\bullet$ The wavelet transform contains information on both the time location and frequency of a signal.
+\vskip .01in
+\noindent
+{\bf Some typical (but not required)  properties of wavelets}
+\vskip .01in
+\noindent
+$\bullet$ Orthogonality - Both wavelet transform matrix and wavelet functions can be orthogonal.
+\vskip .01in
+$\bullet$ Useful for creating basis functions for computation.
+\vskip .01in
+\noindent
+$\bullet$ Zero Mean (admissibility condition) - Forces wavelet functions to {\it wiggle} (oscillate between positive and negative).
+\vskip .01in
+\noindent
+$\bullet$ Compact Support - Efficient at representing localized data and functions.
+
+\end{frame} 
+
+
+\begin{frame}{How are wavelets defined?}
+
+{\bf $\bullet$ Families of basis functions that are based on}
+\vskip .02in
+$ \bullet$ (1) dilations:
+\[ \psi(x) \rightarrow \psi(2x) \]
+\vskip .02in
+$ \bullet$ (2) translations:
+\[ \psi(x) \rightarrow \psi(x+1) \]
+\vskip .02in
+of a given general "mother wavelet"  $\psi(x)$.
+\vskip .02in
+\noindent
+{\bf $\bullet$ How do we use $\psi(x)$?}
+\vskip .01in
+$ \bullet$  The general form is:
+\vskip .01in
+\[ \psi_k^j(x) = 2^{j/2}\psi(2^jx-k) \]
+\vskip .01in
+where
+\vskip .01in
+$ \bullet$ j: dilation index
+\vskip .01in
+$ \bullet$ k: translation index
+\vskip .01in
+$ \bullet$ $2^{j/2}$ needed for normalization
+\vskip .01in
+\noindent
+{ $\bullet$ How do we get $\psi(x)$?}
+\vskip .01in
+$\bullet$ Dilation Equations
+
+\end{frame} 
+
+
+\begin{frame}{Construction of Wavelets}
+
+\noindent
+{\bf $\bullet$  We consider here only orthogonally/compactly supported wavelets}
+\vskip .01in
+ - Orthogonality means:
+\[ \int\limits^{\infty}_{-\infty} \psi^j_k(x)\psi^{j'}_{k'}(x)dx = \delta_{kk'}\delta_{jj'} \]
+\vskip .02in
+\noindent
+{\bf $\bullet$ Wavelets are constructed from scaling functions, $\phi(x)$ :}
+$\phi(x)$ come from the dilation equation:
+\vskip .01in
+\[ \phi(x) = \sum_k c_k \phi(2x-k) \]
+\vskip .01in
+\noindent
+$c_k$: {\bf Finite} set of filter coefficients
+\vskip 0.01in
+\noindent
+{\bf $\bullet$ General features:}
+\vskip .01in
+- Fewer non-zero $c_k$'s mean {\bf more} compact and {\bf less} smooth functions
+\vskip .01in
+- More non-zero $c_k$'s mean {\bf less} compact and {\bf more} smooth functions 
+
+\end{frame} 
+
+\begin{frame}{Restrictions on Filter Coefficients: Normality}
+\[ \int\limits^{\infty}_{-\infty} \phi(x)dx = 1 \]
+\vskip .001in
+\[ \int\limits^{\infty}_{-\infty} \sum_k c_k \phi(2x-k)dx = 1 \]
+\vskip .001in
+\[ \sum_k c_k \int\limits^{\infty}_{-\infty} \phi(2x-k)dx = 1 \]
+\vskip .001in
+\[ \sum_k c_k \int\limits^{\infty}_{-\infty} \frac{1}{2} \phi(2x-k) d(2x-k) = 1 \]
+\vskip .001in
+\[ \sum_k c_k \int\limits^{\infty}_{-\infty} \frac{1}{2} \phi(\xi) d(\xi) = 1 \]
+\vskip .001in
+$ \sum_k c_k (\frac{1}{2}) (1) = 1 $ 
+or
+$ \sum_k c_k = 2 $
+
+\end{frame} 
+
+
+\begin{frame}{Simple Examples} 
+
+\vskip .01in
+ - Smallest number of $c_k$ is 1: just get $\phi(x)=\delta$, $\rightarrow$ zero support.
+\vskip .01in
+- Haar Scaling Function: $c_0=1$, $c_1=1$.
+\vskip .01in 
+The scaling function equation is:
+\[ \phi(x) = \phi(2x) + \phi(2x-1) \]
+\vskip .1in
+\noindent
+The only function that satisfies this is:
+\vskip .1in
+\noindent
+$ \phi(x) = 1$ if $0 \leq x \leq 1$
+\vskip .02in
+\noindent
+$ \phi(x) = 0 $ otherwise
+\begin{centering}
+\begin{figure}[ht]
+\includegraphics[width=0.4\textwidth]{figures/haar_sf.eps} \\ 
+\end{figure}
+\end{centering}
+
+\end{frame} 
+
+
+\begin{frame}{Haar Wavelet} 
+
+{\bf $\bullet$ Wavelets are constructed by taking differences of scaling functions}
+\vskip .02in
+\[ \psi(x) = \sum_k (-1)^k c_{1-k} \phi(2x-k) \]
+\vskip .02in
+differencing is caused by the $(-1)^k$:
+\vskip .02in
+so the basic Haar wavelet is:
+\begin{centering}
+\begin{figure}[ht]
+\includegraphics[width=.3\textwidth]{figures/haar_mother.eps}
+\end{figure}
+\end{centering}
+\end{frame}
+\begin{frame}{Family of Haar wavelets}
+\vskip .1in 
+\noindent
+The family comes from dilating and translating:
+\[ \psi^j_k(x) = 2^{j/2} \psi(2^jx - k) \]
+\vskip .01in
+\noindent
+so that the $j=1$ wavelets are:
+\begin{centering}
+\begin{figure}[ht]
+\includegraphics[width=.3\textwidth]{figures/haar_j1.eps} \\ 
+\end{figure}
+\end{centering}
+\end{frame} 
+
+\begin{frame}{Orthogonality of Haar wavelets}
+
+{\bf $\bullet$ Translation $\Rightarrow$ no overlap}
+\begin{centering}
+\begin{figure}[ht]
+\includegraphics[width=.3\textwidth]{figures/haar_j1.eps} \\
+\end{figure}
+\end{centering}
+
+{\bf $\bullet$ Dilation $\Rightarrow$ cancellation}
+\begin{centering}
+\begin{figure}[ht]
+\includegraphics[width=.3\textwidth]{figures/haar_orthog.eps} \\
+\end{figure}
+\end{centering}
+
+\end{frame} 
+
+
+\begin{frame}{Daubechies' Compactly Supported Wavelets}
+
+The following plots are wavelets created using larger numbers of filter
+coefficients, but having all the properties of orthogonal wavelets. For example,
+$D_4$ has coefficients:
+\[ c_k = \frac{1}{4}(1+\sqrt{3}), \frac{1}{4} (3 + \sqrt{3}) , \frac{1}{4} (3 - \sqrt{3}), \frac{1}{4}(1 - \sqrt{3})\]
+(Reference: Daubechies, 1988)
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{cc}
+\includegraphics[width=.25\textwidth]{figures/d4.ps} & 
+\includegraphics[width=.25\textwidth]{figures/d12.ps} \\
+{\bf $D_4$} & {\bf $D_{12}$}\\
+\includegraphics[width=.25\textwidth]{figures/d20.ps} \\ 
+{\bf $D_{20}$} \\
+\end{tabular}
+\end{figure}
+\end{centering}
+
+\end{frame} 
+
+\begin{frame}{Continuous and Discrete Wavelet Transforms}
+
+\underline{Continuous}
+\vskip .01in 
+\noindent 
+\[ (T^{wav} f)(a,b) = \mathopen| a \mathclose|^{-1/2} \int dt f(t) \psi(\frac{t-1}{b}) \]
+\vskip .02in
+\noindent
+where
+\vskip .02in
+\noindent
+ a: translation parameter
+\vskip .02in
+\noindent
+ b: dilation parameter
+\vskip .02in
+\noindent
+\underline{Discrete}
+\vskip .02in
+\[ T^{wav}_{m,n}(f) = a_o^{-m/2}\int dt f(t) \psi(a_o^{-m} t - nb_o) \]
+\vskip .02in
+\noindent
+m: dilation parameter
+\vskip .02in
+\noindent
+n: translation parameter
+\vskip .02in
+\noindent
+$a_o$,$b_o$ depend on the wavelet used
+
+\end{frame} 
+
+\begin{frame}{Fast Wavelet Transform} 
+\begin{centering} 
+(Reference: S. Mallat, 1989) \\
+\end{centering}
+\normalsize
+\vskip .02in
+{\bf $\bullet$} Uses the discrete data:
+\[ \left[ \begin{array}{cccccccc} 
+f_0 &
+f_1 &
+f_2 & 
+f_3 &
+f_4 & 
+f_5 & 
+f_6 & 
+f_7 \\ 
+\end{array} \right]
+\]
+\vskip .03in
+{\bf $\bullet$ Pyramid Algorithm $\Rightarrow$ o(N) !! }
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{c}
+\includegraphics[width=.6\textwidth]{figures/mallat_2009.eps} \\
+\end{tabular}
+\end{figure} 
+\end{centering}
+
+\end{frame} 
+
+
+\begin{frame}{Fast Transform - continued}
+
+\noindent - Start at finest scale and calculate differences and averages
+\vskip .01in
+\noindent - Use Averages at next coarser scale to get new set of differences
+($b_{j,k}$) and averages ($a_{j,k}$)
+\vskip .05in
+\noindent
+And the coefficients are simply the differences ($b_{j,k}$) and the average for the
+coarsest scale ($a_{0,0}$):
+\[ \left[ \begin{array}{cccccccc} 
+a_{0,0} & 
+b_{0,0} &  
+b_{1,0} &  
+b_{1,1} &  
+b_{2,0} &  
+b_{2,1} &  
+b_{2,2} &
+b_{2,3} \\ 
+\end{array} \right]
+\]
+\vskip .02in
+\noindent
+For Haar Wavelet:
+\[ a_{j-1,k} = c_0 a_{j,k} + c_1 a_{j,k+1} \]
+\[ b_{j-1,k} = c_0 a_{j,k} - c_1 a_{j,k+1} \]
+
+\vskip .01in
+\noindent - The differences are the coefficients at each scale. Averages used for next scale.
+\vskip .01in
+\noindent
+{\bf $\bullet$ How do we store all this?} (eg, Numerical Recipes algorithm).
+
+\end{frame} 
+
+\begin{frame}{Intermittent Signal - wavelet transform} 
+
+
+\vskip .01in
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{cc}
+\includegraphics[width=.3\textwidth]{figures/two_freq_partial.ps} & 
+\includegraphics[width=.3\textwidth]{figures/wav_coef_intermit.ps} \\
+{\bf Signal} & {\bf Transform} \\ 
+\end{tabular}
+\end{figure}
+\end{centering}
+\vskip .01in
+\noindent
+$\bullet$ Higher Frequency intermittent signal shows up in the $j=5,6$
+scales, and only in the middle portion of the domain. Localized frequency data
+is found.
+
+\end{frame} 
+
+\begin{frame}{Data Compression - Efficient Representation}
+
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{cc}
+\includegraphics[width=.28\textwidth]{figures/local_fun.ps} &
+\includegraphics[width=.28\textwidth]{figures/local_fun_wav_16.ps} \\ 
+{\bf Original Localized Data, 128 points} & {\bf 16 term Wavelet Reconstruction}\\
+\includegraphics[width=.28\textwidth]{figures/f_recon_16.ps} &  \\
+{\bf 16 term Fourier Reconstruction} & \\  
+\end{tabular}
+\end{figure}
+\end{centering}
+\vskip .01in
+\noindent
+ Localized function is represented with more accuracy using 16 wavelet coefficients because only
+ significant coefficients need to be retained. Fourier
+coefficients are global.
+
+\end{frame} 
+
+
+\begin{frame}{Denoising by soft thresholding} 
+
+\noindent
+Representation is spread to many (if not all) wavelet coefficients.
+\vskip .02in
+\noindent
+ Noise coefficients are relatively small in amplitude.
+\vskip .02in
+\noindent
+$\bullet$ How do we remove the noise contribution in the coefficients?
+\vskip .02in
+noindent
+Ans: Shrink {\bf all} of them just a little.
+\vskip .02in
+\noindent
+$\bullet$ How much do we shrink each coefficient?
+\vskip .02in
+\noindent
+$t = \sqrt{2 log(n)} \sigma / \sqrt{n} $
+\vskip .02in
+\noindent
+where $n$= number of data points and $\sigma$=noise standard deviation, and t is the amount to shrink the coefficient towards 0.
+
+\end{frame} 
+
+\begin{frame}{Example} 
+
+\begin{centering}
+\begin{figure}[ht]
+\begin{tabular}{cc}
+\includegraphics[width=.4\textwidth]{figures/noisy.ps} &
+\includegraphics[width=.4\textwidth]{figures/denoised.ps} \\ 
+{\bf Noisy Signal} &{\bf Wavelet coefficients Shrunk toward zero.} \\
+\end{tabular}
+\end{figure}
+\end{centering}
+\vskip .02in
+\noindent
+$\bullet$ Soft Thresholding takes advantage of the fact that white noise is represented equally by all coefficients.
+\vskip .02in
+\noindent
+$\bullet$ Data compression means that coherent signal is represented by just a few coefficients with relatively
+large values. White noise (or non-white as well) is spread over many coefficients, adding just a small amount to the magnitude of each.
+
+\end{frame} 
+
+\begin{frame}{The Continuous Morlet Wavelet Transform} 
+
+The Morlet mother wavelet is a complex exponential (Fourier) with a Gaussian envelop which
+ensures localization:
+\vskip .01in
+\[ \psi(t) = exp(i \omega_0 t) exp(-t^2/2\sigma^2) \]
+where $\omega_0$ is the frequency and $\sigma$ is a measure of the spread or support.
+\vskip .01in
+\noindent
+Note that while the footprint is {\bf infinite}, the exponential decay creates an effective footprint
+which is relatively compact.
+\vskip .01in
+\noindent
+Translations and dilations of the Morlet wavelet:
+\[
+\psi_{(b,a)}(t) = \frac{1}{a}exp\left[i \omega_0 \left(\frac{t-b}{a}\right)\right]exp\left[-\left(\frac{t-b}{a}\right)^2/2\sigma^2\right]
+\]
+\noindent
+{\bf The Morlet wavelet using matlab}
+\vskip .01in
+In matlab, the Morlet mother wavelet can be constructed using the command:
+\vskip .01in
+\noindent
+[psi,x] =  Morlet(-8,8,128);
+\vskip .01in
+\noindent
+on 128 grid points, and domain of [-8,8].
+
+\end{frame}
+
+\begin{frame}{Morlet - continued}
+
+\begin{centering}
+\begin{figure}[htp]
+\begin{tabular}{c}
+\includegraphics[width=.5\textwidth]{figures/morlet.eps} \\ 
+\end{tabular}
+\end{figure}
+\end{centering}
+
+\end{frame}
+
+
+\begin{frame}{Morlet transform of a multi-scale sine wave}
+
+Given a time series:
+\vskip .01in
+$ y(t) = sin(2\pi t) + sin(32\pi t)$    when  $.3 \leq t \leq .6 $ 
+\vskip .01in
+$ sin(2\pi t)$  otherwise  
+\vskip .01in
+on 128 grid points,
+ the Morlet transform can be calculated and plotted using the command:
+\vskip .02in
+\noindent
+coef=cwt(y,[1 2 4 8 16 32 64 128],'morl','plot')
+\vskip .02in
+\noindent
+$\bullet$ the top level of the coefficient plot shows bright (or large) values for scale 128 (largest scale).
+\vskip .02in
+\noindent
+$\bullet$ The next two layers are not zero, indicating {\it leakage} between different time scales.
+\vskip .01in
+\begin{centering}
+\begin{figure}[htp]
+\begin{tabular}{cc}
+\includegraphics[width=.3\textwidth]{figures/sine_function.eps} &
+\includegraphics[width=.3\textwidth]{figures/morlet_coef.eps} \\
+\end{tabular}
+\end{figure}
+\end{centering}
+
+\end{frame} 
+
+\begin{frame}{Example: Southern Oscillation Index Time Series 1951-2005}
+The SOI is the monthly pressure fluctuations in air pressure between Tahiti and Darwin. It is
+generally a noisy time series and benefits from some smoothing. Soft thresholding is a way to
+remove the noise in the signal without removing important information. The multivariate ENSO signal
+comes from sea level pressure, surface wind, sea surface tempemperature, surface air temperature and
+total amount of cloudiness.
+\begin{figure}[ht]
+\begin{centering}
+\begin{tabular}{cc}
+\includegraphics[width=.25\textwidth]{figures/original_soi_signal.eps} & 
+\includegraphics[width=.25\textwidth]{figures/denoised_soi_signal.eps}\\
+{\bf Multivariate ENSO Signal from CDC}\\
+\includegraphics[width=.25\textwidth]{figures/ts.ps} \\
+\end{tabular}
+\end{centering}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\end{document}
+

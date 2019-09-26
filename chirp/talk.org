@@ -146,6 +146,9 @@ CHIRP: (Common or Climate) Hyperspectral InfraRed Product
 #+LaTeX: \vspace{-0.1in}
 \small Shortwave sounding region max noise dominated by CrIS
 
+* Illustration of AIRS Conversion oto CHIRP
+#+ATTR_LATEX: :width 0.85\linewidth 
+[[./sample_CrIS_ILS_with_AIRS_parent_SRFs.pdf]]
 * Radiometric Corrections Applied to AIRS
 \vspace{-0.1in}
 - CrIS-like ILS is CHIRP standard

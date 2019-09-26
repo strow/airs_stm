@@ -1,0 +1,284 @@
+\documentclass[10pt,t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+%---------------------------------------------------------------------
+\title{Statistical Approaches for Simple Measurements of  Surface Temperature and
+Cloud Forcing Trends and Extrema} 
+\author{Andrew Tangborn , L. Larrabee Strow and \\ Howard Motteler }
+\institute{Joint Center for Earth Systems Technology and \\ UMBC Department of Physics}
+\date{AIRS STM  -- Sept. 26, 2019}
+%---------------------------------------------------------------------
+\input beamer_setup
+\usetheme{metropolis}
+\metroset{titleformat title=allcaps}
+\renewcommand{\UrlFont}{\small\tt}
+\renewcommand*{\UrlFont}{\footnotesize}
+\tolerance=1000
+\RequirePackage{fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\footnotesize}
+\begin{document}
+
+\maketitle
+\addtobeamertemplate{block begin}{
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{3pt plus 2pt minus 2.5pt}
+  \setlength{\itemsep}{0pt plus 0pt minus 2pt}
+  \setlength{\partopsep}{2pt}
+}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\frame{\maketitle}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Overview}
+  % \begin{itemize}
+  % \item Larrabee
+    \begin{itemize}
+    \item AIRS has made nearly 17 years of high quality TOA radiance measurements 
+    \item We have previously shown that the instrument stability is sufficient to determine linear rates surface temp., column $CO_2$, temp. and wv profiles  
+    \item We have also shown that probability density functions (PDFs) of clear sky PDFs can provide insight into non-Gaussian climate variability and stochastic forcing of the atmosphere 
+    \item We want to learn whether the 16+ years is long enough to start to see climate signals in surface temperature and cloud forcing.   
+    \item The primary issue to resolve is whether the rates we calculate have a significant contribution from the ENSO cycle.  
+    \end{itemize}
+\end{frame}
+%---------------------------------------------------------------------
+\begin{frame}
+  \frametitle{The ENSO cycle during the past 10 years}
+  \framesubtitle{ Southern oscillation index (SOI)} 
+
+The SOI is a measure of the pressure difference between Tahiti and Darwin:
+$$ 
+SOI =  \frac{\Delta P - \Delta P_{average}}{\sigma_{\Delta P}}
+$$
+
+%\includegraphics[width=1.0\linewidth]{./Figs/combined_pdf.png}
+
+\end{frame}
+
+\end{document}
+% %---------------------------------------------------------------------------
+
+         
+% \begin{frame}
+%   \frametitle{Mean PDF from 13 years of allsky observations from 1231 \wn, all latitudes.}
+%   \framesubtitle{Window channel sensitive to surface temperature, clouds and column water vapor}
+%   \vspace{-0.15in}
+%   \begin{itemize}
+%   \item PDF scale is indicated by the colorbar. The x and y axes show the latitude and BT bins. 
+%   \end{itemize}
+%   \vspace{0.1in}
+%   \centering
+% %  \includegraphics[width=0.7\linewidth]{./Figs/bt1291_vs_lat_abs_pdf_with_stemp.png}
+% %   \includegraphics[width=0.7\linewidth]{./Figs/bt1231_day_global_absolute_pdf_obs_720.png}
+% \end{frame}
+% %---------------------------------------------------------------------
+% %---------------------------------------------------------------------
+% \begin{frame}
+%  \frametitle{Rate of change in BT PDF for $1231 \wn$}
+% \begin{itemize}
+%    \item Linear rate from regression of $1231 \wn$ PDF.
+%    \item PDF rate shows how occurences of a particular BT range are changing per year.
+%    \item Color bar scale shows whether BT is increasing. 
+%    \item Gray lines are where rate < uncertainty 
+%    \includegraphics[width=0.65\linewidth]{./figures/bt1291_vs_lat_abs_pdf_rate.png}
+% \end{itemize}
+% \end{frame}
+% %---------------------------------------------------------------------
+% \begin{frame}
+%  \frametitle{Cloud radiative effect}
+% \begin{itemize}
+%    \item Mean cloud forcing over 13 years.
+%    \item Clear Calculated Bt - Obs using ERA.
+%    \item Averaged on 1x0.5 degree grid. 
+% \end{itemize}
+% %   \includegraphics[width=0.7\linewidth]{./Figs/map_mean_forcing.png}
+% \end{frame}
+% %---------------------------------------------------------------------
+% \begin{frame}
+%  \frametitle{Observation count for cloud forcing ranges}
+% \begin{itemize}
+%   \item Observations per pixel.
+%   \item 1\% of data over 13 years.
+% \end{itemize}
+% \twocol{.55}{.55}
+% {
+% \begin{block}{\tiny 1-5 K }
+% %\includegraphics[width=\linewidth]{./Figs/map_mean_forcing_1to5K.png}
+% \end{block}
+% }
+% {
+% \begin{block}{\tiny 5-15 K}
+% %\includegraphics[width=\linewidth]{./Figs/map_mean_forcing_5to15K.png}
+% \end{block}
+% }
+% \end{frame}
+% %---------------------------------------------------------------------
+% \begin{frame}
+%  \frametitle{Observation count - continued }
+% \begin{itemize}
+%    \item Observations per pixel.
+%    \item 1\% of data over 13 years.
+% \end{itemize}
+% \twocol{.55}{.55}
+% {
+% \begin{block}{\tiny 15-30 K }
+% %\includegraphics[width=\linewidth]{./Figs/map_mean_forcing_15to30K.png}
+% \end{block}
+% }
+% {
+% \begin{block}{\tiny 30-45 K}
+
+% %\includegraphics[width=\linewidth]{./Figs/map_mean_forcing_30to45K.png}
+% \end{block}
+% }
+% \end{frame}
+
+% %---------------------------------------------------------------------
+% \begin{frame}
+%  \frametitle{Mean Cloud Forcing over 13 years, zonal average}
+% \begin{itemize} 
+%   \item Color bar indicates PDF value.
+%   \item Large values indicate deep convective clouds. 
+%   \item Values near zero indicate clear sky.  
+% \end{itemize} 
+% %    \includegraphics[width=0.7\linewidth]{./Figs/fig5_pdf_ch1291_global_night.png}
+% \end{frame}
+
+% %---------------------------------------------------------------------
+% \begin{frame}
+% \frametitle{Percent rate of change in cloud forcing ($1231 \wn$). }
+
+% \begin{itemize}
+%   \item Rates form linear regression of cloud forcing over 13 yrs
+%   \item Color scale indicates percent change in PDF per year
+%   \item Regions with dots have uncertainty greater than rate
+% \end{itemize}
+% %    \includegraphics[width=0.7\linewidth]{./Figs/fig2_pdf_ch1291_global_night_obs.png}
+% \end{frame}
+
+% %---------------------------------------------------------------------
+% \begin{frame}
+% \frametitle{Mean Total Cloud Fraction over 13 years}
+% \begin{itemize} 
+%    \item Sum of cloud forcing PDFs from 5K to maximum 
+% \end{itemize} 
+% %   \includegraphics[width=0.8\linewidth]{./Figs/fig3_pdf_ch1291_global_night_obs.png}
+% \end{frame}
+% %-----------------------------------------------------------------------
+% \begin{frame}
+%   \frametitle{Percent rate in change of cloud fraction}
+%   \begin{itemize}
+%   \item Sum rate of change in cloud forcing from 5 K to maximum  
+%   \item Uncertainty from linear regression  
+%   \end{itemize}
+% %   \includegraphics[width=0.7\linewidth]{./Figs/fig4_pdf_ch1291_global_night_obs.png}
+% \end{frame}
+
+% %---------------------------------------------------------------------
+% \begin{frame}
+% \frametitle{Imager determination of cloud fraction}
+% \vspace{-0.2in}
+% \begin{footnotesize}
+% \begin{itemize}
+%    \item ISCCP = count how many cloudy 5 km pixels there are in a 280 km region, seen by satellite? http://isccp.giss.nasa.gov/cloudtypes.html
+%    \item PATMOS : from AVHRR, cf from tests using IR/NR/VIS channels  (Foster et. al., Remote Sens. 2016, 8(5), 424; doi:10.3390/rs8050424)
+% \end{itemize}
+% \end{footnotesize}
+% \twocol{0.55}{0.55}
+% {
+% \begin{block}{\tiny Norris (Nature 2016)}
+% %\includegraphics[width=\linewidth]{./Figs/strow_1.pdf}
+% \end{block}
+% }
+% {
+% \begin{block}{\tiny Stowe (JGR 1997)}
+% %\includegraphics[width=\linewidth]{./Figs/strow_2.png}
+% \end{block}
+% }
+% \end{frame}
+% %-----------------------------------------------------------------------
+% \begin{frame}
+%   \frametitle{Reduction of Uncertainties over Time}
+%   \begin{itemize} 
+%     \item Linear regression errors decrease with longer data sets 
+%     \item We calculate the regression errors for 1-13 year linear fits and extrapolate to 25 years
+%   \end{itemize}
+% \twocol{.55}{.55}
+% {
+% \begin{block}{\tiny 25 years}
+% %\includegraphics[width=\linewidth]{./Figs/cloud_percent_error_forecast.png}  
+% \end{block}
+% }
+% {
+% \begin{block}{\tiny Zoom to last 15 years}
+
+% %\includegraphics[width=\linewidth]{./Figs/cloud_percent_error_forecast_zoom.png}  
+% \end{block}
+% }
+% \end{frame}
+% %-----------------------------------------------------------------
+% \begin{frame}
+% \frametitle{Conclusions} 
+% \begin{itemize}
+%    \item    AIRS can give you high-quality pseudo-veritcal cloud percent changes, and we are starting to reach climate level measurements 
+%    \item   Linear rates of cloud forcing can be used to obtain cloud fraction rate dependence on latitude and level 
+%    \item   Longer term IR observation records should lead to higher accuracy 
+%    \item   Introduced a simple and easily implemented  definition of partial cloudiness that agrees with eg ISCCP and PATMOS
+%    \item   Preliminary results, more work needed 
+% \end{itemize}
+
+% \end{frame}
+
+
+% \begin{frame}
+%   \frametitle{Cloud Forcing PDF with ERA Calcs, Ocean Only}
+%   \begin{itemize}
+%   \item  Shows much less negative forcing over oceans 
+%   \end{itemize}
+%    \includegraphics[width=0.8\linewidth]{./figures/forcing_oceans_1291.png}
+% \end{frame}
+
+% %-----------------------------------------------------------------------
+
+% \begin{frame}
+%   \frametitle{Cloud forcing PDF at equator, ERA Calcs, one month}
+%   \begin{itemize}
+%   \item  Sum of these PDF values gives the cloud fraction. 
+%   \end{itemize}
+%    \includegraphics[width=0.8\linewidth]{./figures/cloud_forcing_1291_equator_ocean.png}
+% \end{frame}
+% %-----------------------------------------------------------------------
+
+% \begin{frame}
+%   \frametitle{Cloud forcing rates, ERA Calcs, ocean only}
+%   \begin{itemize}
+%     \item Shows high clouds increasing over tropics and northern mid-lat.
+%   \end{itemize}
+%    \includegraphics[width=0.8\linewidth]{./figures/over_ocean_cloud_forcing_rates_1291.png}
+% \end{frame}
+% %-----------------------------------------------------------------------
+
+% \end{document}
+% %-----------------------------------------------------------------------
+% %-----------------------------------------------------------------------
+
+
+% %%% Local Variables:
+% %%% mode: latex
+% %%% TeX-master: t
+% %%% End:
